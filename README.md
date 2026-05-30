@@ -1,4 +1,4 @@
-get your fires eaco
+get your first eaco
 
 EACO Beginner Guide
 
