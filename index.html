@@ -3,90 +3,223 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EACO Beginner Guide | 6 Languages</title>
+<title>EACO Beginner Guide | 6 Languages | Min Trade $0.01</title>
+<meta name="description" content="Learn EACO on Solana. Minimum trade just $0.01. Supported in 6 UN languages.">
 <style>
-:root{--primary:#1a73e8;--dark:#0d1b2a;--accent:#00d4aa;--gold:#ffd700;--bg:#f8fafc;--card:#fff}
-*{margin:0;padding:0;box-sizing:border-box}
-body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:#333;line-height:1.6;transition:.3s}
-body[dir=rtl]{font-family:'Tahoma',Arial,sans-serif}
-.nav{background:var(--dark);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3)}
-.nav h1{color:#fff;font-size:1.3rem}.nav h1 span{color:var(--accent)}
-.lang-switch{display:flex;gap:4px;flex-wrap:wrap}
-.lang-btn{padding:4px 10px;border:1px solid rgba(255,255,255,.3);border-radius:20px;background:transparent;color:#aaa;cursor:pointer;font-size:.75rem;transition:.2s}
-.lang-btn:hover,.lang-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
-.hero{text-align:center;padding:4rem 1rem;background:linear-gradient(135deg,var(--dark),#1b2838);color:#fff}
-.hero h2{font-size:2.2rem;margin-bottom:.5rem}.hero p{font-size:1.1rem;color:var(--accent);opacity:.9}
-.ca-box{max-width:600px;margin:2rem auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:1.2rem;text-align:left}
-.ca-label{font-size:.8rem;color:#888;margin-bottom:.4px}
-.ca-value{font-family:'Courier New',monospace;font-size:.85rem;word-break:break-all;color:var(--gold);background:rgba(0,0,0,.3);padding:8px 12px;border-radius:6px;display:flex;justify-content:space-between;align-items:center}
-.copy-btn{background:var(--accent);border:none;color:#fff;padding:4px 12px;border-radius:6px;cursor:pointer;font-size:.75rem;white-space:nowrap}
-.btn-row{display:flex;gap:10px;justify-content:center;margin-top:1rem;flex-wrap:wrap}
-.btn{padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;transition:.2s;display:inline-block}
-.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,212,170,.4)}
-.btn-secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
-.container{max-width:900px;margin:0 auto;padding:2rem 1rem}
-.section{background:var(--card);border-radius:16px;padding:2rem;margin-bottom:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,.06)}
-.section h3{color:var(--primary);margin-bottom:1rem;font-size:1.3rem;display:flex;align-items:center;gap:8px}
-.steps{counter-reset:step}.step{display:flex;gap:1rem;margin-bottom:1.5rem;padding:1rem;background:var(--bg);border-radius:12px;border-left:4px solid var(--accent)}
-.step-num{width:36px;height:36px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0}
-.step-content h4{margin-bottom:.3rem;color:var(--dark)}
-.security-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
-.sec-item{padding:1rem;background:#fff5f5;border-radius:10px;border-left:3px solid #e74c3c;font-size:.9rem}
-.tips-list{list-style:none}.tips-list li{padding:.7rem 0;padding-left:2rem;position:relative;border-bottom:1px solid #eee}
-.tips-list li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:bold}
-.footer{text-align:center;padding:2rem;color:#888;font-size:.85rem;background:var(--dark);color:#aaa}
-@media(max-width:600px){.hero h2{font-size:1.6rem}.section{padding:1.2rem}.ca-value{font-size:.75rem}}
+:root{{--primary:#1a73e8;--dark:#0d1b2a;--accent:#00d4aa;--gold:#ffd700;--green:#00c853;--bg:#f8fafc;--card:#fff}}
+*{{margin:0;padding:0;box-sizing:border-box}}
+body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:#333;line-height:1.7;transition:.3s}}
+body[dir=rtl]{{font-family:'Tahoma',Arial,sans-serif;direction:rtl}}
+.nav{{background:var(--dark);padding:.8rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3)}}
+.nav h1{{color:#fff;font-size:1.2rem}} .nav h1 span{{color:var(--accent)}}
+.lang-switch{{display:flex;gap:4px;flex-wrap:wrap}}
+.lang-btn{{padding:4px 10px;border:1px solid rgba(255,255,255,.3);border-radius:20px;background:transparent;color:#aaa;cursor:pointer;font-size:.75rem;transition:.2s}}
+.lang-btn:hover,.lang-btn.active{{background:var(--accent);color:#fff;border-color:var(--accent)}}
+
+/* Hero */
+.hero{{text-align:center;padding:3.5rem 1rem;background:linear-gradient(135deg,var(--dark),#1b3a4b);color:#fff;position:relative;overflow:hidden}}
+.hero::before{{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(0,212,170,.15),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(255,215,0,.1),transparent 60%)}}
+.hero h2{{font-size:2rem;margin-bottom:.4rem;position:relative}}
+.hero p{{font-size:1rem;color:var(--accent);opacity:.9;margin-bottom:1.5rem;position:relative}}
+
+/* Min Trade Banner */
+.min-trade-banner{{background:linear-gradient(135deg,#00c853,#00e676);color:#fff;padding:.8rem 1.5rem;border-radius:12px;max-width:580px;margin:.5rem auto 1.5rem;display:flex;align-items:center;gap:1rem;position:relative;box-shadow:0 4px 20px rgba(0,200,83,.3)}}
+.min-trade-banner .icon{{font-size:2rem}}
+.min-trade-banner .text{{text-align:left}}
+.min-trade-banner h3{{font-size:1rem;margin-bottom:.2rem}}
+.min-trade-banner p{{font-size:.85rem;opacity:.9}}
+
+/* CA Box */
+.ca-box{{max-width:600px;margin:0 auto 1rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:1rem;text-align:left;position:relative}}
+.ca-label{{font-size:.75rem;color:#888;margin-bottom:.3rem}}
+.ca-value{{font-family:'Courier New',monospace;font-size:.8rem;word-break:break-all;color:var(--gold);background:rgba(0,0,0,.35);padding:8px 12px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:8px}}
+.copy-btn{{background:var(--accent);border:none;color:#fff;padding:5px 14px;border-radius:6px;cursor:pointer;font-size:.75rem;white-space:nowrap;flex-shrink:0}}
+
+/* Buttons */
+.btn-row{{display:flex;gap:10px;justify-content:center;margin-top:1rem;flex-wrap:wrap;position:relative}}
+.btn{{padding:9px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.88rem;transition:.2s;display:inline-block}}
+.btn-primary{{background:var(--accent);color:#fff}}.btn-primary:hover{{transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,212,170,.4)}}
+.btn-secondary{{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}}.btn-secondary:hover{{background:rgba(255,255,255,.2)}}
+
+/* Container */
+.container{{max-width:900px;margin:0 auto;padding:1.5rem 1rem}}
+
+/* Section */
+.section{{background:var(--card);border-radius:16px;padding:1.5rem;margin-bottom:1.2rem;box-shadow:0 2px 12px rgba(0,0,0,.06)}}
+
+/* Foreign Trade Banner */
+.ft-section{{background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border-radius:16px;padding:1.5rem;margin-bottom:1.2rem;border:2px solid #00c853;position:relative;overflow:hidden}}
+.ft-section::before{{content:'';position:absolute;top:-50%;right:-20%;width:200px;height:200px;background:radial-gradient(circle,rgba(0,200,83,.15),transparent 70%);border-radius:50%}}
+.ft-section h3{{color:#00c853;margin-bottom:1rem;font-size:1.2rem;display:flex;align-items:center;gap:8px;position:relative}}
+.ft-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;position:relative}}
+.ft-item{{background:#fff;border-radius:10px;padding:1rem;text-align:center;border:1px solid #e0e0e0}}
+.ft-item .ft-icon{{font-size:1.8rem;margin-bottom:.4rem}}
+.ft-item h4{{font-size:.85rem;color:#333;margin-bottom:.3rem}}
+.ft-item p{{font-size:.75rem;color:#666}}
+
+/* Steps */
+.steps-section h3{{color:var(--primary);margin-bottom:1rem;font-size:1.2rem;display:flex;align-items:center;gap:8px}}
+.step{{display:flex;gap:1rem;margin-bottom:1rem;padding:1rem;background:#f8f9fa;border-radius:12px;border-left:4px solid var(--accent)}}
+.step-num{{width:34px;height:34px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:.9rem;flex-shrink:0}}
+.step-content h4{{margin-bottom:.25rem;color:var(--dark);font-size:.95rem}}
+.step-content p{{font-size:.88rem;color:#555;line-height:1.6}}
+
+/* Security */
+.security-section h3{{color:#c0392b;margin-bottom:1rem;font-size:1.2rem;display:flex;align-items:center;gap:8px}}
+.sec-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}}
+.sec-item{{padding:.9rem;background:#fff5f5;border-radius:10px;border-left:3px solid #e74c3c;font-size:.85rem;line-height:1.5}}
+
+/* Tips */
+.tips-section h3{{color:var(--primary);margin-bottom:1rem;font-size:1.2rem;display:flex;align-items:center;gap:8px}}
+.tips-list{{list-style:none}}
+.tips-list li{{padding:.7rem 0 .7rem 2rem;position:relative;border-bottom:1px solid #eee;font-size:.9rem}}
+.tips-list li::before{{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:bold}}
+
+/* Wallet CTA */
+.wallet-cta{{background:linear-gradient(135deg,#e3f2fd,#e1f5fe);border-radius:12px;padding:1.2rem;text-align:center;border:1px solid #bbdefb}}
+.wallet-cta h3{{color:var(--primary);margin-bottom:.4rem;font-size:1rem}}
+.wallet-cta p{{font-size:.85rem;color:#555;margin-bottom:.8rem}}
+
+/* Footer */
+.footer{{text-align:center;padding:1.5rem;color:#888;font-size:.8rem;background:var(--dark);color:#aaa;line-height:2}}
+
+/* Responsive */
+@media(max-width:600px){{
+  .hero h2{{font-size:1.5rem}}
+  .min-trade-banner{{flex-direction:column;text-align:center}}
+  .min-trade-banner .text{{text-align:center}}
+  .ca-value{{font-size:.72rem;flex-direction:column;align-items:flex-start;gap:6px}}
+  .btn-row{{flex-direction:column;align-items:center}}
+}}
 </style>
 </head>
 <body>
-<nav class="nav"><h1>🚀 <span>EACO</span> Guide</h1><div class="lang-switch" id="langSwitch"></div></nav>
-<div class="hero"><h2 id="heroTitle">Loading...</h2><p id="heroSubtitle"></p>
-<div class="ca-box"><div class="ca-label" id="caLabel">Contract Address:</div><div class="ca-value"><span id="caValue"></span><button class="copy-btn" onclick="copyCA()" id="copyBtn">Copy</button></div></div>
-<div class="btn-row"><a href="https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-primary" id="orbBtn">OrbMarkets</a><a href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-secondary" id="solscanBtn">Solscan</a></div></div>
+<nav class="nav">
+  <h1>🚀 <span>EACO</span></h1>
+  <div class="lang-switch" id="langSwitch"></div>
+</nav>
+
+<div class="hero">
+  <h2 id="heroTitle">Loading...</h2>
+  <p id="heroSub"></p>
+
+  <!-- Min Trade Banner (Foreign Trade Highlight) -->
+  <div class="min-trade-banner">
+    <div class="icon">💰</div>
+    <div class="text">
+      <h3 id="ftMin">$0.01</h3>
+      <p id="ftMinDesc">Minimum trade - perfect for beginners!</p>
+    </div>
+  </div>
+
+  <div class="ca-box">
+    <div class="ca-label" id="caLabel">Contract Address:</div>
+    <div class="ca-value">
+      <span id="caValue">DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</span>
+      <button class="copy-btn" id="copyBtn" onclick="copyCA()">Copy CA</button>
+    </div>
+  </div>
+
+  <div class="btn-row">
+    <a href="https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-primary" id="orbBtn">🌐 OrbMarkets</a>
+    <a href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-secondary" id="solscanBtn">🔍 Solscan</a>
+  </div>
+</div>
 
 <div class="container">
-<div class="section"><h3 id="walletSection">📱 Step 1: Get a Wallet</h3><p id="walletDesc"></p><a href="https://solflare.com/" target="_blank" class="btn btn-primary" id="walletLinkText">Download Solflare →</a></div>
+  <!-- Foreign Trade Features -->
+  <div class="ft-section">
+    <h3>🌍 <span id="ftTitle">Foreign Trade Mode</span></h3>
+    <div class="ft-grid">
+      <div class="ft-item"><div class="ft-icon">💵</div><h4 id="ftMin2">$0.01 Min Trade</h4><p>Trade from just $0.01</p></div>
+      <div class="ft-item"><div class="ft-icon">⚡</div><h4 id="ftFee">~0.25% Fee</h4><p>Low trading fee</p></div>
+      <div class="ft-item"><div class="ft-icon">🚀</div><h4 id="ftSpeed">~1s Settlement</h4><p>Fast on Solana</p></div>
+      <div class="ft-item"><div class="ft-icon">🌐</div><h4 id="ftSup">24/7 Global</h4><p>Always supported</p></div>
+    </div>
+  </div>
 
-<div class="section"><h3 id="securityTitle">🔒 Security First</h3><div class="security-grid" id="securityGrid"></div></div>
+  <!-- Wallet CTA -->
+  <div class="section wallet-cta">
+    <h3 id="walletTitle">Step 1: Get a Wallet</h3>
+    <p id="walletDesc">Download Solflare - recommended for EACO.</p>
+    <a href="https://solflare.com/" target="_blank" class="btn btn-primary" id="walletLink">Download Solflare →</a>
+  </div>
 
-<div class="section"><h3 id="tutorialTitle">📖 Step-by-Step Guide</h3><div class="steps" id="stepsContainer"></div></div>
+  <!-- Security -->
+  <div class="section security-section">
+    <h3>🔒 <span id="secTitle">Security First</span></h3>
+    <div class="sec-grid" id="secGrid"></div>
+  </div>
 
-<div class="section"><h3 id="tipsTitle">💡 Pro Tips</h3><ul class="tips-list" id="tipsList"></ul></div>
+  <!-- Steps -->
+  <div class="section steps-section">
+    <h3>📖 <span id="tutTitle">Step-by-Step Guide</span></h3>
+    <div id="stepsContainer"></div>
+  </div>
+
+  <!-- Tips -->
+  <div class="section tips-section">
+    <h3>💡 <span id="tipsTitle">Pro Tips</span></h3>
+    <ul class="tips-list" id="tipsList"></ul>
+  </div>
 </div>
 
 <footer class="footer" id="footerText"></footer>
 
 <script>
-const i18n = {"en": {"app_title": "EACO Beginner Guide", "lang_name": "English", "hero_title": "Welcome to EACO", "hero_subtitle": "The next-generation AI-powered community token on Solana", "ca_label": "Contract Address (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copy", "copied": "Copied!", "orb_btn": "View on OrbMarkets", "solscan_btn": "View on Solscan", "wallet_section": "Step 1: Get a Wallet", "wallet_desc": "Download Solflare wallet - the recommended wallet for EACO", "wallet_link": "https://solflare.com/", "wallet_link_text": "Download Solflare", "security_title": "Security First", "sec_1": "Never share your seed phrase with anyone", "sec_2": "Only use official links (check CA carefully)", "sec_3": "Start with small test amounts", "sec_4": "Always verify contract address before trading", "tutorial_title": "Step-by-Step Guide", "step1_title": "Create Your Wallet", "step1_desc": "Download Solflare from the official website. Create a new wallet and securely backup your 12-word seed phrase. Never share it with anyone!", "step2_title": "Fund Your Wallet with SOL", "step2_desc": "You need SOL for gas fees. Reserve at least 0.05 SOL for transactions. Buy SOL from any major exchange and transfer to your Solflare wallet.", "step3_title": "Get EACO Tokens", "step3_desc": "Go to OrbMarkets or use Solflare's built-in Swap. Search for EACO contract address: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH. Always double-check the CA!", "step4_title": "Trade & Hold", "step4_desc": "Use Solflare's built-in DEX swap or OrbMarkets to trade EACO. Consider staking for monthly consensus rewards up to 2x multiplier!", "step5_title": "Join Community", "step5_desc": "Join our global community! Participate in daily check-ins, promotions, and earn points. Top contributors get airdrop eligibility!", "tips_title": "Pro Tips", "tip_1": "Reserve 0.05 SOL for gas fees always", "tip_2": "Use Solflare's built-in Swap for best rates", "tip_3": "Double-check CA before every transaction", "tip_4": "Join monthly consensus program for 2x staking rewards", "footer_text": "Updated: 2026-05-30 | EACO Community - Built for Global Adoption"}, "zh": {"app_title": "EACO 新手指南", "lang_name": "中文", "hero_title": "欢迎来到 EACO", "hero_subtitle": "基于 Solana 的下一代 AI 驱动社区代币", "ca_label": "合约地址 (CA)：", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "复制", "copied": "已复制！", "orb_btn": "在 OrbMarkets 查看", "solscan_btn": "在 Solscan 查看", "wallet_section": "第1步：获取钱包", "wallet_desc": "下载 Solflare 钱包 — EACO 推荐钱包", "wallet_link": "https://solflare.com/", "wallet_link_text": "下载 Solflare", "security_title": "安全第一", "sec_1": "绝不向任何人透露种子短语", "sec_2": "仅使用官方链接（仔细核对CA）", "sec_3": "从小额测试开始", "sec_4": "交易前务必核对合约地址", "tutorial_title": "分步教程", "step1_title": "创建钱包", "step1_desc": "从官网下载 Solflare，创建新钱包并安全备份12字种子短语。切勿泄露给任何人！", "step2_title": "充值 SOL", "step2_desc": "需要 SOL 作为 Gas 费。至少预留 0.05 SOL 用于交易。从主流交易所购买 SOL 并转入 Solflare 钱包。", "step3_title": "获取 EACO 代币", "step3_desc": "访问 OrbMarkets 或使用 Solflare 内置 Swap。搜索 EACO 合约地址：DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH。务必核对 CA！", "step4_title": "交易与持有", "step4_desc": "使用 Solflare 内置 DEX Swap 或 OrbMarket 交易 EACO。考虑参与锁仓以获得月度共识奖励，最高 2 倍加成！", "step5_title": "加入社区", "step5_desc": "加入全球社区！参与每日签到、推广活动赚取积分。顶级贡献者将获得空投资格！", "tips_title": "专业提示", "tip_1": "始终预留 0.05 SOL 作为 Gas 费", "tip_2": "使用 Solflare 内置 Swap 获得最佳汇率", "tip_3": "每笔交易前双重核对 CA", "tip_4": "参与月度共识计划获得 2 倍锁仓奖励", "footer_text": "更新日期：2026-05-30 | EACO 社区 - 为全球采用而建"}, "es": {"app_title": "Guía de EACO para Principiantes", "lang_name": "Español", "hero_title": "Bienvenido a EACO", "hero_subtitle": "El token comunitario de próxima generación con IA en Solana", "ca_label": "Dirección del Contrato (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copiar", "copied": "¡Copiado!", "orb_btn": "Ver en OrbMarkets", "solscan_btn": "Ver en Solscan", "wallet_section": "Paso 1: Obtén una Billetera", "wallet_desc": "Descarga Solflare - la billetera recomendada para EACO", "wallet_link": "https://solflare.com/", "wallet_link_text": "Descargar Solflare", "security_title": "Seguridad Primero", "sec_1": "Nunca compartas tu frase semilla con nadie", "sec_2": "Usa solo enlaces oficiales (verifica el CA)", "sec_3": "Comienza con pequeñas cantidades de prueba", "sec_4": "Siempre verifica la dirección del contrato antes de operar", "tutorial_title": "Guía Paso a Paso", "step1_title": "Crea tu Billetera", "step1_desc": "Descarga Solflare desde el sitio oficial. Crea una nueva billetera y respalda tu frase semilla de 12 palabras. ¡Nunca la compartas!", "step2_title": "Fondos tu Billetera con SOL", "step2_desc": "Necesitas SOL para tarifas de gas. Reserva al menos 0.05 SOL para transacciones. Compra SOL en cualquier exchange importante.", "step3_title": "Obtén Tokens EACO", "step3_desc": "Ve a OrbMarkets o usa el Swap integrado de Solflare. Busca la dirección de contrato EACO. ¡Verifica siempre el CA!", "step4_title": "Opera y Mantén", "step4_desc": "Usa el Swap DEX integrado de Solflare u OrbMarkets. ¡Considera hacer staking para recompensas mensuales hasta 2x!", "step5_title": "Únete a la Comunidad", "step5_desc": "¡Únete a nuestra comunidad global! Participa en check-ins diarios, promociones y gana puntos.", "tips_title": "Consejos Pro", "tip_1": "Reserva 0.05 SOL para tarifas de gas", "tip_2": "Usa el Swap de Solflare para mejores tasas", "tip_3": "Verifica el CA antes de cada transacción", "tip_4": "Únete al programa de consenso mensual", "footer_text": "Actualizado: 2026-05-30 | EACO Community"}, "fr": {"app_title": "Guide EACO pour Débutants", "lang_name": "Français", "hero_title": "Bienvenue sur EACO", "hero_subtitle": "Le jeton communautaire nouvelle génération propulsé par l'IA sur Solana", "ca_label": "Adresse du Contrat (CA) :", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copier", "copied": "Copié !", "orb_btn": "Voir sur OrbMarkets", "solscan_btn": "Voir sur Solscan", "wallet_section": "Étape 1 : Obtenir un Portefeuille", "wallet_desc": "Téléchargez Solflare - le portefeuille recommandé pour EACO", "wallet_link": "https://solflare.com/", "wallet_link_text": "Télécharger Solflare", "security_title": "Sécurité Avant Tout", "sec_1": "Ne partagez jamais votre phrase seed", "sec_2": "Utilisez uniquement les liens officiels", "sec_3": "Commencez par de petits montants test", "sec_4": "Vérifiez toujours le contrat avant d'échanger", "tutorial_title": "Guide Étape par Étape", "step1_title": "Créer votre Portefeuille", "step1_desc": "Téléchargez Solflare depuis le site officiel. Créez un nouveau portefeuille et sauvegardez votre phrase seed de 12 mots.", "step2_title": "Approvisionner en SOL", "step2_desc": "Vous avez besoin de SOL pour les frais de gaz. Gardez au moins 0.05 SOL pour les transactions.", "step3_title": "Obtenir des Jetons EACO", "step3_desc": "Allez sur OrbMarkets ou utilisez le Swap intégré de Solflare. Cherchez l'adresse du contrat EACO.", "step4_title": "Échanger et Détenir", "step4_desc": "Utilisez le Swap DEX intégré ou OrbMarkets. Envisagez le staking pour des récompenses jusqu'à 2x !", "step5_title": "Rejoindre la Communauté", "step5_desc": "Rejoignez notre communauté mondiale ! Participez aux check-ins quotidiens et gagnez des points.", "tips_title": "Conseils Pro", "tip_1": "Gardez 0.05 SOL pour les frais de gaz", "tip_2": "Utilisez le Swap Solflare pour les meilleurs taux", "tip_3": "Vérifiez le CA avant chaque transaction", "tip_4": "Rejoignez le programme de consensus mensuel", "footer_text": "Mis à jour : 2026-05-30 | EACO Community"}, "ar": {"app_title": "دليل EACO للمبتدئين", "lang_name": "العربية", "hero_title": "مرحباً بكم في EACO", "hero_subtitle": "عملة مجتمعية من الجيل التالي مدعومة بالذكاء الاصطناعي على سولانا", "ca_label": "عقد العنوان (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "نسخ", "copied": "تم النسخ!", "orb_btn": "عرض على OrbMarkets", "solscan_btn": "عرض على Solscan", "wallet_section": "الخطوة 1: الحصول على محفظة", "wallet_desc": "قم بتحميل Solflare - المحفظة الموصى بها لـ EACO", "wallet_link": "https://solflare.com/", "wallet_link_text": "تحميل Solflare", "security_title": "الأمان أولاً", "sec_1": "لا تشارك عبارة البذر مع أي شخص", "sec_2": "استخدم الروابط الرسمية فقط", "sec_3": "ابدأ بمبالغ صغيرة للاختبار", "sec_4": "تحقق دائماً من العقد قبل التداول", "tutorial_title": "دليل خطوة بخطوة", "step1_title": "إنشاء محفظتك", "step1_desc": "قم بتحميل Solflare من الموقع الرسمي. أنشئ محفظة جديدة واحفظ عبارة البذر المكونة من 12 كلمة.", "step2_title": "شحن محفظتك بـ SOL", "step2_desc": "تحتاج SOL لرسوم الغاز. احتفظ بـ 0.5 SOL على الأقل للمعاملات.", "step3_title": "الحصول على عملات EACO", "step3_desc": "اذهب إلى OrbMarkets أو استخدم Swap المدمج في Solflare. ابحث عن عنوان عقد EACO.", "step4_title": "التداول والاحتفاظ", "step4_desc": "استخدم Swap DEX أو OrbMarkets. فكر في Staking للحصول على مكافآت حتى ضعفين!", "step5_title": "انضم للمجتمع", "step5_desc": "انضم لمجتمعنا العالمي! شك في التسجيل اليومي واكسب نقاطاً.", "tips_title": "نصائح احترافية", "tip_1": "احتفظ بـ 0.5 SOL لرسوم الغاز", "tip_2": "استخدم Swap Solflare لأفضل الأسعار", "tip_3": "تحقق من CA قبل كل معاملة", "tip_4": "انضم لبرنامج الإجماع الشهري", "footer_text": "تحديث: 2026-05-30 | EACO Community"}, "ru": {"app_title": "Руководство EACO для начинающих", "lang_name": "Русский", "hero_title": "Добро пожаловать в EACO", "hero_subtitle": "Токен сообщества нового поколения с ИИ на Solana", "ca_label": "Адрес контракта (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Копировать", "copied": "Скопировано!", "orb_btn": "Смотреть на OrbMarkets", "solscan_btn": "Смотреть на Solscan", "wallet_section": "Шаг 1: Получите кошелёк", "wallet_desc": "Скачайте Solflare - рекомендованный кошелёк для EACO", "wallet_link": "https://solflare.com/", "wallet_link_text": "Скачать Solflare", "security_title": "Безопасность превыше всего", "sec_1": "Никогда не делитесь сид-фразой", "sec_2": "Используйте только официальные ссылки", "sec_3": "Начинайте с небольших тестовых сумм", "sec_4": "Всегда проверяйте адрес контракта перед торговлей", "tutorial_title": "Пошаговое руководство", "step1_title": "Создайте кошелёк", "step1_desc": "Скачайте Solflare с официального сайта. Создайте новый кошелёк и сохраните сид-фразу из 12 слов.", "step2_title": "Пополните кошелёк SOL", "step2_desc": "Вам нужен SOL для комиссий. Оставьте минимум 0.05 SOL для транзакций.", "step3_title": "Получите токены EACO", "step3_desc": "Перейдите на OrbMarkets или используйте встроенный Swap в Solflare. Поищите адрес контракта EACO.", "step4_title": "Торговля и удержание", "step4_desc": "Используйте DEX Swap или OrbMarkets. Рассмотрите стейкинг для наград до 2x!", "step5_title": "Присоединяйтесь к сообществу", "step5_desc": "Присоединяйтесь к нашему глобальному сообществу! Участвуйте в ежедневных чекинах и зарабатывайте очки.", "tips_title": "Советы профи", "tip_1": "Держите 0.05 SOL для газовых комиссий", "tip_2": "Используйте Swap Solflare для лучших курсов", "tip_3": "Проверяйте CA перед каждой транзакцией", "tip_4": "Присоединяйтесь к программе месячного консенсуса", "footer_text": "Обновлено: 2026-05-30 | EACO Community"}};
-let curLang = localStorage.getItem('eaco_lang') || 'en';
+const i18n = JSON.parse({"en": {"app_title": "EACO Beginner Guide + Foreign Trade", "lang_name": "English", "hero_title": "Welcome to EACO", "hero_subtitle": "AI-powered community token on Solana | Min trade: $0.01", "ca_label": "Contract Address (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copy CA", "copied": "Copied!", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "Minimum Trade: $0.01", "min_trade_desc": "Start with as little as $0.01 - perfect for beginners!", "wallet_section": "Step 1: Get a Wallet", "wallet_desc": "Download Solflare wallet - recommended for EACO. Min deposit: $0.01 equivalent in SOL.", "wallet_link": "https://solflare.com/", "wallet_link_text": "Download Solflare →", "security_title": "Security First", "sec_1": "Never share your seed phrase with anyone", "sec_2": "Only use official links (verify CA each time)", "sec_3": "Start with $0.01 minimum trade - test first", "sec_4": "Always double-check contract before trading", "tutorial_title": "Step-by-Step Guide", "step1_title": "Create Your Wallet", "step1_desc": "Download Solflare from solflare.com. Create wallet, backup 12-word seed phrase. Never share it!", "step2_title": "Add Funds (Min $0.01)", "step2_desc": "Buy SOL from any exchange (Binance, OKX, etc.). Even $0.01 equivalent in SOL is enough to start! Transfer to your Solflare wallet.", "step3_title": "Get EACO Tokens", "step3_desc": "Go to OrbMarkets or Solflare Swap. Search CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH. Minimum buy: just $0.01!", "step4_title": "Trade & Hold (Min $0.01)", "step4_desc": "Trade any amount from $0.01! Consider staking for up to 2x monthly consensus rewards.", "step5_title": "Join Community & Earn", "step5_desc": "Daily check-in, promotions, AI tasks. Top contributors earn airdrop eligibility + up to 2x staking multiplier!", "tips_title": "Pro Tips", "tip_1": "Minimum trade is only $0.01 - start small!", "tip_2": "Use Solflare Swap for best rates on Solana", "tip_3": "Verify CA DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH before every trade", "tip_4": "Stake for 30/90/180/365 days → 1.1x/1.3x/1.5x/2.0x multiplier", "foreign_trade_title": "Foreign Trade Mode", "ft_min": "Minimum Trade: $0.01", "ft_fee": "Trading Fee: ~0.25%", "ft_speed": "Speed: ~1 second settlement", "ft_support": "24/7 Global Support", "footer_text": "Updated: 2026-05-30 | EACO - Min Trade $0.01 | CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH"}, "zh": {"app_title": "EACO 新手指南 + 外贸交易", "lang_name": "中文", "hero_title": "欢迎来到 EACO", "hero_subtitle": "Solana 上的 AI 驱动社区代币 | 最低交易：$0.01", "ca_label": "合约地址 (CA)：", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "复制 CA", "copied": "已复制！", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "最低交易：$0.01", "min_trade_desc": "最低只需 $0.01 即可开始交易，新手友好！", "wallet_section": "第1步：获取钱包", "wallet_desc": "下载 Solflare 钱包 — EACO 推荐钱包。最低充值：等价 $0.01 的 SOL。", "wallet_link": "https://solflare.com/", "wallet_link_text": "下载 Solflare →", "security_title": "安全第一", "sec_1": "绝不向任何人透露种子短语", "sec_2": "仅使用官方链接（每次核对 CA）", "sec_3": "从最低 $0.01 开始 — 先小额测试", "sec_4": "交易前务必核对合约地址", "tutorial_title": "分步教程", "step1_title": "创建钱包", "step1_desc": "从 solflare.com 下载 Solflare，创建钱包并安全备份12字种子短语，切勿泄露！", "step2_title": "充值（最低 $0.01）", "step2_desc": "从任何交易所（Binance、OKX等）购买 SOL。即使等价 $0.01 的 SOL 也足够开始！", "step3_title": "获取 EACO 代币", "step3_desc": "访问 OrbMarkets 或 Solflare Swap。搜索 CA：DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH，最低买入仅需 $0.01！", "step4_title": "交易与持有（最低 $0.01）", "step4_desc": "最低 $0.01 即可交易！考虑锁仓获得高达 2 倍月度共识奖励。", "step5_title": "加入社区赚取", "step5_desc": "每日签到、推广、AI任务。顶级贡献者获得空投资格 + 最高 2 倍锁仓加成！", "tips_title": "专业提示", "tip_1": "最低交易仅需 $0.01 — 小额开始！", "tip_2": "使用 Solflare Swap 获取最佳汇率", "tip_3": "每次交易前核对 CA：DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "tip_4": "锁仓 30/90/180/365 天 → 1.1x/1.3x/1.5x/2.0x 加成", "foreign_trade_title": "外贸交易模式", "ft_min": "最低交易：$0.01", "ft_fee": "交易手续费：约 0.25%", "ft_speed": "结算速度：约 1 秒", "ft_support": "24/7 全球支持", "footer_text": "更新日期：2026-05-30 | EACO - 最低交易 $0.01 | CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH"}, "es": {"app_title": "Guía EACO + Comercio Exterior", "lang_name": "Español", "hero_title": "Bienvenido a EACO", "hero_subtitle": "Token comunitario con IA en Solana | Mín. trade: $0.01", "ca_label": "Dirección del Contrato (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copiar CA", "copied": "¡Copiado!", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "Mín. Trade: $0.01", "min_trade_desc": "¡Comienza con solo $0.01 - perfecto para principiantes!", "wallet_section": "Paso 1: Obtén una Billetera", "wallet_desc": "Descarga Solflare - recomendada para EACO. Depósito mín: equivalente a $0.01 en SOL.", "wallet_link": "https://solflare.com/", "wallet_link_text": "Descargar Solflare →", "security_title": "Seguridad Primero", "sec_1": "Nunca compartas tu frase semilla", "sec_2": "Solo usa enlaces oficiales (verifica CA siempre)", "sec_3": "Empieza con mínimo $0.01 - prueba primero", "sec_4": "Verifica el contrato antes de cada operación", "tutorial_title": "Guía Paso a Paso", "step1_title": "Crea tu Billetera", "step1_desc": "Descarga Solflare de solflare.com. Crea billetera, respalda 12 palabras. ¡Nunca las compartas!", "step2_title": "Fondos (Mín $0.01)", "step2_desc": "Compra SOL en cualquier exchange. ¡Solo $0.01 equivalente en SOL es suficiente!", "step3_title": "Obtén EACO", "step3_desc": "Ve a OrbMarkets o Solflare Swap. Busca CA. ¡Mínimo de compra: solo $0.01!", "step4_title": "Opera y Mantén (Mín $0.01)", "step4_desc": "Opera desde $0.01. Considera staking para recompensas hasta 2x.", "step5_title": "Únete y Gana", "step5_desc": "Check-ins diarios, promociones, tareas IA. ¡Los mejores obtienen air rewards!", "tips_title": "Consejos Pro", "tip_1": "Mínimo de trade: solo $0.01", "tip_2": "Usa Solflare Swap para mejores tasas", "tip_3": "Verifica CA antes de cada trade", "tip_4": "Staking 30/90/180/365 días → 1.1x/1.3x/1.5x/2.0x", "foreign_trade_title": "Modo Comercio Exterior", "ft_min": "Mín. Trade: $0.01", "ft_fee": "Comisión: ~0.25%", "ft_speed": "Liquidación: ~1 segundo", "ft_support": "Soporte 24/7 Global", "footer_text": "Actualizado: 2026-05-30 | EACO - Mín. $0.01"}, "fr": {"app_title": "Guide EACO + Commerce Extérieur", "lang_name": "Français", "hero_title": "Bienvenue sur EACO", "hero_subtitle": "Token communautaire IA sur Solana | Min. trade: $0.01", "ca_label": "Adresse du Contrat (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copier CA", "copied": "Copié!", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "Min. Trade: $0.01", "min_trade_desc": "Commencez avec seulement $0.01 - parfait pour débutants!", "wallet_section": "Étape 1: Obtenir un Portefeuille", "wallet_desc": "Téléchargez Solflare - recommandé pour EACO. Dépôt min: équivalent $0.01 en SOL.", "wallet_link": "https://solflare.com/", "wallet_link_text": "Télécharger Solflare →", "security_title": "Sécurité Avant Tout", "sec_1": "Ne partagez jamais votre phrase seed", "sec_2": "Utilisez uniquement les liens officiels", "sec_3": "Commencez par $0.01 minimum", "sec_4": "Vérifiez toujours le contrat avant de trader", "tutorial_title": "Guide Étape par Étape", "step1_title": "Créer le Portefeuille", "step1_desc": "Téléchargez Solflare depuis solflare.com. Sauvegardez votre phrase de 12 mots.", "step2_title": "Approvisionner (Min $0.01)", "step2_desc": "Achetez SOL sur n'importe quel exchange. Même $0.01 équivalent suffit!", "step3_title": "Obtenir des EACO", "step3_desc": "OrbMarkets ou Solflare Swap. Cherchez CA. Achat minimum: seulement $0.01!", "step4_title": "Trader et Détenir (Min $0.01)", "step4_desc": "Tradez à partir de $0.01. Stakez pour des récompenses jusqu'à 2x!", "step5_title": "Rejoindre et Gagner", "step5_desc": "Check-ins quotidiens, promotions, tâches IA. Les meilleurs reçoivent des air drops!", "tips_title": "Conseils Pro", "tip_1": "Trade minimum: $0.01 seulement", "tip_2": "Solflare Swap pour les meilleurs taux", "tip_3": "Vérifiez le CA avant chaque trade", "tip_4": "Staking 30/90/180/365 jours → 1.1x/1.3x/1.5x/2.0x", "foreign_trade_title": "Mode Commerce Extérieur", "ft_min": "Min. Trade: $0.01", "ft_fee": "Frais: ~0.25%", "ft_speed": "Règlement: ~1 seconde", "ft_support": "Support 24/7 Mondial", "footer_text": "Mis à jour: 2026-05-30 | EACO - Min. $0.01"}, "ar": {"app_title": "دليل EACO + التجارة الخارجية", "lang_name": "العربية", "hero_title": "مرحباً في EACO", "hero_subtitle": "رمز مجتمعي بالذكاء الاصطناعي على سولانا | الحد الأدنى: $0.01", "ca_label": "عنوان العقد (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "نسخ CA", "copied": "تم النسخ!", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "الحد الأدنى: $0.01", "min_trade_desc": "ابدأ بـ $0.01 فقط - مثالي للمبتدئين!", "wallet_section": "الخطوة 1: الحصول على محفظة", "wallet_desc": "حمل Solflare - الموصى بها لـ EACO. الإيداع الأدنى: $0.01.", "wallet_link": "https://solflare.com/", "wallet_link_text": "تحميل Solflare ←", "security_title": "الأمان أولاً", "sec_1": "لا تشارك عبارة البذر أبداً", "sec_2": "استخدم الروابط الرسمية فقط", "sec_3": "ابدأ بـ $0.01 - جرب أولاً", "sec_4": "تحقق من العقد قبل كل تداول", "tutorial_title": "دليل خطوة بخطوة", "step1_title": "إنشاء محفظتك", "step1_desc": "حمل Solflare من solflare.com. أنشئ محفظة واحفظ الـ 12 كلمة.", "step2_title": "الإيداع (الأدنى $0.01)", "step2_desc": "اشترِ SOL من أي منصة. حتى $0.01 يكفي للبدء!", "step3_title": "احصل على EACO", "step3_desc": "اذهب إلى OrbMarkets أو Solflare Swap. الحد الأدنى للشراء: $0.01 فقط!", "step4_title": "التداول (الأدنى $0.01)", "step4_desc": "تداول من $0.01. فكر في Staking لمكافآت حتى 2x!", "step5_title": "انضم واكسب", "step5_desc": "تسجيل يومي، ترويج، مهام ذكاء اصطناعي. الأفضل يحصلون على Air Drop!", "tips_title": "نصائح احترافية", "tip_1": "الحد الأدنى للتداول: $0.01 فقط", "tip_2": "استخدم Solflare Swap لأفضل الأسعار", "tip_3": "تحقق من CA قبل كل تداول", "tip_4": "Staking 30/90/180/365 يوم → 1.1x/1.3x/1.5x/2.0x", "foreign_trade_title": "وضع التجارة الخارجية", "ft_min": "الحد الأدنى: $0.01", "ft_fee": "الرسوم: ~0.25%", "ft_speed": "التسوية: ~1 ثانية", "ft_support": "دعم 24/7 عالمي", "footer_text": "تحديث: 2026-05-30 | EACO - الحد الأدنى $0.01"}, "ru": {"app_title": "EACO + Внешняя Торговля", "lang_name": "Русский", "hero_title": "Добро пожаловать в EACO", "hero_subtitle": "Токен сообщества с ИИ на Solana | Мин. сделка: $0.01", "ca_label": "Адрес контракта (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Копировать CA", "copied": "Скопировано!", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "Мин. Сделка: $0.01", "min_trade_desc": "Начните всего с $0.01 - идеально для новичков!", "wallet_section": "Шаг 1: Получите кошелёк", "wallet_desc": "Скачайте Solflare - рекомендованный кошелёк для EACO. Мин. депозит: $0.01 в SOL.", "wallet_link": "https://solflare.com/", "wallet_link_text": "Скачать Solflare ←", "security_title": "Безопасность превыше всего", "sec_1": "Никогда не делитесь сид-фразой", "sec_2": "Используйте только официальные ссылки", "sec_3": "Начните с минимум $0.01", "sec_4": "Всегда проверяйте контракт перед торговлей", "tutorial_title": "Пошаговое руководство", "step1_title": "Создайте кошелёк", "step1_desc": "Скачайте Solflare с solflare.com. Сохраните сид-фразу из 12 слов.", "step2_title": "Пополнение (Мин $0.01)", "step2_desc": "Купите SOL на любой бирже. Даже $0.01 эквивалент достаточно!", "step3_title": "Получите EACO", "step3_desc": "OrbMarkets или Solflare Swap. Мин. покупка: всего $0.01!", "step4_title": "Торговля (Мин $0.01)", "step4_desc": "Торгуйте от $0.01.考虑质押获得奖励高达 2x!", "step5_title": "Присоединяйтесь и зарабатывайте", "step5_desc": "Ежедневные чекины, продвижение, задания ИИ. Лучшие получают airdrop!", "tips_title": "Советы профи", "tip_1": "Мин. сделка: всего $0.01", "tip_2": "Solflare Swap для лучших курсов", "tip_3": "Проверяйте CA перед каждой сделкой", "tip_4": "Стейкинг 30/90/180/365 дней → 1.1x/1.3x/1.5x/2.0x", "foreign_trade_title": "Режим внешней торговли", "ft_min": "Мин. Сделка: $0.01", "ft_fee": "Комиссия: ~0.25%", "ft_speed": "Расчёты: ~1 секунда", "ft_support": "Поддержка 24/7 глобальная", "footer_text": "Обновлено: 2026-05-30 | EACO - Мин. $0.01"}});
 const rtlLangs = ['ar'];
-function t(key){return (i18n[curLang]&&i18n[curLang][key])||(i18n['en'][key]||key)}
-function applyLang(){
+let curLang = localStorage.getItem('eaco_lang') || 'en';
+
+function t(k){{return (i18n[curLang] && i18n[curLang][k]) || (i18n['en'][k]||k);}}
+function applyLang(){{
   document.documentElement.lang = curLang;
-  document.documentElement.dir = rtlLangs.includes(curLang)?'rtl':'ltr';
-  const map={heroTitle:'heroTitle',heroSubtitle:'heroSubtitle',caLabel:'caLabel',caValue:'caValue',copyBtn:'copyBtn',orbBtn:'orbBtn',solscanBtn:'solscanBtn',walletSection:'walletSection',walletDesc:'walletDesc',walletLinkText:'walletLinkText',securityTitle:'securityTitle',tutorialTitle:'tutorialTitle',tipsTitle:'tipsTitle',footerText:'footerText'};
-  for(const[id,key]of Object.entries(map)){const el=document.getElementById(id);if(el)el.textContent=t(key)}
-  document.title=t('app_title');
+  document.documentElement.dir = rtlLangs.includes(curLang) ? 'rtl' : 'ltr';
+  document.title = t('app_title');
+  $('heroTitle').textContent = t('hero_title');
+  $('heroSub').textContent = t('hero_subtitle');
+  $('caLabel').textContent = t('ca_label');
+  $('caValue').textContent = t('ca_value');
+  $('copyBtn').textContent = t('copy_btn');
+  $('orbBtn').textContent = t('orb_btn');
+  $('solscanBtn').textContent = t('solscan_btn');
+  $('ftMin').textContent = t('min_trade');
+  $('ftMinDesc').textContent = t('min_trade_desc');
+  $('ftTitle').textContent = t('foreign_trade_title');
+  $('ftMin2').textContent = t('ft_min');
+  $('ftFee').textContent = t('ft_fee');
+  $('ftSpeed').textContent = t('ft_speed');
+  $('ftSup').textContent = t('ft_support');
+  $('walletTitle').textContent = t('wallet_section');
+  $('walletDesc').textContent = t('wallet_desc');
+  $('walletLink').textContent = t('wallet_link_text');
+  $('secTitle').textContent = t('security_title');
+  $('tutTitle').textContent = t('tutorial_title');
+  $('tipsTitle').textContent = t('tips_title');
+  $('footerText').textContent = t('footer_text');
+
   // Security grid
-  const sg=document.getElementById('securityGrid'); if(sg){
-    sg.innerHTML=[1,2,3,4].map(i=>`<div class="sec-item">${t('sec_'+i)}</div>`).join('');
-  }
+  $('secGrid').innerHTML = [1,2,3,4].map(i=>
+    `<div class="sec-item">{t('sec_'+i)}</div>`).join('');
+
   // Steps
-  const sc=document.getElementById('stepsContainer'); if(sc){
-    sc.innerHTML=[1,2,3,4,5].map(i=>`<div class="step"><div class="step-num">${i}</div><div class="step-content"><h4>${t('step'+i+'_title')}</h4><p>${t('step'+i+'_desc')}</p></div></div>`).join('');
-  }
+  $('stepsContainer').innerHTML = [1,2,3,4,5].map(i=>
+    `<div class="step"><div class="step-num">{i}</div>
+     <div class="step-content"><h4>{t('step'+i+'_title')}</h4><p>{t('step'+i+'_desc')}</p></div></div>`).join('');
+
   // Tips
-  const tl=document.getElementById('tipsList'); if(tl){
-    tl.innerHTML=[1,2,3,4].map(i=>`<li>${t('tip_'+i)}</li>`).join('');
-  }
+  $('tipsList').innerHTML = [1,2,3,4].map(i=>
+    `<li>{t('tip_'+i)}</li>`).join('');
+
   // Lang buttons
-  const ls=document.getElementById('langSwitch'); if(ls){
-    ls.innerHTML=Object.keys(i18n).map(l=>`<button class="lang-btn${l===curLang?' active':''}" onclick:setLang('${l}')">${i18n[l].lang_name}</button>`).join('');
-  }
-}
-function setLang(l){curLang=l;localStorage.setItem('eaco_lang',l);applyLang()}
-function copyCA(){navigator.clipboard.writeText(document.getElementById('caValue').textContent).then(()=>{
-  const b=document.getElementById('copyBtn');b.textContent='copied!';setTimeout(()=>{b.textContent=t('copyBtn')},2000)})}
+  $('langSwitch').innerHTML = Object.keys(i18n).map(l=>
+    `<button class="lang-btn${{l===curLang?' active':''}}" onclick="setLang('${{l}}')">${{i18n[l].lang_name}}</button>`).join('');
+}}
+function $(id){{return document.getElementById(id);}}
+function setLang(l){{curLang=l;localStorage.setItem('eaco_lang',l);applyLang();}}
+function copyCA(){{navigator.clipboard.writeText($('caValue').textContent).then(()=>{{
+  const b=$('copyBtn');b.textContent=t('copied');b.style.background='#00c853';
+  setTimeout(()=>{{b.textContent=t('copy_btn');b.style.background='';}},2000);}});}}
 applyLang();
 </script>
 </body></html>
