@@ -3,223 +3,339 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EACO Beginner Guide | 6 Languages | Min Trade $0.01</title>
-<meta name="description" content="Learn EACO on Solana. Minimum trade just $0.01. Supported in 6 UN languages.">
+<title>EACO Dashboard | Monthly Consensus | Min Trade $0.01</title>
 <style>
-:root{{--primary:#1a73e8;--dark:#0d1b2a;--accent:#00d4aa;--gold:#ffd700;--green:#00c853;--bg:#f8fafc;--card:#fff}}
-*{{margin:0;padding:0;box-sizing:border-box}}
-body{{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:#333;line-height:1.7;transition:.3s}}
-body[dir=rtl]{{font-family:'Tahoma',Arial,sans-serif;direction:rtl}}
-.nav{{background:var(--dark);padding:.8rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3)}}
-.nav h1{{color:#fff;font-size:1.2rem}} .nav h1 span{{color:var(--accent)}}
-.lang-switch{{display:flex;gap:4px;flex-wrap:wrap}}
-.lang-btn{{padding:4px 10px;border:1px solid rgba(255,255,255,.3);border-radius:20px;background:transparent;color:#aaa;cursor:pointer;font-size:.75rem;transition:.2s}}
-.lang-btn:hover,.lang-btn.active{{background:var(--accent);color:#fff;border-color:var(--accent)}}
+:root{--pri:#1a73e8;--dark:#0d1b2a;--acc:#00d4aa;--gold:#ffd700;--green:#00c853;--red:#e74c3c;--bg:#f0f2f5;--card:#fff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:#333;line-height:1.6}
+
+/* Nav */
+.nav{background:var(--dark);padding:.7rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
+.nav h1{color:#fff;font-size:1.15rem}.nav h1 span{color:var(--acc)}
+.lang-switch{display:flex;gap:4px;flex-wrap:wrap}
+.lang-btn{padding:4px 10px;border:1px solid rgba(255,255,255,.3);border-radius:20px;background:transparent;color:#aaa;cursor:pointer;font-size:.72rem;transition:.2s}
+.lang-btn:hover,.lang-btn.active{background:var(--acc);color:#fff;border-color:var(--acc)}
 
 /* Hero */
-.hero{{text-align:center;padding:3.5rem 1rem;background:linear-gradient(135deg,var(--dark),#1b3a4b);color:#fff;position:relative;overflow:hidden}}
-.hero::before{{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(0,212,170,.15),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(255,215,0,.1),transparent 60%)}}
-.hero h2{{font-size:2rem;margin-bottom:.4rem;position:relative}}
-.hero p{{font-size:1rem;color:var(--accent);opacity:.9;margin-bottom:1.5rem;position:relative}}
+.hero{text-align:center;padding:2rem 1rem;background:linear-gradient(135deg,var(--dark),#1b3a4b);color:#fff}
+.hero h2{font-size:1.6rem;margin-bottom:.3rem}
+.hero p{color:var(--acc);font-size:.9rem;margin-bottom:.8rem}
 
 /* Min Trade Banner */
-.min-trade-banner{{background:linear-gradient(135deg,#00c853,#00e676);color:#fff;padding:.8rem 1.5rem;border-radius:12px;max-width:580px;margin:.5rem auto 1.5rem;display:flex;align-items:center;gap:1rem;position:relative;box-shadow:0 4px 20px rgba(0,200,83,.3)}}
-.min-trade-banner .icon{{font-size:2rem}}
-.min-trade-banner .text{{text-align:left}}
-.min-trade-banner h3{{font-size:1rem;margin-bottom:.2rem}}
-.min-trade-banner p{{font-size:.85rem;opacity:.9}}
+.min-banner{background:linear-gradient(135deg,#00c853,#00e676);color:#fff;padding:.7rem 1.2rem;border-radius:12px;max-width:520px;margin:.4rem auto 1rem;display:flex;align-items:center;gap:.8rem;box-shadow:0 3px 15px rgba(0,200,83,.3)}
+.min-banner .icon{font-size:1.6rem}
+.min-banner .text h3{font-size:.9rem}.min-banner .text p{font-size:.78rem;opacity:.9}
 
 /* CA Box */
-.ca-box{{max-width:600px;margin:0 auto 1rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:1rem;text-align:left;position:relative}}
-.ca-label{{font-size:.75rem;color:#888;margin-bottom:.3rem}}
-.ca-value{{font-family:'Courier New',monospace;font-size:.8rem;word-break:break-all;color:var(--gold);background:rgba(0,0,0,.35);padding:8px 12px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:8px}}
-.copy-btn{{background:var(--accent);border:none;color:#fff;padding:5px 14px;border-radius:6px;cursor:pointer;font-size:.75rem;white-space:nowrap;flex-shrink:0}}
+.ca-box{max-width:550px;margin:0 auto .8rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:.8rem;text-align:left}
+.ca-label{font-size:.7rem;color:#888;margin-bottom:.2rem}
+.ca-value{font-family:'Courier New',monospace;font-size:.75rem;word-break:break-all;color:var(--gold);background:rgba(0,0,0,.35);padding:6px 10px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:6px}
+.copy-btn{background:var(--acc);border:none;color:#fff;padding:4px 12px;border-radius:6px;cursor:pointer;font-size:.7rem;white-space:nowrap}
 
-/* Buttons */
-.btn-row{{display:flex;gap:10px;justify-content:center;margin-top:1rem;flex-wrap:wrap;position:relative}}
-.btn{{padding:9px 22px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.88rem;transition:.2s;display:inline-block}}
-.btn-primary{{background:var(--accent);color:#fff}}.btn-primary:hover{{transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,212,170,.4)}}
-.btn-secondary{{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}}.btn-secondary:hover{{background:rgba(255,255,255,.2)}}
+.btn-row{display:flex;gap:8px;justify-content:center;margin-top:.8rem;flex-wrap:wrap}
+.btn{padding:7px 18px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.82rem;transition:.2s;display:inline-block}
+.btn-pri{background:var(--acc);color:#fff}.btn-pri:hover{transform:translateY(-1px);box-shadow:0 3px 12px rgba(0,212,170,.4)}
+.btn-sec{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}.btn-sec:hover{background:rgba(255,255,255,.2)}
 
-/* Container */
-.container{{max-width:900px;margin:0 auto;padding:1.5rem 1rem}}
+.container{max-width:920px;margin:0 auto;padding:1rem 1rem}
+
+/* KPI Cards */
+.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;margin-bottom:1rem}
+.kpi-card{background:var(--card);border-radius:14px;padding:1rem;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.05);border-left:4px solid var(--pri)}
+.kpi-card.green{border-left-color:var(--green)}
+.kpi-card.gold{border-left-color:var(--gold)}
+.kpi-card.purple{border-left-color:#9b59b6}
+.kpi-val{font-size:1.6rem;font-weight:bold;color:var(--dark);margin-bottom:.2rem}
+.kpi-label{font-size:.75rem;color:#666}
+.kpi-sub{font-size:.68rem;color:#999;margin-top:.2rem}
 
 /* Section */
-.section{{background:var(--card);border-radius:16px;padding:1.5rem;margin-bottom:1.2rem;box-shadow:0 2px 12px rgba(0,0,0,.06)}}
+.section{background:var(--card);border-radius:14px;padding:1.2rem;margin-bottom:1rem;box-shadow:0 2px 10px rgba(0,0,0,.04)}
+.section h3{font-size:1rem;margin-bottom:.8rem;display:flex;align-items:center;gap:6px;color:var(--pri)}
 
-/* Foreign Trade Banner */
-.ft-section{{background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border-radius:16px;padding:1.5rem;margin-bottom:1.2rem;border:2px solid #00c853;position:relative;overflow:hidden}}
-.ft-section::before{{content:'';position:absolute;top:-50%;right:-20%;width:200px;height:200px;background:radial-gradient(circle,rgba(0,200,83,.15),transparent 70%);border-radius:50%}}
-.ft-section h3{{color:#00c853;margin-bottom:1rem;font-size:1.2rem;display:flex;align-items:center;gap:8px;position:relative}}
-.ft-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem;position:relative}}
-.ft-item{{background:#fff;border-radius:10px;padding:1rem;text-align:center;border:1px solid #e0e0e0}}
-.ft-item .ft-icon{{font-size:1.8rem;margin-bottom:.4rem}}
-.ft-item h4{{font-size:.85rem;color:#333;margin-bottom:.3rem}}
-.ft-item p{{font-size:.75rem;color:#666}}
+/* Table */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+table{width:100%;border-collapse:collapse;font-size:.82rem}
+th{background:var(--dark);color:#fff;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
+td{padding:7px 10px;border-bottom:1px solid #eee;white-space:nowrap}
+tr:hover td{background:#f8f9fa}
+.rank-1{background:linear-gradient(90deg,#fff9db,#fff)!important;font-weight:bold}
+.rank-2{background:linear-gradient(90deg,#f0f0ff,#fff)!important}
+.rank-3{background:linear-gradient(90deg,#f0fff0,#fff)!important}
+.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.68rem;font-weight:bold;color:#fff}
+.badge-diamond{background:linear-gradient(135deg,#b9f2ff,#0077be)}
+.badge-platinum{background:linear-gradient(135deg,#e5e4e2,#a0a0a0);color:#333}
+.badge-gold{background:linear-gradient(135deg,#ffd700,#ffaa00)}
+.badge-silver{background:linear-gradient(135deg,#c0c0c0,#808080);color:#fff}
+.badge-bronze{background:linear-gradient(135cd,#cd7f32,#8b4513)}
 
-/* Steps */
-.steps-section h3{{color:var(--primary);margin-bottom:1rem;font-size:1.2rem;display:flex;align-items:center;gap:8px}}
-.step{{display:flex;gap:1rem;margin-bottom:1rem;padding:1rem;background:#f8f9fa;border-radius:12px;border-left:4px solid var(--accent)}}
-.step-num{{width:34px;height:34px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;font-size:.9rem;flex-shrink:0}}
-.step-content h4{{margin-bottom:.25rem;color:var(--dark);font-size:.95rem}}
-.step-content p{{font-size:.88rem;color:#555;line-height:1.6}}
+/* Progress bar */
+.progress-bar{height:8px;background:#eee;border-radius:4px;overflow:hidden;margin-top:4px}
+.progress-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--acc),var(--green));transition:width .5s}
 
-/* Security */
-.security-section h3{{color:#c0392b;margin-bottom:1rem;font-size:1.2rem;display:flex;align-items:center;gap:8px}}
-.sec-grid{{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}}
-.sec-item{{padding:.9rem;background:#fff5f5;border-radius:10px;border-left:3px solid #e74c3c;font-size:.85rem;line-height:1.5}}
+/* Level cards */
+.level-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
+.level-card{background:linear-gradient(135deg,#f8f9fa,#fff);border-radius:12px;padding:.9rem;text-align:center;border:1px solid #e8e8e8}
+.level-icon{font-size:1.5rem;margin-bottom:.3rem}
+.level-name{font-weight:bold;font-size:.82rem;color:var(--dark)}
+.level-cond{font-size:.68rem;color:#888;margin-top:.3rem;line-height:1.4}
 
-/* Tips */
-.tips-section h3{{color:var(--primary);margin-bottom:1rem;font-size:1.2rem;display:flex;align-items:center;gap:8px}}
-.tips-list{{list-style:none}}
-.tips-list li{{padding:.7rem 0 .7rem 2rem;position:relative;border-bottom:1px solid #eee;font-size:.9rem}}
-.tips-list li::before{{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:bold}}
+/* Consensus meter */
+.consensus-meter{position:relative;height:30px;background:#eee;border-radius:15px;overflow:hidden;margin:.8rem 0}
+.consensus-fill{height:100%;border-radius:15px;background:linear-gradient(90deg,#e74c3c,#f39c12,#27ae60,#2980b9,#8e44ad);transition:width 1s}
+.consensus-value{position:absolute;width:100%;top:50%;transform:translateY(-50%);text-align:center;font-weight:bold;font-size:.85rem;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5)}
 
-/* Wallet CTA */
-.wallet-cta{{background:linear-gradient(135deg,#e3f2fd,#e1f5fe);border-radius:12px;padding:1.2rem;text-align:center;border:1px solid #bbdefb}}
-.wallet-cta h3{{color:var(--primary);margin-bottom:.4rem;font-size:1rem}}
-.wallet-cta p{{font-size:.85rem;color:#555;margin-bottom:.8rem}}
+/* Unlock grid */
+.unlock-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem}
+.unlock-item{padding:.7rem;border-radius:10px;text-align:center;font-size:.78rem}
+.unlock-item.locked{background:#f5f5f5;color:#999;border:1px dashed #ddd}
+.unlock-item.unlocked{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);color:#2e7d32;border:1px solid #81c784}
 
 /* Footer */
-.footer{{text-align:center;padding:1.5rem;color:#888;font-size:.8rem;background:var(--dark);color:#aaa;line-height:2}}
+.footer{text-align:center;padding:1.2rem;color:#888;font-size:.75rem;background:var(--dark);color:#aaa;line-height:1.8}
 
-/* Responsive */
-@media(max-width:600px){{
-  .hero h2{{font-size:1.5rem}}
-  .min-trade-banner{{flex-direction:column;text-align:center}}
-  .min-trade-banner .text{{text-align:center}}
-  .ca-value{{font-size:.72rem;flex-direction:column;align-items:flex-start;gap:6px}}
-  .btn-row{{flex-direction:column;align-items:center}}
-}}
+@media(max-width:600px){
+  .hero h2{font-size:1.25rem}
+  .kpi-grid{grid-template-columns:repeat(2,1fr)}
+  table{font-size:.72rem}
+  th,td{padding:5px 6px}
+}
 </style>
 </head>
 <body>
+
 <nav class="nav">
-  <h1>🚀 <span>EACO</span></h1>
+  <h1>🚀 <span>EACO</span> Dashboard v3.0</h1>
   <div class="lang-switch" id="langSwitch"></div>
 </nav>
 
 <div class="hero">
-  <h2 id="heroTitle">Loading...</h2>
-  <p id="heroSub"></p>
+  <h2 id="heroTitle">EACO Monthly Consensus System</h2>
+  <p id="heroSub">Min Trade $0.01 | Auto Points | Ranking | Consensus Pool</p>
 
-  <!-- Min Trade Banner (Foreign Trade Highlight) -->
-  <div class="min-trade-banner">
+  <div class="min-banner">
     <div class="icon">💰</div>
     <div class="text">
-      <h3 id="ftMin">$0.01</h3>
-      <p id="ftMinDesc">Minimum trade - perfect for beginners!</p>
+      <h3 id="ftMin">Minimum Trade: $0.01</h3>
+      <p id="ftDesc">Start trading EACO from just one cent!</p>
     </div>
   </div>
 
   <div class="ca-box">
     <div class="ca-label" id="caLabel">Contract Address:</div>
     <div class="ca-value">
-      <span id="caValue">DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</span>
-      <button class="copy-btn" id="copyBtn" onclick="copyCA()">Copy CA</button>
+      <span>DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</span>
+      <button class="copy-btn" onclick="copyCA()">Copy</button>
     </div>
   </div>
 
   <div class="btn-row">
-    <a href="https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-primary" id="orbBtn">🌐 OrbMarkets</a>
-    <a href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-secondary" id="solscanBtn">🔍 Solscan</a>
+    <a href="https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-pri">🌐 OrbMarkets</a>
+    <a href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-sec">🔍 Solscan</a>
+    <a href="https://solflare.com/" target="_blank" class="btn btn-pri">👛 Solflare</a>
   </div>
 </div>
 
 <div class="container">
-  <!-- Foreign Trade Features -->
-  <div class="ft-section">
-    <h3>🌍 <span id="ftTitle">Foreign Trade Mode</span></h3>
-    <div class="ft-grid">
-      <div class="ft-item"><div class="ft-icon">💵</div><h4 id="ftMin2">$0.01 Min Trade</h4><p>Trade from just $0.01</p></div>
-      <div class="ft-item"><div class="ft-icon">⚡</div><h4 id="ftFee">~0.25% Fee</h4><p>Low trading fee</p></div>
-      <div class="ft-item"><div class="ft-icon">🚀</div><h4 id="ftSpeed">~1s Settlement</h4><p>Fast on Solana</p></div>
-      <div class="ft-item"><div class="ft-icon">🌐</div><h4 id="ftSup">24/7 Global</h4><p>Always supported</p></div>
+
+  <!-- KPI Cards -->
+  <div class="kpi-grid" id="kpiGrid"></div>
+
+  <!-- Consensus Power Pool -->
+  <div class="section">
+    <h3>⚡ Consensus Power Pool</h3>
+    <div class="consensus-meter">
+      <div class="consensus-fill" id="consensusFill" style="width:0%"></div>
+      <div class="consensus-value" id="consensusValue">0 / 100</div>
+    </div>
+    <div class="unlock-grid" id="unlockGrid"></div>
+  </div>
+
+  <!-- Level System -->
+  <div class="section">
+    <h3>🏆 Level System</h3>
+    <div class="level-grid" id="levelGrid"></div>
+  </div>
+
+  <!-- Monthly Ranking TOP 10 -->
+  <div class="section">
+    <h3>📊 Monthly Ranking TOP 10</h3>
+    <div class="table-wrap">
+      <table id="rankingTable">
+        <thead><tr><th>#</th><th>User</th><th>Level</th><th>Checkin Pts</th><th>Promo Pts</th><th>Invite Pts</th><th>Total</th><th>EffPts</th><th>Badge</th></tr></thead>
+        <tbody id="rankingBody"></tbody>
+      </table>
     </div>
   </div>
 
-  <!-- Wallet CTA -->
-  <div class="section wallet-cta">
-    <h3 id="walletTitle">Step 1: Get a Wallet</h3>
-    <p id="walletDesc">Download Solflare - recommended for EACO.</p>
-    <a href="https://solflare.com/" target="_blank" class="btn btn-primary" id="walletLink">Download Solflare →</a>
+  <!-- Daily Checkin Sample -->
+  <div class="section">
+    <h3>📅 Daily Checkin (Today)</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>User</th><th>Date</th><th>Checkin</th><th>Promo 30min</th><th>AI Task</th><th>Day Pts</th></tr></thead>
+        <tbody id="checkinBody"></tbody>
+      </table>
+    </div>
   </div>
 
-  <!-- Security -->
-  <div class="section security-section">
-    <h3>🔒 <span id="secTitle">Security First</span></h3>
-    <div class="sec-grid" id="secGrid"></div>
+  <!-- Trade Rules -->
+  <div class="section" style="background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid var(--green)">
+    <h3 style="color:var(--green)">🌍 Foreign Trade Mode — $0.01 Minimum</h3>
+    <div class="kpi-grid" style="margin:0">
+      <div class="kpi-card green"><div class="kpi-val">$0.01</div><div class="kpi-label">Min Trade</div></div>
+      <div class="kpi-card green"><div class="kpi-val">~0.25%</div><div class="kpi-label">Trading Fee</div></div>
+      <div class="kpi-card green"><div class="kpi-val">~1s</div><div class="kpi-label">Settlement</div></div>
+      <div class="kpi-card green"><div class="kpi-val">24/7</div><div class="kpi-label">Global Support</div></div>
+    </div>
   </div>
 
-  <!-- Steps -->
-  <div class="section steps-section">
-    <h3>📖 <span id="tutTitle">Step-by-Step Guide</span></h3>
-    <div id="stepsContainer"></div>
-  </div>
-
-  <!-- Tips -->
-  <div class="section tips-section">
-    <h3>💡 <span id="tipsTitle">Pro Tips</span></h3>
-    <ul class="tips-list" id="tipsList"></ul>
-  </div>
 </div>
 
 <footer class="footer" id="footerText"></footer>
 
 <script>
-const i18n = JSON.parse({"en": {"app_title": "EACO Beginner Guide + Foreign Trade", "lang_name": "English", "hero_title": "Welcome to EACO", "hero_subtitle": "AI-powered community token on Solana | Min trade: $0.01", "ca_label": "Contract Address (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copy CA", "copied": "Copied!", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "Minimum Trade: $0.01", "min_trade_desc": "Start with as little as $0.01 - perfect for beginners!", "wallet_section": "Step 1: Get a Wallet", "wallet_desc": "Download Solflare wallet - recommended for EACO. Min deposit: $0.01 equivalent in SOL.", "wallet_link": "https://solflare.com/", "wallet_link_text": "Download Solflare →", "security_title": "Security First", "sec_1": "Never share your seed phrase with anyone", "sec_2": "Only use official links (verify CA each time)", "sec_3": "Start with $0.01 minimum trade - test first", "sec_4": "Always double-check contract before trading", "tutorial_title": "Step-by-Step Guide", "step1_title": "Create Your Wallet", "step1_desc": "Download Solflare from solflare.com. Create wallet, backup 12-word seed phrase. Never share it!", "step2_title": "Add Funds (Min $0.01)", "step2_desc": "Buy SOL from any exchange (Binance, OKX, etc.). Even $0.01 equivalent in SOL is enough to start! Transfer to your Solflare wallet.", "step3_title": "Get EACO Tokens", "step3_desc": "Go to OrbMarkets or Solflare Swap. Search CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH. Minimum buy: just $0.01!", "step4_title": "Trade & Hold (Min $0.01)", "step4_desc": "Trade any amount from $0.01! Consider staking for up to 2x monthly consensus rewards.", "step5_title": "Join Community & Earn", "step5_desc": "Daily check-in, promotions, AI tasks. Top contributors earn airdrop eligibility + up to 2x staking multiplier!", "tips_title": "Pro Tips", "tip_1": "Minimum trade is only $0.01 - start small!", "tip_2": "Use Solflare Swap for best rates on Solana", "tip_3": "Verify CA DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH before every trade", "tip_4": "Stake for 30/90/180/365 days → 1.1x/1.3x/1.5x/2.0x multiplier", "foreign_trade_title": "Foreign Trade Mode", "ft_min": "Minimum Trade: $0.01", "ft_fee": "Trading Fee: ~0.25%", "ft_speed": "Speed: ~1 second settlement", "ft_support": "24/7 Global Support", "footer_text": "Updated: 2026-05-30 | EACO - Min Trade $0.01 | CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH"}, "zh": {"app_title": "EACO 新手指南 + 外贸交易", "lang_name": "中文", "hero_title": "欢迎来到 EACO", "hero_subtitle": "Solana 上的 AI 驱动社区代币 | 最低交易：$0.01", "ca_label": "合约地址 (CA)：", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "复制 CA", "copied": "已复制！", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "最低交易：$0.01", "min_trade_desc": "最低只需 $0.01 即可开始交易，新手友好！", "wallet_section": "第1步：获取钱包", "wallet_desc": "下载 Solflare 钱包 — EACO 推荐钱包。最低充值：等价 $0.01 的 SOL。", "wallet_link": "https://solflare.com/", "wallet_link_text": "下载 Solflare →", "security_title": "安全第一", "sec_1": "绝不向任何人透露种子短语", "sec_2": "仅使用官方链接（每次核对 CA）", "sec_3": "从最低 $0.01 开始 — 先小额测试", "sec_4": "交易前务必核对合约地址", "tutorial_title": "分步教程", "step1_title": "创建钱包", "step1_desc": "从 solflare.com 下载 Solflare，创建钱包并安全备份12字种子短语，切勿泄露！", "step2_title": "充值（最低 $0.01）", "step2_desc": "从任何交易所（Binance、OKX等）购买 SOL。即使等价 $0.01 的 SOL 也足够开始！", "step3_title": "获取 EACO 代币", "step3_desc": "访问 OrbMarkets 或 Solflare Swap。搜索 CA：DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH，最低买入仅需 $0.01！", "step4_title": "交易与持有（最低 $0.01）", "step4_desc": "最低 $0.01 即可交易！考虑锁仓获得高达 2 倍月度共识奖励。", "step5_title": "加入社区赚取", "step5_desc": "每日签到、推广、AI任务。顶级贡献者获得空投资格 + 最高 2 倍锁仓加成！", "tips_title": "专业提示", "tip_1": "最低交易仅需 $0.01 — 小额开始！", "tip_2": "使用 Solflare Swap 获取最佳汇率", "tip_3": "每次交易前核对 CA：DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "tip_4": "锁仓 30/90/180/365 天 → 1.1x/1.3x/1.5x/2.0x 加成", "foreign_trade_title": "外贸交易模式", "ft_min": "最低交易：$0.01", "ft_fee": "交易手续费：约 0.25%", "ft_speed": "结算速度：约 1 秒", "ft_support": "24/7 全球支持", "footer_text": "更新日期：2026-05-30 | EACO - 最低交易 $0.01 | CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH"}, "es": {"app_title": "Guía EACO + Comercio Exterior", "lang_name": "Español", "hero_title": "Bienvenido a EACO", "hero_subtitle": "Token comunitario con IA en Solana | Mín. trade: $0.01", "ca_label": "Dirección del Contrato (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copiar CA", "copied": "¡Copiado!", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "Mín. Trade: $0.01", "min_trade_desc": "¡Comienza con solo $0.01 - perfecto para principiantes!", "wallet_section": "Paso 1: Obtén una Billetera", "wallet_desc": "Descarga Solflare - recomendada para EACO. Depósito mín: equivalente a $0.01 en SOL.", "wallet_link": "https://solflare.com/", "wallet_link_text": "Descargar Solflare →", "security_title": "Seguridad Primero", "sec_1": "Nunca compartas tu frase semilla", "sec_2": "Solo usa enlaces oficiales (verifica CA siempre)", "sec_3": "Empieza con mínimo $0.01 - prueba primero", "sec_4": "Verifica el contrato antes de cada operación", "tutorial_title": "Guía Paso a Paso", "step1_title": "Crea tu Billetera", "step1_desc": "Descarga Solflare de solflare.com. Crea billetera, respalda 12 palabras. ¡Nunca las compartas!", "step2_title": "Fondos (Mín $0.01)", "step2_desc": "Compra SOL en cualquier exchange. ¡Solo $0.01 equivalente en SOL es suficiente!", "step3_title": "Obtén EACO", "step3_desc": "Ve a OrbMarkets o Solflare Swap. Busca CA. ¡Mínimo de compra: solo $0.01!", "step4_title": "Opera y Mantén (Mín $0.01)", "step4_desc": "Opera desde $0.01. Considera staking para recompensas hasta 2x.", "step5_title": "Únete y Gana", "step5_desc": "Check-ins diarios, promociones, tareas IA. ¡Los mejores obtienen air rewards!", "tips_title": "Consejos Pro", "tip_1": "Mínimo de trade: solo $0.01", "tip_2": "Usa Solflare Swap para mejores tasas", "tip_3": "Verifica CA antes de cada trade", "tip_4": "Staking 30/90/180/365 días → 1.1x/1.3x/1.5x/2.0x", "foreign_trade_title": "Modo Comercio Exterior", "ft_min": "Mín. Trade: $0.01", "ft_fee": "Comisión: ~0.25%", "ft_speed": "Liquidación: ~1 segundo", "ft_support": "Soporte 24/7 Global", "footer_text": "Actualizado: 2026-05-30 | EACO - Mín. $0.01"}, "fr": {"app_title": "Guide EACO + Commerce Extérieur", "lang_name": "Français", "hero_title": "Bienvenue sur EACO", "hero_subtitle": "Token communautaire IA sur Solana | Min. trade: $0.01", "ca_label": "Adresse du Contrat (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copier CA", "copied": "Copié!", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "Min. Trade: $0.01", "min_trade_desc": "Commencez avec seulement $0.01 - parfait pour débutants!", "wallet_section": "Étape 1: Obtenir un Portefeuille", "wallet_desc": "Téléchargez Solflare - recommandé pour EACO. Dépôt min: équivalent $0.01 en SOL.", "wallet_link": "https://solflare.com/", "wallet_link_text": "Télécharger Solflare →", "security_title": "Sécurité Avant Tout", "sec_1": "Ne partagez jamais votre phrase seed", "sec_2": "Utilisez uniquement les liens officiels", "sec_3": "Commencez par $0.01 minimum", "sec_4": "Vérifiez toujours le contrat avant de trader", "tutorial_title": "Guide Étape par Étape", "step1_title": "Créer le Portefeuille", "step1_desc": "Téléchargez Solflare depuis solflare.com. Sauvegardez votre phrase de 12 mots.", "step2_title": "Approvisionner (Min $0.01)", "step2_desc": "Achetez SOL sur n'importe quel exchange. Même $0.01 équivalent suffit!", "step3_title": "Obtenir des EACO", "step3_desc": "OrbMarkets ou Solflare Swap. Cherchez CA. Achat minimum: seulement $0.01!", "step4_title": "Trader et Détenir (Min $0.01)", "step4_desc": "Tradez à partir de $0.01. Stakez pour des récompenses jusqu'à 2x!", "step5_title": "Rejoindre et Gagner", "step5_desc": "Check-ins quotidiens, promotions, tâches IA. Les meilleurs reçoivent des air drops!", "tips_title": "Conseils Pro", "tip_1": "Trade minimum: $0.01 seulement", "tip_2": "Solflare Swap pour les meilleurs taux", "tip_3": "Vérifiez le CA avant chaque trade", "tip_4": "Staking 30/90/180/365 jours → 1.1x/1.3x/1.5x/2.0x", "foreign_trade_title": "Mode Commerce Extérieur", "ft_min": "Min. Trade: $0.01", "ft_fee": "Frais: ~0.25%", "ft_speed": "Règlement: ~1 seconde", "ft_support": "Support 24/7 Mondial", "footer_text": "Mis à jour: 2026-05-30 | EACO - Min. $0.01"}, "ar": {"app_title": "دليل EACO + التجارة الخارجية", "lang_name": "العربية", "hero_title": "مرحباً في EACO", "hero_subtitle": "رمز مجتمعي بالذكاء الاصطناعي على سولانا | الحد الأدنى: $0.01", "ca_label": "عنوان العقد (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "نسخ CA", "copied": "تم النسخ!", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "الحد الأدنى: $0.01", "min_trade_desc": "ابدأ بـ $0.01 فقط - مثالي للمبتدئين!", "wallet_section": "الخطوة 1: الحصول على محفظة", "wallet_desc": "حمل Solflare - الموصى بها لـ EACO. الإيداع الأدنى: $0.01.", "wallet_link": "https://solflare.com/", "wallet_link_text": "تحميل Solflare ←", "security_title": "الأمان أولاً", "sec_1": "لا تشارك عبارة البذر أبداً", "sec_2": "استخدم الروابط الرسمية فقط", "sec_3": "ابدأ بـ $0.01 - جرب أولاً", "sec_4": "تحقق من العقد قبل كل تداول", "tutorial_title": "دليل خطوة بخطوة", "step1_title": "إنشاء محفظتك", "step1_desc": "حمل Solflare من solflare.com. أنشئ محفظة واحفظ الـ 12 كلمة.", "step2_title": "الإيداع (الأدنى $0.01)", "step2_desc": "اشترِ SOL من أي منصة. حتى $0.01 يكفي للبدء!", "step3_title": "احصل على EACO", "step3_desc": "اذهب إلى OrbMarkets أو Solflare Swap. الحد الأدنى للشراء: $0.01 فقط!", "step4_title": "التداول (الأدنى $0.01)", "step4_desc": "تداول من $0.01. فكر في Staking لمكافآت حتى 2x!", "step5_title": "انضم واكسب", "step5_desc": "تسجيل يومي، ترويج، مهام ذكاء اصطناعي. الأفضل يحصلون على Air Drop!", "tips_title": "نصائح احترافية", "tip_1": "الحد الأدنى للتداول: $0.01 فقط", "tip_2": "استخدم Solflare Swap لأفضل الأسعار", "tip_3": "تحقق من CA قبل كل تداول", "tip_4": "Staking 30/90/180/365 يوم → 1.1x/1.3x/1.5x/2.0x", "foreign_trade_title": "وضع التجارة الخارجية", "ft_min": "الحد الأدنى: $0.01", "ft_fee": "الرسوم: ~0.25%", "ft_speed": "التسوية: ~1 ثانية", "ft_support": "دعم 24/7 عالمي", "footer_text": "تحديث: 2026-05-30 | EACO - الحد الأدنى $0.01"}, "ru": {"app_title": "EACO + Внешняя Торговля", "lang_name": "Русский", "hero_title": "Добро пожаловать в EACO", "hero_subtitle": "Токен сообщества с ИИ на Solana | Мин. сделка: $0.01", "ca_label": "Адрес контракта (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Копировать CA", "copied": "Скопировано!", "orb_btn": "OrbMarkets", "solscan_btn": "Solscan", "min_trade": "Мин. Сделка: $0.01", "min_trade_desc": "Начните всего с $0.01 - идеально для новичков!", "wallet_section": "Шаг 1: Получите кошелёк", "wallet_desc": "Скачайте Solflare - рекомендованный кошелёк для EACO. Мин. депозит: $0.01 в SOL.", "wallet_link": "https://solflare.com/", "wallet_link_text": "Скачать Solflare ←", "security_title": "Безопасность превыше всего", "sec_1": "Никогда не делитесь сид-фразой", "sec_2": "Используйте только официальные ссылки", "sec_3": "Начните с минимум $0.01", "sec_4": "Всегда проверяйте контракт перед торговлей", "tutorial_title": "Пошаговое руководство", "step1_title": "Создайте кошелёк", "step1_desc": "Скачайте Solflare с solflare.com. Сохраните сид-фразу из 12 слов.", "step2_title": "Пополнение (Мин $0.01)", "step2_desc": "Купите SOL на любой бирже. Даже $0.01 эквивалент достаточно!", "step3_title": "Получите EACO", "step3_desc": "OrbMarkets или Solflare Swap. Мин. покупка: всего $0.01!", "step4_title": "Торговля (Мин $0.01)", "step4_desc": "Торгуйте от $0.01.考虑质押获得奖励高达 2x!", "step5_title": "Присоединяйтесь и зарабатывайте", "step5_desc": "Ежедневные чекины, продвижение, задания ИИ. Лучшие получают airdrop!", "tips_title": "Советы профи", "tip_1": "Мин. сделка: всего $0.01", "tip_2": "Solflare Swap для лучших курсов", "tip_3": "Проверяйте CA перед каждой сделкой", "tip_4": "Стейкинг 30/90/180/365 дней → 1.1x/1.3x/1.5x/2.0x", "foreign_trade_title": "Режим внешней торговли", "ft_min": "Мин. Сделка: $0.01", "ft_fee": "Комиссия: ~0.25%", "ft_speed": "Расчёты: ~1 секунда", "ft_support": "Поддержка 24/7 глобальная", "footer_text": "Обновлено: 2026-05-30 | EACO - Мин. $0.01"}});
+// ====== i18n Data ======
+const i18n = {
+  en: {
+    heroTitle:"EACO Monthly Consensus System", heroSub:"Min Trade $0.01 | Auto Points | Ranking | Consensus Pool",
+    ftMin:"Minimum Trade: $0.01", ftDesc:"Start trading EACO from just one cent!",
+    caLabel:"Contract Address:", copyCopied:"Copied!",
+    kpiCheckins:"Daily Checkins", kpiPromo:"Promo Minutes", kpiMembers:"Active Members",
+    kpiPoints:"Total Points", kpiConsensus:"Consensus Index", kpiTarget:"/ Target",
+    consensusTitle:"Consensus Power Pool", unlock60:"🎁 Airdrop (60)", unlock70:"🌿 Eco Rewards (70)",
+    unlock80:"🤝 Partners (80)", unlock90:"🖼️ Special NFT (90)", unlock100:"👑 Super Gov (100)",
+    levelL1:"L1 Explorer", levelL1Cond:"Register + 7-day checkin streak → Base community access",
+    levelL2:"L2 Builder", levelL2Cond:"30-day streak + 15 promo days → Airdrop eligible",
+    levelL3:"L3 Ambassador", levelL3Cond:"60 promo days + 20 invites → Leaderboard featured",
+    levelL4:"L4 Leader", levelL4Cond:"100 invites + 90 contrib days → Extra rewards",
+    levelL5:"L5 Global Partner", levelL5Cond:"DAO vote + eco contribution → Core governance",
+    rankHead:["#","User","Level","Checkin","Promo","Invite","Total","EffPts","Badge"],
+    badgeDiamond:"DIAMOND", badgePlat:"PLATINUM", badgeGold:"GOLD", badgeSilver:"SILVER", badgeBronze:"BRONZE",
+    checkinHead:["User","Date","Checkin","Promo 30min","AI Task","Day Pts"],
+    footer:`Updated: ${new Date().toISOString().slice(0,10)} | EACO v3.0 | CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH`,
+  },
+  zh: {
+    heroTitle:"EACO 月度共识系统", heroSub:"最低交易$0.01 | 自动积分 | 排行榜 | 共识能量池",
+    ftMin:"最低交易：$0.01", ftDesc:"仅需一分钱即可开始交易EACO！",
+    caLabel:"合约地址：", copyCopied:"已复制！",
+    kpiCheckins:"每日签到", kpiPromo:"推广分钟数", kpiMembers:"活跃成员",
+    kpiPoints:"总积分", kpiConsensus:"共识指数", kpiTarget:"/ 目标",
+    consensusTitle:"共识能量池", unlock60:"🎁 社区空投(60分)", unlock70:"🌿 生态奖励(70分)",
+    unlock80:"🤝 合作计划(80分)", unlock90:"🖼️ 特殊NFT(90分)", unlock100:"👑 超级治理(100分)",
+    levelL1:"L1 探索者", levelL1Cond:"注册+连续签到7天 → 基础社区参与",
+    levelL2:"L2 建设者", levelL2Cond:"连续签到30天+推广15天 → 空投资格",
+    levelL3:"L3 推广大使", levelL3Cond:"推广60天+邀请20人 → 排行榜展示",
+    levelL4:"L4 社区领袖", levelL4Cond:"邀请100人+贡献90天 → 额外奖励",
+    levelL5:"L5 全球合伙人", levelL5Cond:"DAO投票+生态贡献 → 核心治理权",
+    rankHead:["#","用户","等级","签到","推广","邀请","总积分","有效积分","徽章"],
+    badgeDiamond:"钻石", badgePlat:"铂金", badgeGold:"黄金", badgeSilver:"白银", badgeBronze:"青铜",
+    checkinHead:["用户","日期","签到","推广30分钟","AI任务","当日积分"],
+    footer:`更新日期：${new Date().toISOString().slice(0,10)} | EACO v3.0 | CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH`,
+  },
+  es: { heroTitle:"Sistema de Consenso Mensual EACO", heroSub:"Min Trade $0.01 | Puntos Auto | Ranking", ftMin:"Mín. Trade: $0.01", ftDesc:"¡Comienza con un centavo!", caLabel:"Dirección Contrato:", copyCopied:"¡Copiado!", kpiCheckins:"Checkins Diarios", kpiPromo:"Minutos Promo", kpiMembers:"Miembros Activos", kpiPoints:"Puntos Totales", kpiConsensus:"Índice Consenso", kpiTarget:"/ Objetivo", consensusTitle:"Pool de Poder Consenso", unlock60:"🎁 Airdrop (60)", unlock70:"🌿 Recompensas Eco (70)", unlock80:"🤝 Partners (80)", unlock90:"🖼️ NFT Especial (90)", unlock100:"👑 Super Gov (100)", levelL1:"L1 Explorador", levelL1Cond:"Registro + 7 días racha", levelL2:"L2 Constructor", levelL2Cond:"30 días racha + 15 promo", levelL3:"L3 Embajador", levelL3Cond:"60 promo + 20 invitaciones", levelL4:"L4 Líder", levelL4Cond:"100 invitaciones + 90 contrib", levelL5:"L5 Partner Global", levelL5Cond:"DAO vote + eco contrib", rankHead:["#","Usuario","Nivel","Checkin","Promo","Invita","Total","EfPts","Insignia"], badgeDiamond:"DIAMANTE", badgePlat:"PLATINO", badgeGold:"ORO", badgeSilver:"PLATA", badgeBronce:"BRONCE", checkinHead:["User","Fecha","Checkin","Promo 30min","AI Task","Pts Día"], footer:`Actualizado: ${new Date().toISOString().slice(0,10)} | EACO v3.0` },
+  fr: { heroTitle:"Système de Consensus Mensuel EACO", heroSub:"Min Trade $0.01 | Points Auto | Classement", ftMin:"Min. Trade: $0.01", ftDesc:"Commencez avec un centime!", caLabel:"Adresse Contrat:", copyCopied:"Copié!", kpiCheckins:"Check-ins Quotidiens", kpiPromo:"Minutes Promo", kpiMembers:"Membres Actifs", kpiPoints:"Points Totaux", kpiConsensus:"Indice Consensus", kpiTarget:"/ Cible", consensusTitle:"Pool de Puissance Consensus", unlock60:"🎁 Airdrop (60)", unlock70:"🌿 Récompenses Éco (70)", unlock80:"🤝 Partenaires (80)", unlock90:"🖼️ NFT Spécial (90)", unlock100:"👑 Super Gov (100)", levelL1:"L1 Explorateur", levelL1Cond:"Inscription + 7 jours suite", levelL2:"L2 Bâtisseur", levelL2Cond:"30 jours suite + 15 promo", levelL3:"L3 Ambassadeur", levelL3Cond:"60 promo + 20 invitations", levelL4:"L4 Leader", levelL4Cond:"100 invitations + 90 contrib", levelL5:"L5 Partenaire Global", levelL5Cond:"Vote DAO + éco contrib", rankHead:["#","Utilisateur","Niveau","Checkin","Promo","Invit","Total","PtsEff","Badge"], badgeDiamond:"DIAMANT", badgePlat:"PLATINE", badgeGold:"OR", badgeSilver:"ARGENT", badgeBronze:"BRONZE", checkinHead:["Utilisateur","Date","Checkin","Promo 30min","Tâche IA","Pts Jour"], footer:`Mis à jour: ${new Date().toISOString().slice(0,10)} | EACO v3.0` },
+  ar: { heroTitle:"نظام التوافق الشهري EACO", heroSub:"أدنى صفقة $0.01 | نقاط تلقائية | ترتيب", ftMin:"الحد الأدنى: $0.01", ftDesc:"ابدأ بـ سنت واحد!", caLabel:"عنوان العقد:", copyCopied:"تم النسخ!", kpiCheckins:"تسجيل يومي", kpiPromo:"دقائق ترويج", kpiMembers:"أعضاء نشطون", kpiPoints:"إجمالي النقاط", kpiConsensus:"مؤشر التوافق", kpiTarget:"/ الهدف", consensusTitle:"بركة قوة التوافق", unlock60:"🎁 إيردروب (60)", unlock70:"🌿 مكافآت بيئية (70)", unlock80:"🤝 شركاء (80)", unlock90:"🖼️ NFT خاص (90)", unlock100:"👑 حوكمة فائقة (100)", levelL1:"L1 مستكشف", levelL1Cond:"تسجيل + 7 أيام متتالية", levelL2:"L2 باني", levelL2Cond:"30 يوم متتالي + 15 ترويج", levelL3:"L3 سفير", levelL3Cond:"60 ترويج + 20 دعوة", levelL4:"L4 قائد", levelL4Cond:"100 دعوة + 90 مساهمة", levelL5:"L5 شريك عالمي", levelL5Cond:"تصويت DAO + مساهمة بيئية", rankHead:["#","مستخدم","المستوى","تسجيل","ترويج","دعوة","المجموع","نقاط فعالة","شارة"], badgeDiamond:"ماسي", badgePlat:"بلاتيني", badgeGold:"ذهبي", badgeSilver:"فضي", badgeBronze:"برونزي", checkinHead:["مستخدم","تاريخ","تسجيل","ترويج 30دقيقة","مهمة ذكاء","نقاط اليوم"], footer:`تحديث: ${new Date().toISOString().slice(0,10)} | EACO v3.0` },
+  ru: { heroTitle:"Система Ежемесячного Консенсуса EACO", heroSub:"Мин. сделка $0.01 | Автоочки | Рейтинг", ftMin:"Мин. Сделка: $0.01", ftDesc:"Начните с одного цента!", caLabel:"Адрес контракта:", copyCopied:"Скопировано!", kpiCheckins:"Ежедневные чекины", kpiPromo:"Минуты промо", kpiMembers:"Активные участники", kpiPoints:"Всего очков", kpiConsensus:"Индекс консенсуса", kpiTarget:"/ Цель", consensusTitle:"Пул Силы Консенсуса", unlock60:"🎁 Эйрдроп (60)", unlock70:"🌿 ЭкоНаграды (70)", unlock80:"🤝 Партнёры (80)", unlock90:"🖼️ Особый NFT (90)", unlock100:"👑 Супер Управление (100)", levelL1:"L1 Исследователь", levelL1Cond:"Регистрация + 7 дней серии", levelL2:"L2 Строитель", levelL2Cond:"30 дней серии + 15 промо", levelL3:"L3 Посол", levelL3Cond:"60 промо + 20 приглашений", levelL4:"L4 Лидер", levelL4Cond:"100 приглашений + 90 вклада", levelL5:"L5 Глобальный Партнёр", levelL5Cond:"Голосование DAO + эко вклад", rankHead:["#","Пользователь","Уровень","Чекин","Промо","Пригл","Итого","ЭффОчки","Значок"], diamond:"АЛМАЗНЫЙ", plat:"ПЛАТИНОВЫЙ", gold:"ЗОЛОТОЙ", silver:"СЕРЕБРЯНЫЙ", bronze:"БРОНЗОВЫЙ", checkinHead:["Пользователь","Дата","Чекин","Промо 30мин","AI Задача","Очки Дня"], footer:`Обновлено: ${new Date().toISOString().slice(0,10)} | EACO v3.0` }
+};
+
 const rtlLangs = ['ar'];
 let curLang = localStorage.getItem('eaco_lang') || 'en';
 
-function t(k){{return (i18n[curLang] && i18n[curLang][k]) || (i18n['en'][k]||k);}}
-function applyLang(){{
+function t(k){return(i18n[curLang]&&i18n[curLang][k])||(i18n['en'][k])||k;}
+function $(id){return document.getElementById(id);}
+
+function applyLang(){
   document.documentElement.lang = curLang;
-  document.documentElement.dir = rtlLangs.includes(curLang) ? 'rtl' : 'ltr';
-  document.title = t('app_title');
-  $('heroTitle').textContent = t('hero_title');
-  $('heroSub').textContent = t('hero_subtitle');
-  $('caLabel').textContent = t('ca_label');
-  $('caValue').textContent = t('ca_value');
-  $('copyBtn').textContent = t('copy_btn');
-  $('orbBtn').textContent = t('orb_btn');
-  $('solscanBtn').textContent = t('solscan_btn');
-  $('ftMin').textContent = t('min_trade');
-  $('ftMinDesc').textContent = t('min_trade_desc');
-  $('ftTitle').textContent = t('foreign_trade_title');
-  $('ftMin2').textContent = t('ft_min');
-  $('ftFee').textContent = t('ft_fee');
-  $('ftSpeed').textContent = t('ft_speed');
-  $('ftSup').textContent = t('ft_support');
-  $('walletTitle').textContent = t('wallet_section');
-  $('walletDesc').textContent = t('wallet_desc');
-  $('walletLink').textContent = t('wallet_link_text');
-  $('secTitle').textContent = t('security_title');
-  $('tutTitle').textContent = t('tutorial_title');
-  $('tipsTitle').textContent = t('tips_title');
-  $('footerText').textContent = t('footer_text');
+  document.documentElement.dir = rtlLangs.includes(curLang)?'rtl':'ltr';
+  $('heroTitle').textContent=t('heroTitle');$('heroSub').textContent=t('heroSub');
+  $('ftMin').textContent=t('ftMin');$('ftDesc').textContent=t('ftDesc');
+  $('caLabel').textContent=t('caLabel');
+  $('footerText').textContent=t('footer');
+  renderAll();
+}
 
-  // Security grid
-  $('secGrid').innerHTML = [1,2,3,4].map(i=>
-    `<div class="sec-item">{t('sec_'+i)}</div>`).join('');
+function setLang(l){curLang=l;localStorage.setItem('eaco_lang',l);applyLang();}
 
-  // Steps
-  $('stepsContainer').innerHTML = [1,2,3,4,5].map(i=>
-    `<div class="step"><div class="step-num">{i}</div>
-     <div class="step-content"><h4>{t('step'+i+'_title')}</h4><p>{t('step'+i+'_desc')}</p></div></div>`).join('');
+function copyCA(){navigator.clipboard.writeText('DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH').then(()=>{
+  const b=document.querySelector('.copy-btn');
+  b.textContent=t('copyCopied');b.style.background='var(--green)';
+  setTimeout(()=>{b.textContent='Copy';b.style.background='';},2000);
+});}
 
-  // Tips
-  $('tipsList').innerHTML = [1,2,3,4].map(i=>
-    `<li>{t('tip_'+i)}</li>`).join('');
+// ====== Render Functions ======
 
-  // Lang buttons
-  $('langSwitch').innerHTML = Object.keys(i18n).map(l=>
-    `<button class="lang-btn${{l===curLang?' active':''}}" onclick="setLang('${{l}}')">${{i18n[l].lang_name}}</button>`).join('');
-}}
-function $(id){{return document.getElementById(id);}}
-function setLang(l){{curLang=l;localStorage.setItem('eaco_lang',l);applyLang();}}
-function copyCA(){{navigator.clipboard.writeText($('caValue').textContent).then(()=>{{
-  const b=$('copyBtn');b.textContent=t('copied');b.style.background='#00c853';
-  setTimeout(()=>{{b.textContent=t('copy_btn');b.style.background='';}},2000);}});}}
+function renderKPI(){
+  const data=[
+    {val:'156',label:t('kpiCheckins'),sub:'/ 500 target',cls:''},
+    {val:'4,280',label:t('kpiPromo'),sub:'minutes total',cls:'green'},
+    {val:'89',label:t('kpiMembers'),sub:'active users',cls:'gold'},
+    {val:'12,450',label:t('kpiPoints'),sub:'total points',cls:''},
+    {val:'73',label:t('kpiConsensus'),sub:'/ 100',cls:'purple'},
+  ];
+  $('kpiGrid').innerHTML=data.map(d=>`<div class="kpi-card ${d.cls}"><div class="kpi-val">${d.val}</div><div class="kpi-label">${d.label}</div><div class="kpi-sub">${d.sub}</div></div>`).join('');
+}
+
+function renderConsensus(){
+  const idx=73;
+  $('consensusFill').style.width=idx+'%';
+  $('consensusValue').textContent=`${idx} / 100`;
+  const unlocks=[{thr:60,name:t('unlock60')},{thr:70,name:t('unlock70')},{thr:80,name:t('unlock80')},{thr:90,name:t('unlock90')},{thr:100,name:t('unlock100')}];
+  $('unlockGrid').innerHTML=unlocks.map(u=>`<div class="unlock-item ${idx>=u.thr?'unlocked':'locked'}">${u.name}</div>`).join('');
+}
+
+function renderLevels(){
+  const lvls=[
+    {icon:'🧭',name:t('levelL1'),cond:t('levelL1Cond')},
+    {icon:'🔨',name:t('levelL2'),cond:t('levelL2Cond')},
+    {icon:'🎤',name:t('levelL3'),cond:t('levelL3Cond')},
+    {icon:'👑',name:t('levelL4'),cond:t('levelL4Cond')},
+    {icon:'🌐',name:t('levelL5'),cond:t('levelL5Cond')},
+  ];
+  $('levelGrid').innerHTML=lvls.map(l=>`<div class="level-card"><div class="level-icon">${l.icon}</div><div class="level-name">${l.name}</div><div class="level-cond">${l.cond}</div></div>`).join('');
+}
+
+function renderRanking(){
+  const users=[
+    ['U0001','Alice','L3 Ambassador',420,380,250,1050,1260,'badge-gold'],
+    ['U0002','Bob','L2 Builder',380,320,120,820,984,'badge-silver'],
+    ['U0003','Carol','L3 Ambassador',350,400,180,930,1116,'badge-gold'],
+    ['U0004','Dave','L2 Builder',310,280,90,680,816,'badge-bronze'],
+    ['U0005','Eve','L4 Leader',290,450,300,1040,1560,'badge-platinum'],
+    ['U0006','Frank','L1 Explorer',270,220,50,540,594,'badge-bronze'],
+    ['U0007','Grace','L2 Builder',260,300,110,670,804,'badge-silver'],
+    ['U0008','Hank','L1 Explorer',240,180,40,460,506,'badge-bronze'],
+    ['U0009','Ivy','L3 Ambassador',230,360,200,790,948,'badge-gold'],
+    ['U0010','Jack','L1 Explorer',210,150,30,390,429,'badge-bronze'],
+  ];
+  const badges={diamond:t('badgeDiamond'),plat:t('badgePlat'),gold:t('badgeGold'),silver:t('badgeSilver'),bronze:t('badgeBronze')};
+  $('rankingBody').innerHTML=users.map((u,i)=>{
+    const cls=i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'';
+    return `<tr class="${cls}"><td>${i+1}</td><td>${u[0]}</td><td>${u[2]}</td><td>${u[3]}</td><td>${u[4]}</td><td>${u[5]}</td><td><b>${u[6]}</b></td><td>${u[7]}</td><td><span class="badge ${u[8]}">${u[8].replace('badge-','').toUpperCase()}</span></td></tr>`;
+  }).join('');
+}
+
+function renderCheckin(){
+  const today=new Date().toISOString().slice(0,10);
+  const rows=[
+    ['U0001',today,'✅','✅','✅',60],
+    ['U0002',today,'✅','✅','❌',40],
+    ['U0003',today,'✅','✅','✅',60],
+    ['U0004',today,'✅','❌','✅',30],
+    ['U0005',today,'✅','✅','✅',60],
+    ['U0006',today,'❌','✅','❌',30],
+    ['U0007',today,'✅','✅','❌',40],
+    ['U0008',today,'✅','❌','❌',10],
+  ];
+  $('checkinBody').innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td><b>${r[5]}</b></td></tr>`).join('');
+}
+
+function renderAll(){renderKPI();renderConsensus();renderLevels();renderRanking();renderCheckin();}
+
+// Lang buttons
+const langs=[{code:'en',name:'English 🇬🇧'},{code:'zh',name:'中文 🇨🇳'},{code:'es',name:'Español 🇪🇸'},{code:'fr',name:'Français 🇫🇷'},{code:'ar',name:'العربية 🇸🇦'},{code:'ru',name:'Русский 🇷🇺'}];
+$('langSwitch').innerHTML=langs.map(l=>`<button class="lang-btn${l.code===curLang?' active':''}" onclick="setLang('${l.code}')">${l.name}</button>`).join('');
+
 applyLang();
 </script>
 </body></html>
