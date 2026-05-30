@@ -58,3 +58,57 @@ This site is **automatically rebuilt daily at 22:33 Beijing time** via the EACO 
 Built with \\\python + GitHub Pages + Netlify + Vercel\\\
 
 *EACO Global Community — Min Trade \.01 — CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH*
+
+
+---
+
+## 🚀 Get Your First EACO
+
+### EACO Beginner Guide
+
+Your first EACO token — step by step, safe and simple.
+
+> ⚠️ **Safety Reminders** (Stay Positive and Protected)
+>
+> - **Your seed phrase = your wallet.** Never share it with anyone, never enter it into any website.
+> - **Only use official Solflare and verified links.**
+> - **Start small** — test with tiny amounts before moving bigger ones.
+> - **Check the contract address twice before every swap.**
+
+### EACO Contract Address (CA)
+
+Always verify this address before any transaction:
+
+```
+DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH
+```
+
+### Official Explorers
+
+- 🔍 [OrbMarkets](https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH)
+- 🔍 [Solscan](https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH)
+
+### Get Your First EACO — Step by Step
+
+![Get Your First Eaco](get-your-first-eaco.png)
+
+1. **Install Solflare Wallet**
+   Download Solflare from the official website. Available as browser extension and mobile app. Never download from unofficial sources.
+   👉 [Get Solflare](https://solflare.com/)
+
+2. **Create or Import Wallet**
+   Create a new wallet or import an existing one. Write down your seed phrase on paper and store it somewhere safe. Never store it digitally or share it with anyone.
+
+3. **Deposit SOL**
+   Transfer SOL to your Solflare wallet address. You will need SOL to swap for EACO and to pay for gas fees. Always keep at least 0.05 SOL for transaction fees.
+
+4. **Swap SOL → EACO**
+   Open Solflare built-in Swap feature. Paste the EACO contract address exactly: `DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH`
+   Double-check the contract address, then enter the amount of SOL to swap and confirm.
+
+5. **Verify Your EACO**
+   After the transaction completes, check your EACO balance in Solflare. You can also verify on Solscan using your wallet address.
+
+---
+
+*Built with 💜 by EACO Global Community | Min Trade $0.01*
