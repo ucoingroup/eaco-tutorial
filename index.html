@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EACO Beginner's Guide</title>
+<style>
+:root{--primary:#6C5CE7;--primary-dark:#5A4BD1;--accent:#00B894;--warn:#FDCB6E;--bg:#0F0F1A;--card:#1A1A2E;--card2:#16213E;--text:#EAEAEA;--text2:#B0B0C0;--border:#2D2D44;--radius:16px;--shadow:0 8px 32px rgba(0,0,0,0.3)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden}
+a{color:var(--accent);text-decoration:none;transition:.2s}a:hover{color:#55EFC4}
+.container{max-width:900px;margin:0 auto;padding:0 20px}
+nav{position:sticky;top:0;z-index:100;background:rgba(15,15,26,0.92);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);padding:12px 0}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;max-width:900px;margin:0 auto;padding:0 20px}
+.logo{font-size:1.5rem;font-weight:800;background:linear-gradient(135deg,var(--primary),var(--accent));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.lang-switcher{position:relative}
+.lang-btn{background:var(--card);border:1px solid var(--border);color:var(--text);padding:8px 16px;border-radius:10px;cursor:pointer;font-size:.9rem;transition:.2s}
+.lang-btn:hover{border-color:var(--primary)}
+.lang-dropdown{display:none;position:absolute;right:0;top:110%;background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;min-width:180px;box-shadow:var(--shadow)}
+.lang-dropdown.show{display:block}
+.lang-option{padding:10px 16px;cursor:pointer;transition:.15s;font-size:.9rem}
+.lang-option:hover{background:var(--primary);color:#fff}
+.hero{text-align:center;padding:80px 20px 60px;position:relative}
+.hero::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:600px;background:radial-gradient(circle,rgba(108,92,231,0.15),transparent 70%);pointer-events:none}
+.hero h1{font-size:3rem;font-weight:800;margin-bottom:12px;background:linear-gradient(135deg,#fff,var(--primary));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero .subtitle{font-size:1.2rem;color:var(--text2);margin-bottom:24px}
+.badge{display:inline-block;background:linear-gradient(135deg,var(--accent),#00CEC9);color:#000;font-weight:700;padding:6px 18px;border-radius:20px;font-size:.85rem;margin-bottom:20px}
+.section{padding:50px 0}
+.section-title{font-size:1.8rem;font-weight:700;margin-bottom:8px}
+.section-desc{color:var(--text2);margin-bottom:30px;font-size:1rem}
+.step{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px 28px 24px;margin-bottom:20px;position:relative;transition:.2s}
+.step:hover{border-color:var(--primary);transform:translateY(-2px);box-shadow:var(--shadow)}
+.step-num{position:absolute;top:-14px;left:24px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem}
+.step h3{font-size:1.2rem;margin-bottom:10px;color:#fff}
+.step p{color:var(--text2);font-size:.95rem}
+.step code{background:rgba(108,92,231,0.2);padding:2px 8px;border-radius:6px;font-family:'Consolas',monospace;font-size:.88rem;color:#A29BFE;word-break:break-all}
+.warning{background:rgba(253,203,110,0.08);border:1px solid rgba(253,203,110,0.3);border-radius:var(--radius);padding:20px 24px;margin:24px 0}
+.warning-title{color:var(--warn);font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:8px}
+.warning p{color:var(--text2);font-size:.92rem}
+.info-card{background:var(--card2);border:1px solid var(--border);border-radius:var(--radius);padding:20px 24px;margin-bottom:16px}
+.info-card h4{color:var(--accent);margin-bottom:6px}
+.info-card p,.info-card code{color:var(--text2);font-size:.93rem}
+.info-card code{background:rgba(0,184,148,0.12);padding:2px 8px;border-radius:6px;font-family:'Consolas',monospace;color:#55EFC4;word-break:break-all;font-size:.85rem}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:12px;font-weight:600;font-size:1rem;border:none;cursor:pointer;transition:.2s;text-decoration:none}
+.btn-accent{background:linear-gradient(135deg,var(--accent),#00CEC9);color:#000}
+.btn-accent:hover{transform:translateY(-2px);box-shadow:0 4px 20px rgba(0,184,148,0.4)}
+footer{text-align:center;padding:40px 20px;border-top:1px solid var(--border);color:var(--text2);font-size:.85rem}
+.copy-btn{background:rgba(108,92,231,0.2);border:1px solid var(--primary);color:#A29BFE;padding:4px 12px;border-radius:8px;font-size:.8rem;cursor:pointer;margin-left:8px;transition:.2s}
+.copy-btn:hover{background:var(--primary);color:#fff}
+.copied{background:var(--accent)!important;color:#000!important;border-color:var(--accent)!important}
+@media(max-width:600px){.hero h1{font-size:2rem}.step{padding:22px 18px 18px}.lang-dropdown{right:-40px}}
+</style>
+</head>
+<body>
+<nav><div class="nav-inner"><div class="logo">🪙 EACO</div><div class="lang-switcher"><button class="lang-btn" onclick="toggleLang()" id="langBtn">🌐 English</button><div class="lang-dropdown" id="langDropdown"><div class="lang-option" onclick="setLang('en')">🇺🇸 English</div><div class="lang-option" onclick="setLang('zh')">🇨🇳 中文</div><div class="lang-option" onclick="setLang('es')">🇪🇸 Español</div><div class="lang-option" onclick="setLang('fr')">🇫🇷 Français</div><div class="lang-option" onclick="setLang('ar')">🇸🇦 العربية</div><div class="lang-option" onclick="setLang('ru')">🇷🇺 Русский</div></div></div></div></nav>
+<div class="hero"><div class="badge" data-i18n="badge">Solana Token</div><h1 data-i18n="hero_title">EACO Beginner's Guide</h1><p class="subtitle" data-i18n="hero_sub">Your first EACO token — step by step, safe and simple</p></div>
+<div class="container">
+<div class="section"><div class="warning"><div class="warning-title">⚠️ <span data-i18n="warn_title">Safety Reminders (Stay Positive &amp; Protected)</span></div><p data-i18n="warn_1">Your seed phrase = your wallet. Never share it with anyone, never enter it into any website.</p><p data-i18n="warn_2">Only use official Solflare and verified links.</p><p data-i18n="warn_3">Start small – test with tiny amounts before moving bigger ones.</p><p data-i18n="warn_4">Check the contract address twice before every swap.</p></div></div>
+<div class="section"><h2 class="section-title" data-i18n="ca_title">📌 EACO Contract Address (CA)</h2><p class="section-desc" data-i18n="ca_desc">Always verify this address before any transaction</p><div class="info-card"><h4 data-i18n="ca_label">Contract Address</h4><p><code id="caAddr">DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</code><button class="copy-btn" onclick="copyCA()" id="copyBtn" data-i18n="copy">Copy</button></p></div></div>
+<div class="section"><h2 class="section-title" data-i18n="exp_title">🔍 Official Explorers</h2><div class="info-card"><h4>OrbMarkets</h4><p><a href="https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank">orbmarkets.io/token/EACO →</a></p></div><div class="info-card"><h4>Solscan</h4><p><a href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank">solscan.io/token/EACO →</a></p></div></div>
+<div class="section"><h2 class="section-title" data-i18n="steps_title">🚀 Get Your First EACO</h2><p class="section-desc" data-i18n="steps_desc">Follow these steps to buy EACO safely</p>
+<div class="step"><div class="step-num">1</div><h3 data-i18n="s1_title">Install Solflare Wallet</h3><p data-i18n="s1_desc">Download Solflare from the official website. Available as browser extension and mobile app. Never download from unofficial sources.</p><p style="margin-top:10px"><a href="https://solflare.com/" target="_blank" class="btn btn-accent">🔗 <span data-i18n="s1_btn">Get Solflare</span></a></p></div>
+<div class="step"><div class="step-num">2</div><h3 data-i18n="s2_title">Create or Import Wallet</h3><p data-i18n="s2_desc">Create a new wallet or import an existing one. Write down your seed phrase on paper and store it somewhere safe. Never store it digitally or share it with anyone.</p></div>
+<div class="step"><div class="step-num">3</div><h3 data-i18n="s3_title">Deposit SOL</h3><p data-i18n="s3_desc">Transfer SOL to your Solflare wallet address. You will need SOL to swap for EACO and to pay for gas fees. Always keep at least <code>0.05 SOL</code> for transaction fees.</p></div>
+<div class="step"><div class="step-num">4</div><h3 data-i18n="s4_title">Swap SOL → EACO</h3><p data-i18n="s4_desc">Open Solflare built-in Swap feature. Paste the EACO contract address exactly:</p><p style="margin-top:8px"><code>DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</code></p><p style="margin-top:8px" data-i18n="s4_desc2">Double-check the contract address, then enter the amount of SOL to swap and confirm.</p></div>
+<div class="step"><div class="step-num">5</div><h3 data-i18n="s5_title">Verify Your EACO</h3><p data-i18n="s5_desc">After the transaction completes, check your EACO balance in Solflare. You can also verify on Solscan using your wallet address.</p></div>
+</div>
+<div class="section"><h2 class="section-title" data-i18n="tips_title">💡 Key Trading Tips</h2><div class="info-card"><h4 data-i18n="t1_title">Gas Fees</h4><p data-i18n="t1_desc">Always reserve at least 0.05 SOL for gas fees. Without it, you cannot send or swap tokens.</p></div><div class="info-card"><h4 data-i18n="t2_title">Built-in Swap</h4><p data-i18n="t2_desc">Use Solflare built-in Swap for the safest experience. Avoid unknown DEXs.</p></div><div class="info-card"><h4 data-i18n="t3_title">Double-Check CA</h4><p data-i18n="t3_desc">Always verify the contract address before swapping. Scammers create fake tokens with similar names.</p></div><div class="info-card"><h4 data-i18n="t4_title">Start Small</h4><p data-i18n="t4_desc">Test with a small amount first. Once you are confident, you can increase your position.</p></div></div>
+</div>
+<footer><p data-i18n="footer">EACO Community · Not financial advice · Always DYOR</p></footer>
+<script>
+const i18n={
+"en": {
+"badge": "Solana Token",
+"hero_title": "EACO Beginner Guide",
+"hero_sub": "Your first EACO token - step by step, safe and simple",
+"warn_title": "Safety Reminders (Stay Positive and Protected)",
+"warn_1": "Your seed phrase = your wallet. Never share it with anyone, never enter it into any website.",
+"warn_2": "Only use official Solflare and verified links.",
+"warn_3": "Start small - test with tiny amounts before moving bigger ones.",
+"warn_4": "Check the contract address twice before every swap.",
+"ca_title": "EACO Contract Address (CA)",
+"ca_desc": "Always verify this address before any transaction",
+"ca_label": "Contract Address",
+"copy": "Copy",
+"copied": "Copied!",
+"exp_title": "Official Explorers",
+"steps_title": "Get Your First EACO",
+"steps_desc": "Follow these steps to buy EACO safely",
+"s1_title": "Install Solflare Wallet",
+"s1_desc": "Download Solflare from the official website. Available as browser extension and mobile app. Never download from unofficial sources.",
+"s1_btn": "Get Solflare",
+"s2_title": "Create or Import Wallet",
+"s2_desc": "Create a new wallet or import an existing one. Write down your seed phrase on paper and store it somewhere safe. Never store it digitally or share it with anyone.",
+"s3_title": "Deposit SOL",
+"s3_desc": "Transfer SOL to your Solflare wallet address. You will need SOL to swap for EACO and to pay for gas fees. Always keep at least 0.05 SOL for transaction fees.",
+"s4_title": "Swap SOL to EACO",
+"s4_desc": "Open Solflare built-in Swap feature. Paste the EACO contract address exactly:",
+"s4_desc2": "Double-check the contract address, then enter the amount of SOL to swap and confirm.",
+"s5_title": "Verify Your EACO",
+"s5_desc": "After the transaction completes, check your EACO balance in Solflare. You can also verify on Solscan using your wallet address.",
+"tips_title": "Key Trading Tips",
+"t1_title": "Gas Fees",
+"t1_desc": "Always reserve at least 0.05 SOL for gas fees. Without it, you cannot send or swap tokens.",
+"t2_title": "Built-in Swap",
+"t2_desc": "Use Solflare built-in Swap for the safest experience. Avoid unknown DEXs.",
+"t3_title": "Double-Check CA",
+"t3_desc": "Always verify the contract address before swapping. Scammers create fake tokens with similar names.",
+"t4_title": "Start Small",
+"t4_desc": "Test with a small amount first. Once you are confident, you can increase your position.",
+"footer": "EACO Community - Not financial advice - Always DYOR"
+},
+"zh": {
+"badge": "Solana 代币",
+"hero_title": "EACO 新手指南",
+"hero_sub": "安全、简单地获取你的第一枚 EACO",
+"warn_title": "安全提醒（保持警惕，保护资产）",
+"warn_1": "助记词 = 你的钱包。绝对不要分享给任何人，不要输入到任何网站。",
+"warn_2": "只使用官方 Solflare 和经过验证的链接。",
+"warn_3": "从小额开始 - 先用少量测试，再逐步增加。",
+"warn_4": "每次交易前务必核对合约地址。",
+"ca_title": "EACO 合约地址 (CA)",
+"ca_desc": "每次交易前请务必核对此地址",
+"ca_label": "合约地址",
+"copy": "复制",
+"copied": "已复制!",
+"exp_title": "官方浏览器",
+"steps_title": "获取你的第一枚 EACO",
+"steps_desc": "按以下步骤安全购买 EACO",
+"s1_title": "安装 Solflare 钱包",
+"s1_desc": "从官方网站下载 Solflare。支持浏览器扩展和手机 App。切勿从非官方渠道下载。",
+"s1_btn": "获取 Solflare",
+"s2_title": "创建或导入钱包",
+"s2_desc": "创建新钱包或导入已有钱包。将助记词抄写在纸上并妥善保管。绝不数字化存储或分享给他人。",
+"s3_title": "充值 SOL",
+"s3_desc": "向你的 Solflare 钱包地址转入 SOL。你需要 SOL 来兑换 EACO 和支付手续费。始终保留至少 0.05 SOL 作为手续费。",
+"s4_title": "兑换 SOL → EACO",
+"s4_desc": "打开 Solflare 内置的 Swap 功能。精确粘贴 EACO 合约地址：",
+"s4_desc2": "再次核对合约地址，然后输入要兑换的 SOL 数量并确认。",
+"s5_title": "验证你的 EACO",
+"s5_desc": "交易完成后，在 Solflare 中查看 EACO 余额。也可以在 Solscan 上用你的钱包地址验证。",
+"tips_title": "关键交易提示",
+"t1_title": "手续费",
+"t1_desc": "始终保留至少 0.05 SOL 作为手续费。没有手续费将无法发送或兑换代币。",
+"t2_title": "内置 Swap",
+"t2_desc": "使用 Solflare 内置 Swap 是最安全的方式。避免使用不知名的 DEX。",
+"t3_title": "双重核对 CA",
+"t3_desc": "兑换前务必核对合约地址。骗子会创建名称相似的假代币。",
+"t4_title": "从小额开始",
+"t4_desc": "先用小额测试。确认无误后再增加投入。",
+"footer": "EACO 社区 - 非投资建议 - 请自行研究 (DYOR)"
+},
+"es": {
+"badge": "Token de Solana",
+"hero_title": "Guia para Principiantes de EACO",
+"hero_sub": "Tu primer token EACO - paso a paso, seguro y simple",
+"warn_title": "Recordatorios de Seguridad",
+"warn_1": "Tu frase semilla = tu billetera. Nunca la compartas ni la ingreses en ningun sitio web.",
+"warn_2": "Solo usa Solflare oficial y enlaces verificados.",
+"warn_3": "Empieza con poco - prueba con cantidades pequenas antes de invertir mas.",
+"warn_4": "Verifica la direccion del contrato antes de cada intercambio.",
+"ca_title": "Direccion de Contrato de EACO (CA)",
+"ca_desc": "Siempre verifica esta direccion antes de cualquier transaccion",
+"ca_label": "Direccion de Contrato",
+"copy": "Copiar",
+"copied": "Copiado!",
+"exp_title": "Exploradores Oficiales",
+"steps_title": "Obten Tu Primer EACO",
+"steps_desc": "Sigue estos pasos para comprar EACO de forma segura",
+"s1_title": "Instalar Billetera Solflare",
+"s1_desc": "Descarga Solflare desde el sitio web oficial. Disponible como extension de navegador y app movil. Nunca descargues de fuentes no oficiales.",
+"s1_btn": "Obtener Solflare",
+"s2_title": "Crear o Importar Billetera",
+"s2_desc": "Crea una nueva billetera o importa una existente. Anota tu frase semilla en papel y guardala en un lugar seguro. Nunca la guardes digitalmente.",
+"s3_title": "Depositar SOL",
+"s3_desc": "Transfiere SOL a tu direccion de Solflare. Necesitaras SOL para intercambiar por EACO y pagar comisiones. Siempre conserva al menos 0.05 SOL para gas.",
+"s4_title": "Intercambiar SOL a EACO",
+"s4_desc": "Abre la funcion Swap integrada de Solflare. Pega exactamente la direccion del contrato EACO:",
+"s4_desc2": "Verifica la direccion del contrato, ingresa la cantidad de SOL e confirma.",
+"s5_title": "Verifica Tu EACO",
+"s5_desc": "Despues de la transaccion, revisa tu saldo EACO en Solflare. Tambien puedes verificar en Solscan.",
+"tips_title": "Consejos Clave de Trading",
+"t1_title": "Comisiones de Gas",
+"t1_desc": "Siempre reserva al menos 0.05 SOL para comisiones. Sin ellas no podras enviar ni intercambiar tokens.",
+"t2_title": "Swap Integrado",
+"t2_desc": "Usa el Swap integrado de Solflare para la experiencia mas segura. Evita DEX desconocidos.",
+"t3_title": "Verifica el CA",
+"t3_desc": "Siempre verifica la direccion del contrato antes de intercambiar. Los estafadores crean tokens falsos con nombres similares.",
+"t4_title": "Empieza con Poco",
+"t4_desc": "Prueba con una cantidad pequena primero. Cuando estes seguro, puedes aumentar tu posicion.",
+"footer": "Comunidad EACO - No es consejo financiero - Siempre DYOR"
+},
+"fr": {
+"badge": "Jeton Solana",
+"hero_title": "Guide du Debutant EACO",
+"hero_sub": "Votre premier jeton EACO - etape par etape, en toute securite",
+"warn_title": "Rappels de Securite",
+"warn_1": "Votre phrase seed = votre portefeuille. Ne la partagez jamais et ne la saisissez sur aucun site.",
+"warn_2": "Utilisez uniquement Solflare officiel et les liens verifies.",
+"warn_3": "Commencez petit - testez avec de petits montants avant d'investir davantage.",
+"warn_4": "Verifiez l'adresse du contrat avant chaque echange.",
+"ca_title": "Adresse de Contrat EACO (CA)",
+"ca_desc": "Verifiez toujours cette adresse avant toute transaction",
+"ca_label": "Adresse de Contrat",
+"copy": "Copier",
+"copied": "Copie !",
+"exp_title": "Explorateurs Officiels",
+"steps_title": "Obtenez Votre Premier EACO",
+"steps_desc": "Suivez ces etapes pour acheter EACO en toute securite",
+"s1_title": "Installer le Portefeuille Solflare",
+"s1_desc": "Telechargez Solflare depuis le site officiel. Disponible en extension navigateur et app mobile. Ne telechargez jamais depuis des sources non officielles.",
+"s1_btn": "Obtenir Solflare",
+"s2_title": "Creer ou Importer un Portefeuille",
+"s2_desc": "Creez un nouveau portefeuille ou importez-en un existant. Notez votre phrase seed sur papier et conservez-la en lieu sur. Ne la stockez jamais numeriquement.",
+"s3_title": "Deposer du SOL",
+"s3_desc": "Transferez du SOL vers votre adresse Solflare. Vous aurez besoin de SOL pour echanger contre de l'EACO et payer les frais. Gardez toujours au moins 0.05 SOL pour les frais.",
+"s4_title": "Echanger SOL a EACO",
+"s4_desc": "Ouvrez la fonction Swap integree de Solflare. Collez exactement l'adresse du contrat EACO :",
+"s4_desc2": "Verifiez l'adresse du contrat, entrez le montant de SOL a echanger et confirmez.",
+"s5_title": "Verifiez Votre EACO",
+"s5_desc": "Apres la transaction, verifiez votre solde EACO dans Solflare. Vous pouvez aussi verifier sur Solscan.",
+"tips_title": "Conseils Cles de Trading",
+"t1_title": "Frais de gas",
+"t1_desc": "Reservez toujours au moins 0.05 SOL pour les frais. Sans eux, vous ne pouvez pas envoyer ou echanger de jetons.",
+"t2_title": "Swap Integre",
+"t2_desc": "Utilisez le Swap integre de Solflare pour une experience plus sure. Evitez les DEX inconnus.",
+"t3_title": "Verifiez le CA",
+"t3_desc": "Verifiez toujours l'adresse du contrat avant d'echanger. Les arnaqueurs creent de faux jetons avec des noms similaires.",
+"t4_title": "Commencez Petit",
+"t4_desc": "Testez d'abord avec un petit montant. Une fois confiant, vous pouvez augmenter votre position.",
+"footer": "Communaute EACO - Non un conseil financier - Toujours DYOR"
+},
+"ar": {
+"badge": "رمز Solana",
+"hero_title": "دليل المبتدئين لـ EACO",
+"hero_sub": "أول رمز EACO لك — خطوة بخطوة، بأمان وببساطة",
+"warn_title": "تذكيرات أمنية",
+"warn_1": "عبارة الاسترداد = محفظتك. لا تشاركها مع أي شخص ولا تدخلها في أي موقع.",
+"warn_2": "استخدم فقط Solflare الرسمي والروابط الموثوقة.",
+"warn_3": "ابدأ بمبالغ صغيرة — اختبر أولاً قبل زيادة المبلغ.",
+"warn_4": "تحقق من عنوان العقد مرتين قبل كل تبادل.",
+"ca_title": "عنوان عقد EACO (CA)",
+"ca_desc": "تحقق دائماً من هذا العنوان قبل أي معاملة",
+"ca_label": "عنوان العقد",
+"copy": "نسخ",
+"copied": "تم النسخ!",
+"exp_title": "مستكشفون رسميون",
+"steps_title": "احصل على أول EACO لك",
+"steps_desc": "اتبع هذه الخطوات لشراء EACO بأمان",
+"s1_title": "تثبيت محفظة Solflare",
+"s1_desc": "حمّل Solflare من الموقع الرسمي. متاح كإضافة متصفح وتطبيق جوال. لا تحمّل أبداً من مصادر غير رسمية.",
+"s1_btn": "الحصول على Solflare",
+"s2_title": "إنشاء أو استيراد محفظة",
+"s2_desc": "أنشئ محفظة جديدة أو استورد محفظة موجودة. اكتب عبارة الاسترداد على ورقة واحتفظ بها في مكان آمن. لا تخزنها رقمياً أبداً.",
+"s3_title": "إيداع SOL",
+"s3_desc": "حوّل SOL إلى عنوان محفظة Solflare الخاصة بك. ستحتاج SOL لتبادلها مع EACO ودفع الرسوم. احتفظ دائماً بـ 0.05 SOL على الأقل للرسوم.",
+"s4_title": "تبديل SOL إلى EACO",
+"s4_desc": "افتح ميزة Swap المدمجة في Solflare. الصق عنوان عقد EACO بالضبط:",
+"s4_desc2": "تحقق مرة أخرى من عنوان العقد، ثم أدخل مقدار SOL للتبديل وأكّد.",
+"s5_title": "تحقق من EACO الخاص بك",
+"s5_desc": "بعد إتمام المعاملة، تحقق من رصيد EACO في Solflare. يمكنك أيضاً التحقق على Solscan.",
+"tips_title": "نصائح تداول مهمة",
+"t1_title": "رسوم الغاز",
+"t1_desc": "احجز دائماً 0.05 SOL على الأقل لرسوم الغاز. بدونها لن تتمكن من إرسال أو تبديل الرموز.",
+"t2_title": "Swap المدمج",
+"t2_desc": "استخدم Swap المدمج في Solflare للحصول على أقصى أمان. تجنب DEXs غير المعروفة.",
+"t3_title": "تحقق من CA",
+"t3_desc": "تحقق دائماً من عنوان العقد قبل التبديل. المحتالون ينشئون رموزاً مزيفة بأسماء مشابهة.",
+"t4_title": "ابدأ بصغير",
+"t4_desc": "اختبر بمبلغ صغير أولاً. عندما تكون واثقاً، يمكنك زيادة استثمارك.",
+"footer": "مجتمع EACO - ليس نصيحة مالية - ابحث بنفسك دائماً (DYOR)"
+},
+"ru": {
+"badge": "Токен Solana",
+"hero_title": "Руководство для новичков EACO",
+"hero_sub": "Ваш первый токен EACO — шаг за шагом, безопасно и просто",
+"warn_title": "Правила безопасности",
+"warn_1": "Ваша seed-фраза = ваш кошелёк. Никогда не делитесь ей и не вводите на сайтах.",
+"warn_2": "Используйте только официальный Solflare и проверенные ссылки.",
+"warn_3": "Начните с малого — протестируйте с маленькими суммами прежде чем увеличивать.",
+"warn_4": "Проверяйте адрес контракта дважды перед каждым обменом.",
+"ca_title": "Адрес контракта EACO (CA)",
+"ca_desc": "Всегда проверяйте этот адрес перед любой транзакцией",
+"ca_label": "Адрес контракта",
+"copy": "Копировать",
+"copied": "Скопировано!",
+"exp_title": "Официальные обозреватели",
+"steps_title": "Получите свой первый EACO",
+"steps_desc": "Следуйте этим шагам для безопасной покупки EACO",
+"s1_title": "Установите кошелёк Solflare",
+"s1_desc": "Скачайте Solflare с официального сайта. Доступен как расширение для браузера и мобильное приложение. Никогда не скачивайте из неофициальных источников.",
+"s1_btn": "Получить Solflare",
+"s2_title": "Создайте или импортируйте кошелёк",
+"s2_desc": "Создайте новый кошелёк или импортируйте существующий. Запишите seed-фразу на бумаге и храните в безопасном месте. Никогда не храните её в цифровом виде.",
+"s3_title": "Внесите SOL",
+"s3_desc": "Переведите SOL на адрес вашего кошелька Solflare. Вам понадобится SOL для обмена на EACO и оплаты комиссий. Всегда оставляйте не менее 0.05 SOL на комиссии.",
+"s4_title": "Обмен SOL на EACO",
+"s4_desc": "Откройте встроенную функцию Swap в Solflare. Вставьте адрес контракта EACO точно:",
+"s4_desc2": "Ещё раз проверьте адрес контракта, введите сумму SOL для обмена и подтвердите.",
+"s5_title": "Проверьте ваш EACO",
+"s5_desc": "После завершения транзакции проверьте баланс EACO в Solflare. Также можно проверить на Solscan.",
+"tips_title": "Ключевые советы по торговле",
+"t1_title": "Комиссии (Gas)",
+"t1_desc": "Всегда оставляйте не менее 0.05 SOL на комиссии. Без них вы не сможете отправлять или обменивать токены.",
+"t2_title": "Встроенный Swap",
+"t2_desc": "Используйте встроенный Swap Solflare для максимальной безопасности. Избегайте неизвестных DEX.",
+"t3_title": "Проверяйте CA",
+"t3_desc": "Всегда проверяйте адрес контракта перед обменом. Мошенники создают поддельные токены с похожими названиями.",
+"t4_title": "Начните с малого",
+"t4_desc": "Сначала протестируйте с небольшой суммой. Уверены — увеличивайте позицию.",
+"footer": "Сообщество EACO - Не финансовая рекомендация - Всегда DYOR"
+}
+};
+let currentLang='en';
+const langNames={en:'English',zh:'中文',es:'Español',fr:'Français',ar:'العربية',ru:'Русский'};
+function toggleLang(){document.getElementById('langDropdown').classList.toggle('show')}
+document.addEventListener('click',e=>{if(!e.target.closest('.lang-switcher'))document.getElementById('langDropdown').classList.remove('show')});
+function setLang(lang){
+  currentLang=lang;
+  document.getElementById('langBtn').textContent='🌐 '+langNames[lang];
+  document.getElementById('langDropdown').classList.remove('show');
+  document.documentElement.lang=lang;
+  document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key=el.getAttribute('data-i18n');
+    if(i18n[lang]&&i18n[lang][key])el.textContent=i18n[lang][key];
+  });
+  document.title=i18n[lang]?.hero_title||'EACO';
+}
+function copyCA(){
+  navigator.clipboard.writeText('DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH');
+  const btn=document.getElementById('copyBtn');
+  btn.textContent=i18n[currentLang]?.copied||'Copied!';
+  btn.classList.add('copied');
+  setTimeout(()=>{btn.textContent=i18n[currentLang]?.copy||'Copy';btn.classList.remove('copied')},2000);
+}
+const userLang=navigator.language.slice(0,2);
+if(i18n[userLang])setLang(userLang);
+</script>
+</body>
+</html>
