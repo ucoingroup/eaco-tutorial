@@ -3,126 +3,160 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EACO Dashboard | Monthly Consensus | Min Trade $0.01</title>
+<title>EACO - Complete Guide | Consensus | Promotion | Min Trade $0.01</title>
+<meta name="description" content="EACO AI Community Token on Solana. Tutorial, Monthly Consensus, Promotion Strategy. Min trade $0.01.">
 <style>
-:root{--pri:#1a73e8;--dark:#0d1b2a;--acc:#00d4aa;--gold:#ffd700;--green:#00c853;--red:#e74c3c;--bg:#f0f2f5;--card:#fff}
+:root{--pri:#1a73e8;--dark:#0d1b2a;--acc:#00d4aa;--gold:#ffd700;--green:#00c853;--red:#e74c3c;--purple:#9b59b6;--bg:#f0f2f5;--card:#fff}
 *{margin:0;padding:0;box-sizing:border-box}
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:#333;line-height:1.6}
+body[dir=rtl]{font-family:Tahoma,Arial,sans-serif;direction:rtl}
 
-/* Nav */
 .nav{background:var(--dark);padding:.7rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100}
-.nav h1{color:#fff;font-size:1.15rem}.nav h1 span{color:var(--acc)}
+.nav h1{color:#fff;font-size:1.1rem}.nav h1 span{color:var(--acc)}
 .lang-switch{display:flex;gap:4px;flex-wrap:wrap}
 .lang-btn{padding:4px 10px;border:1px solid rgba(255,255,255,.3);border-radius:20px;background:transparent;color:#aaa;cursor:pointer;font-size:.72rem;transition:.2s}
 .lang-btn:hover,.lang-btn.active{background:var(--acc);color:#fff;border-color:var(--acc)}
 
-/* Hero */
-.hero{text-align:center;padding:2rem 1rem;background:linear-gradient(135deg,var(--dark),#1b3a4b);color:#fff}
-.hero h2{font-size:1.6rem;margin-bottom:.3rem}
-.hero p{color:var(--acc);font-size:.9rem;margin-bottom:.8rem}
+.hero{text-align:center;padding:2.5rem 1rem;background:linear-gradient(135deg,var(--dark),#1b3a4b);color:#fff;position:relative}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(0,212,170,.1),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(255,215,0,.08),transparent 60%)}
+.hero h2{font-size:1.8rem;margin-bottom:.3rem;position:relative}
+.hero p{color:var(--acc);font-size:.95rem;margin-bottom:1rem;position:relative}
 
-/* Min Trade Banner */
-.min-banner{background:linear-gradient(135deg,#00c853,#00e676);color:#fff;padding:.7rem 1.2rem;border-radius:12px;max-width:520px;margin:.4rem auto 1rem;display:flex;align-items:center;gap:.8rem;box-shadow:0 3px 15px rgba(0,200,83,.3)}
-.min-banner .icon{font-size:1.6rem}
-.min-banner .text h3{font-size:.9rem}.min-banner .text p{font-size:.78rem;opacity:.9}
+/* $0.01 Banner */
+.min-banner{background:linear-gradient(135deg,#00c853,#00e676);color:#fff;padding:.8rem 1.5rem;border-radius:14px;max-width:560px;margin:.5rem auto 1rem;display:flex;align-items:center;gap:1rem;box-shadow:0 4px 20px rgba(0,200,83,.35);position:relative}
+.min-banner .icon{font-size:2rem}
+.min-banner .text h3{font-size:1rem;margin-bottom:.2rem}
+.min-banner .text p{font-size:.8rem;opacity:.9}
 
 /* CA Box */
-.ca-box{max-width:550px;margin:0 auto .8rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:.8rem;text-align:left}
-.ca-label{font-size:.7rem;color:#888;margin-bottom:.2rem}
-.ca-value{font-family:'Courier New',monospace;font-size:.75rem;word-break:break-all;color:var(--gold);background:rgba(0,0,0,.35);padding:6px 10px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:6px}
-.copy-btn{background:var(--acc);border:none;color:#fff;padding:4px 12px;border-radius:6px;cursor:pointer;font-size:.7rem;white-space:nowrap}
+.ca-box{max-width:580px;margin:0 auto .8rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:1rem}
+.ca-label{font-size:.72rem;color:#888;margin-bottom:.25rem}
+.ca-value{font-family:'Courier New',monospace;font-size:.78rem;word-break:break-all;color:var(--gold);background:rgba(0,0,0,.4);padding:8px 12px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:8px}
+.copy-btn{background:var(--acc);border:none;color:#fff;padding:5px 14px;border-radius:6px;cursor:pointer;font-size:.72rem;white-space:nowrap}
 
-.btn-row{display:flex;gap:8px;justify-content:center;margin-top:.8rem;flex-wrap:wrap}
-.btn{padding:7px 18px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.82rem;transition:.2s;display:inline-block}
-.btn-pri{background:var(--acc);color:#fff}.btn-pri:hover{transform:translateY(-1px);box-shadow:0 3px 12px rgba(0,212,170,.4)}
+.btn-row{display:flex;gap:10px;justify-content:center;margin-top:.9rem;flex-wrap:wrap;position:relative}
+.btn{padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.85rem;transition:.2s;display:inline-block}
+.btn-pri{background:var(--acc);color:#fff}.btn-pri:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,212,170,.4)}
 .btn-sec{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}.btn-sec:hover{background:rgba(255,255,255,.2)}
 
-.container{max-width:920px;margin:0 auto;padding:1rem 1rem}
+.container{max-width:960px;margin:0 auto;padding:1rem 1rem}
 
-/* KPI Cards */
-.kpi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.8rem;margin-bottom:1rem}
-.kpi-card{background:var(--card);border-radius:14px;padding:1rem;text-align:center;box-shadow:0 2px 10px rgba(0,0,0,.05);border-left:4px solid var(--pri)}
-.kpi-card.green{border-left-color:var(--green)}
-.kpi-card.gold{border-left-color:var(--gold)}
-.kpi-card.purple{border-left-color:#9b59b6}
-.kpi-val{font-size:1.6rem;font-weight:bold;color:var(--dark);margin-bottom:.2rem}
-.kpi-label{font-size:.75rem;color:#666}
-.kpi-sub{font-size:.68rem;color:#999;margin-top:.2rem}
+/* Sections */
+.section{background:var(--card);border-radius:16px;padding:1.4rem;margin-bottom:1rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
+.section h3{font-size:1.05rem;margin-bottom:1rem;display:flex;align-items:center;gap:8px;color:var(--pri)}
 
-/* Section */
-.section{background:var(--card);border-radius:14px;padding:1.2rem;margin-bottom:1rem;box-shadow:0 2px 10px rgba(0,0,0,.04)}
-.section h3{font-size:1rem;margin-bottom:.8rem;display:flex;align-items:center;gap:6px;color:var(--pri)}
+/* Tab Navigation */
+.tabs{display:flex;gap:4px;margin-bottom:1rem;flex-wrap:wrap}
+.tab-btn{padding:8px 16px;border:none;border-radius:8px 8px 0 0;background:#e8e8e8;color:#666;cursor:pointer;font-size:.82rem;transition:.2s}
+.tab-btn.active{background:var(--dark);color:#fff}
+.tab-content{display:none}
+.tab-content.active{display:block}
 
-/* Table */
-.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
-table{width:100%;border-collapse:collapse;font-size:.82rem}
-th{background:var(--dark);color:#fff;padding:8px 10px;text-align:left;font-weight:600;white-space:nowrap}
-td{padding:7px 10px;border-bottom:1px solid #eee;white-space:nowrap}
-tr:hover td{background:#f8f9fa}
-.rank-1{background:linear-gradient(90deg,#fff9db,#fff)!important;font-weight:bold}
-.rank-2{background:linear-gradient(90deg,#f0f0ff,#fff)!important}
-.rank-3{background:linear-gradient(90deg,#f0fff0,#fff)!important}
-.badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.68rem;font-weight:bold;color:#fff}
-.badge-diamond{background:linear-gradient(135deg,#b9f2ff,#0077be)}
-.badge-platinum{background:linear-gradient(135deg,#e5e4e2,#a0a0a0);color:#333}
-.badge-gold{background:linear-gradient(135deg,#ffd700,#ffaa00)}
-.badge-silver{background:linear-gradient(135deg,#c0c0c0,#808080);color:#fff}
-.badge-bronze{background:linear-gradient(135cd,#cd7f32,#8b4513)}
+/* Feature Grid */
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}
+.feature-card{background:#f8fafc;border-radius:14px;padding:1.2rem;border-left:4px solid var(--pri)}
+.feature-card.green{border-left-color:var(--green)}
+.feature-card.gold{border-left-color:var(--gold)}
+.feature-card.purple{border-left-color:var(--purple)}
+.feature-card.red{border-left-color:var(--red)}
+.feature-icon{font-size:1.8rem;margin-bottom:.4rem}
+.feature-title{font-weight:bold;font-size:.95rem;color:var(--dark);margin-bottom:.3rem}
+.feature-desc{font-size:.82rem;color:#666;line-height:1.5}
 
-/* Progress bar */
-.progress-bar{height:8px;background:#eee;border-radius:4px;overflow:hidden;margin-top:4px}
-.progress-fill{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--acc),var(--green));transition:width .5s}
+/* Quick Links */
+.quick-links{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:.8rem}
+.quick-link{padding:6px 14px;background:#f0f2f5;border-radius:8px;font-size:.78rem;color:#555;text-decoration:none;transition:.2s}
+.quick-link:hover{background:var(--acc);color:#fff}
 
-/* Level cards */
-.level-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:.7rem}
-.level-card{background:linear-gradient(135deg,#f8f9fa,#fff);border-radius:12px;padding:.9rem;text-align:center;border:1px solid #e8e8e8}
-.level-icon{font-size:1.5rem;margin-bottom:.3rem}
-.level-name{font-weight:bold;font-size:.82rem;color:var(--dark)}
-.level-cond{font-size:.68rem;color:#888;margin-top:.3rem;line-height:1.4}
+/* Stats */
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.7rem;margin-bottom:1rem}
+.stat-card{background:var(--card);border-radius:12px;padding:1rem;text-align:center;border-left:4px solid var(--acc)}
+.stat-card.green{border-left-color:var(--green)}
+.stat-card.gold{border-left-color:var(--gold)}
+.stat-value{font-size:1.5rem;font-weight:bold;color:var(--dark)}
+.stat-label{font-size:.75rem;color:#777}
+.stat-sub{font-size:.68rem;color:#999}
 
-/* Consensus meter */
-.consensus-meter{position:relative;height:30px;background:#eee;border-radius:15px;overflow:hidden;margin:.8rem 0}
-.consensus-fill{height:100%;border-radius:15px;background:linear-gradient(90deg,#e74c3c,#f39c12,#27ae60,#2980b9,#8e44ad);transition:width 1s}
-.consensus-value{position:absolute;width:100%;top:50%;transform:translateY(-50%);text-align:center;font-weight:bold;font-size:.85rem;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+/* Steps */
+.steps-list{counter-reset:step}
+.step-item{display:flex;gap:.9rem;margin-bottom:1rem;padding:1rem;background:#f8f9fa;border-radius:12px;counter-increment:step}
+.step-num{width:32px;height:32px;background:var(--pri);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0}
+.step-content{flex:1}
+.step-title{font-weight:bold;font-size:.95rem;color:var(--dark);margin-bottom:.25rem}
+.step-desc{font-size:.83rem;color:#666;line-height:1.5}
 
-/* Unlock grid */
-.unlock-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:.6rem}
+/* Checklist */
+.checklist{list-style:none}
+.checklist li{padding:.7rem 0 .7rem 2rem;position:relative;border-bottom:1px solid #eee;font-size:.88rem}
+.checklist li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:bold}
+
+/* Promotional Budget */
+.budget-table{width:100%;border-collapse:collapse;font-size:.82rem}
+.budget-table th{background:var(--dark);color:#fff;padding:8px 12px;text-align:left;font-weight:600}
+.budget-table td{padding:8px 12px;border-bottom:1px solid #eee}
+.budget-table tr:hover td{background:#f8f9fa}
+.budget-high{background:#fff3cd!important;font-weight:bold}
+.budget-mid{background:#e8f5e9!important}
+
+/* Level Cards */
+.level-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:.7rem}
+.level-card{background:linear-gradient(135deg,#f8f9fa,#fff);border-radius:14px;padding:1rem;text-align:center;border:2px solid transparent}
+.level-card.gold{border-color:var(--gold);background:linear-gradient(135deg,#fffcf0,#fff)}
+.level-card.purple{border-color:var(--purple);background:linear-gradient(135deg,#f5f0ff,#fff)}
+.level-card.green{border-color:var(--green);background:linear-gradient(135deg,#f0fff0,#fff)}
+.level-icon{font-size:1.8rem;margin-bottom:.4rem}
+.level-name{font-weight:bold;font-size:.9rem;color:var(--dark)}
+.level-req{font-size:.72rem;color:#888;margin-top:.3rem}
+
+/* Consensus Meter */
+.consensus-meter{height:28px;background:#eee;border-radius:14px;overflow:hidden;margin:.8rem 0;position:relative}
+.consensus-fill{height:100%;border-radius:14px;background:linear-gradient(90deg,#e74c3c,#f39c12,#27ae60,#2980b9,#9b59b6);transition:width 1s}
+.consensus-value{position:absolute;width:100%;top:50%;transform:translateY(-50%);text-align:center;font-weight:bold;font-size:.9rem;color:#fff;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+
+/* Unlock Grid */
+.unlock-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:.6rem}
 .unlock-item{padding:.7rem;border-radius:10px;text-align:center;font-size:.78rem}
 .unlock-item.locked{background:#f5f5f5;color:#999;border:1px dashed #ddd}
 .unlock-item.unlocked{background:linear-gradient(135deg,#e8f5e9,#c8e6c9);color:#2e7d32;border:1px solid #81c784}
 
+/* Tab Navigation */
+.tab-nav{display:flex;gap:4px;margin-bottom:1rem;border-bottom:2px solid #eee;padding-bottom:.5rem}
+.tab-link{padding:8px 16px;background:none;border:none;color:#666;cursor:pointer;font-size:.85rem;font-weight:600;transition:.2s}
+.tab-link.active{color:var(--pri);border-bottom:3px solid var(--pri);margin-bottom:-.55rem}
+
 /* Footer */
-.footer{text-align:center;padding:1.2rem;color:#888;font-size:.75rem;background:var(--dark);color:#aaa;line-height:1.8}
+.footer{text-align:center;padding:1.5rem;color:#aaa;font-size:.78rem;background:var(--dark);line-height:2}
 
 @media(max-width:600px){
-  .hero h2{font-size:1.25rem}
-  .kpi-grid{grid-template-columns:repeat(2,1fr)}
-  table{font-size:.72rem}
-  th,td{padding:5px 6px}
+  .hero h2{font-size:1.4rem}
+  .feature-grid{grid-template-columns:1fr}
+  .stats-grid{grid-template-columns:repeat(2,1fr)}
 }
 </style>
 </head>
 <body>
 
 <nav class="nav">
-  <h1>🚀 <span>EACO</span> Dashboard v3.0</h1>
+  <h1>🚀 <span>EACO</span> Complete Guide</h1>
   <div class="lang-switch" id="langSwitch"></div>
 </nav>
 
+<!-- Hero Section -->
 <div class="hero">
-  <h2 id="heroTitle">EACO Monthly Consensus System</h2>
-  <p id="heroSub">Min Trade $0.01 | Auto Points | Ranking | Consensus Pool</p>
+  <h2>EACO - AI Community Token on Solana</h2>
+  <p>Tutorial + Monthly Consensus + Promotion Strategy</p>
 
+  <!-- $0.01 Min Trade Banner -->
   <div class="min-banner">
     <div class="icon">💰</div>
     <div class="text">
-      <h3 id="ftMin">Minimum Trade: $0.01</h3>
-      <p id="ftDesc">Start trading EACO from just one cent!</p>
+      <h3>$0.01 Minimum Trade</h3>
+      <p>Start trading EACO from just one cent - beginner friendly!</p>
     </div>
   </div>
 
   <div class="ca-box">
-    <div class="ca-label" id="caLabel">Contract Address:</div>
+    <div class="ca-label">Contract Address (CA)</div>
     <div class="ca-value">
       <span>DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</span>
       <button class="copy-btn" onclick="copyCA()">Copy</button>
@@ -134,109 +168,287 @@ tr:hover td{background:#f8f9fa}
     <a href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-sec">🔍 Solscan</a>
     <a href="https://solflare.com/" target="_blank" class="btn btn-pri">👛 Solflare</a>
   </div>
+
+  <div class="quick-links">
+    <a href="#guide" class="quick-link">📖 Get Started</a>
+    <a href="#consensus" class="quick-link">⚡ Monthly Consensus</a>
+    <a href="#promotion" class="quick-link">📢 Promotion</a>
+    <a href="#levels" class="quick-link">🏆 Levels</a>
+  </div>
 </div>
 
 <div class="container">
 
-  <!-- KPI Cards -->
-  <div class="kpi-grid" id="kpiGrid"></div>
+  <!-- Tab Navigation -->
+  <div class="tab-nav">
+    <button class="tab-link active" onclick="showTab('guide')">📖 Tutorial</button>
+    <button class="tab-link" onclick="showTab('consensus')">⚡ Consensus</button>
+    <button class="tab-link" onclick="showTab('promotion')">📢 Promotion</button>
+    <button class="tab-link" onclick="showTab('levels')">🏆 Levels</button>
+  </div>
 
-  <!-- Consensus Power Pool -->
-  <div class="section">
-    <h3>⚡ Consensus Power Pool</h3>
-    <div class="consensus-meter">
-      <div class="consensus-fill" id="consensusFill" style="width:0%"></div>
-      <div class="consensus-value" id="consensusValue">0 / 100</div>
+  <!-- TAB 1: Tutorial -->
+  <div id="guide" class="tab-content active">
+    <div class="section">
+      <h3>📖 How to Get Your First EACO - Step by Step</h3>
+      <div class="steps-list">
+        <div class="step-item">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <div class="step-title">Download Solflare Wallet</div>
+            <div class="step-desc">Get Solflare from solflare.com. Available as browser extension and mobile app. Never download from unofficial sources.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <div class="step-title">Create / Import Wallet</div>
+            <div class="step-desc">Create new or import existing. Write down 12-word seed phrase on PAPER. Never share or store digitally.</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <div class="step-title">Deposit SOL</div>
+            <div class="step-desc">Transfer SOL to your Solflare address. Keep at least 0.05 SOL for gas fees. Even $0.01 equivalent is enough!</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">4</div>
+          <div class="step-content">
+            <div class="step-title">Swap SOL → EACO</div>
+            <div class="step-desc">Use Solflare Swap or OrbMarkets. Enter CA: <code>DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</code>. Minimum trade: just $0.01!</div>
+          </div>
+        </div>
+        <div class="step-item">
+          <div class="step-num">5</div>
+          <div class="step-content">
+            <div class="step-title">Join Community & Earn</div>
+            <div class="step-desc">Daily check-in, promote, complete AI tasks. Earn points, badges, and airdrop eligibility!</div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div class="unlock-grid" id="unlockGrid"></div>
+
+    <div class="section" style="background:#fff5f5;border:2px solid var(--red)">
+      <h3 style="color:var(--red)">⚠️ Security First</h3>
+      <ul class="checklist">
+        <li>Never share your seed phrase with anyone</li>
+        <li>Only use official links (solflare.com, orbmarkets.io)</li>
+        <li>ALWAYS verify contract address before trading</li>
+        <li>Start small - test with $0.01 first</li>
+        <li>Keep at least 0.05 SOL for gas fees</li>
+      </ul>
+    </div>
   </div>
 
-  <!-- Level System -->
-  <div class="section">
-    <h3>🏆 Level System</h3>
-    <div class="level-grid" id="levelGrid"></div>
+  <!-- TAB 2: Monthly Consensus -->
+  <div id="consensus" class="tab-content">
+    <div class="section">
+      <h3>⚡ Monthly Consensus System</h3>
+      <p style="font-size:.9rem;color:#666;margin-bottom:1rem">Join the monthly growth cycle. Every action counts toward community consensus.</p>
+      
+      <!-- Stats -->
+      <div class="stats-grid">
+        <div class="stat-card"><div class="stat-value">10</div><div class="stat-label">Daily Check-in</div><div class="stat-sub">+points</div></div>
+        <div class="stat-card green"><div class="stat-value">30</div><div class="stat-label">Promo 30min</div><div class="stat-sub">+points</div></div>
+        <div class="stat-card gold"><div class="stat-value">20</div><div class="stat-label">AI Task</div><div class="stat-sub">+points</div></div>
+        <div class="stat-card"><div class="stat-value">50</div><div class="stat-label">L1 Invite</div><div class="stat-sub">+points</div></div>
+      </div>
+    </div>
+
+    <!-- Consensus Power Pool -->
+    <div class="section">
+      <h3>🔥 Consensus Power Pool</h3>
+      <div class="consensus-meter">
+        <div class="consensus-fill" style="width:73%"></div>
+        <div class="consensus-value">73 / 100</div>
+      </div>
+      <div class="unlock-grid">
+        <div class="unlock-item unlocked">🎁 60pt: Airdrop</div>
+        <div class="unlock-item unlocked">🌿 70pt: Eco Rewards</div>
+        <div class="unlock-item unlocked">🤝 80pt: Partners</div>
+        <div class="unlock-item locked">🖼️ 90pt: Special NFT</div>
+        <div class="unlock-item locked">👑 100pt: Super Gov</div>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div class="feature-grid">
+      <div class="feature-card">
+        <div class="feature-icon">📅</div>
+        <div class="feature-title">Daily Check-in</div>
+        <div class="feature-desc">Sign in daily to earn 10 pts. Build streaks for bonus!</div>
+      </div>
+      <div class="feature-card green">
+        <div class="feature-icon">📢</div>
+        <div class="feature-title">Promotion</div>
+        <div class="feature-desc">30 min promotion = 30 pts. Share, create content, invite.</div>
+      </div>
+      <div class="feature-card purple">
+        <div class="feature-icon">🤖</div>
+        <div class="feature-title">AI Tasks</div>
+        <div class="feature-desc">Complete AI tasks = 20 pts. Help train, test, feedback.</div>
+      </div>
+      <div class="feature-card gold">
+        <div class="feature-icon">👥</div>
+        <div class="feature-title">Invites</div>
+        <div class="feature-desc">L1 invite = 50 pts. L2 invite = 25 pts. Grow together!</div>
+      </div>
+    </div>
   </div>
 
-  <!-- Monthly Ranking TOP 10 -->
-  <div class="section">
-    <h3>📊 Monthly Ranking TOP 10</h3>
-    <div class="table-wrap">
-      <table id="rankingTable">
-        <thead><tr><th>#</th><th>User</th><th>Level</th><th>Checkin Pts</th><th>Promo Pts</th><th>Invite Pts</th><th>Total</th><th>EffPts</th><th>Badge</th></tr></thead>
-        <tbody id="rankingBody"></tbody>
+  <!-- TAB 3: Promotion Strategy -->
+  <div id="promotion" class="tab-content">
+    <div class="section">
+      <h3>📢 Community Promotion Strategy</h3>
+      <p style="font-size:.9rem;color:#666;margin-bottom:1rem">Weekly and monthly activities to grow EACO community.</p>
+
+      <h4 style="margin:.8rem 0 .5rem;color:var(--pri)">🗓️ Weekly Activities</h4>
+      <table class="budget-table">
+        <tr><th>Activity</th><th>Budget</th><th>Priority</th></tr>
+        <tr><td>Telegram Daily Ops</td><td>100-200 EACO</td><td>⭐⭐⭐</td></tr>
+        <tr><td>Twitter Posts</td><td>50-100 EACO</td><td>⭐⭐⭐</td></tr>
+        <tr><td>Weekend Giveaway</td><td>200-500 EACO</td><td>⭐⭐</td></tr>
+        <tr><td>Content Creation</td><td>100-200 EACO</td><td>⭐⭐</td></tr>
+      </table>
+
+      <h4 style="margin:1rem 0 .5rem;color:var(--pri)">🗓️ Monthly Activities</h4>
+      <table class="budget-table">
+        <tr><th>Activity</th><th>Budget</th><th>Priority</th></tr>
+        <tr class="budget-high"><td>Monthly Airdrop</td><td>5,000-10,000 EACO</td><td>⭐⭐⭐</td></tr>
+        <tr><td>Community Challenge</td><td>2,000-5,000 EACO</td><td>⭐⭐</td></tr>
+        <tr><td>Large AMA</td><td>1,000-2,000 EACO</td><td>⭐⭐</td></tr>
+        <tr><td>Partner Events</td><td>500-1,000 EACO</td><td>⭐</td></tr>
+      </table>
+    </div>
+
+    <div class="section" style="background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid var(--green)">
+      <h3 style="color:var(--green)">💰 Promotion Budget Summary</h3>
+      <div class="feature-grid" style="margin:0">
+        <div class="feature-card green">
+          <div class="feature-icon">📅</div>
+          <div class="feature-title">Weekly Min Budget</div>
+          <div class="feature-desc">500 EACO = ~$5 (@$0.01)</div>
+        </div>
+        <div class="feature-card green">
+          <div class="feature-icon">🗓️</div>
+          <div class="feature-title">Monthly Budget</div>
+          <div class="feature-desc">15,500 - 32,400 EACO = $155-$324</div>
+        </div>
+        <div class="feature-card green">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-title">Most Effective</div>
+          <div class="feature-desc">TG daily + Twitter consistent</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>📈 Success Metrics Targets</h3>
+      <table class="budget-table">
+        <tr><th>Metric</th><th>Month 1</th><th>Month 3</th><th>Month 6</th></tr>
+        <tr><td>Twitter Followers</td><td>500</td><td>2,000</td><td>8,000</td></tr>
+        <tr><td>Telegram Members</td><td>200</td><td>800</td><td>3,000</td></tr>
+        <tr><td>Daily Active</td><td>50</td><td>200</td><td>800</td></tr>
+        <tr><td>Holder Addresses</td><td>100</td><td>500</td><td>2,000</td></tr>
       </table>
     </div>
   </div>
 
-  <!-- Daily Checkin Sample -->
-  <div class="section">
-    <h3>📅 Daily Checkin (Today)</h3>
-    <div class="table-wrap">
-      <table>
-        <thead><tr><th>User</th><th>Date</th><th>Checkin</th><th>Promo 30min</th><th>AI Task</th><th>Day Pts</th></tr></thead>
-        <tbody id="checkinBody"></tbody>
-      </table>
+  <!-- TAB 4: Levels -->
+  <div id="levels" class="tab-content">
+    <div class="section">
+      <h3>🏆 Level System</h3>
+      <div class="level-grid">
+        <div class="level-card">
+          <div class="level-icon">🧭</div>
+          <div class="level-name">L1 Explorer</div>
+          <div class="level-req">Register + 7-day checkin</div>
+        </div>
+        <div class="level-card green">
+          <div class="level-icon">🔨</div>
+          <div class="level-name">L2 Builder</div>
+          <div class="level-req">30-day streak + 15 promo</div>
+        </div>
+        <div class="level-card">
+          <div class="level-icon">🎤</div>
+          <div class="level-name">L3 Ambassador</div>
+          <div class="level-req">60 promo + 20 invites</div>
+        </div>
+        <div class="level-card gold">
+          <div class="level-icon">👑</div>
+          <div class="level-name">L4 Leader</div>
+          <div class="level-req">100 invites + 90 contrib</div>
+        </div>
+        <div class="level-card purple">
+          <div class="level-icon">🌐</div>
+          <div class="level-name">L5 Global Partner</div>
+          <div class="level-req">DAO vote + eco contrib</div>
+        </div>
+      </div>
     </div>
-  </div>
 
-  <!-- Trade Rules -->
-  <div class="section" style="background:linear-gradient(135deg,#e8f5e9,#f1f8e9);border:2px solid var(--green)">
-    <h3 style="color:var(--green)">🌍 Foreign Trade Mode — $0.01 Minimum</h3>
-    <div class="kpi-grid" style="margin:0">
-      <div class="kpi-card green"><div class="kpi-val">$0.01</div><div class="kpi-label">Min Trade</div></div>
-      <div class="kpi-card green"><div class="kpi-val">~0.25%</div><div class="kpi-label">Trading Fee</div></div>
-      <div class="kpi-card green"><div class="kpi-val">~1s</div><div class="kpi-label">Settlement</div></div>
-      <div class="kpi-card green"><div class="kpi-val">24/7</div><div class="kpi-label">Global Support</div></div>
+    <div class="section">
+      <h3>🏅 Badge System</h3>
+      <div class="feature-grid">
+        <div class="feature-card" style="border-color:#b9f2ff">
+          <div class="feature-icon">💎</div>
+          <div class="feature-title">DIAMOND</div>
+          <div class="feature-desc">5,000+ Effective Points</div>
+        </div>
+        <div class="feature-card" style="border-color:#a0a0a0">
+          <div class="feature-icon">🟦</div>
+          <div class="feature-title">PLATINUM</div>
+          <div class="feature-desc">2,000-4,999 Points</div>
+        </div>
+        <div class="feature-card" style="border-color:#ffd700">
+          <div class="feature-icon">🟡</div>
+          <div class="feature-title">GOLD</div>
+          <div class="feature-desc">1,000-1,999 Points</div>
+        </div>
+        <div class="feature-card" style="border-color:#c0c0c0">
+          <div class="feature-icon">⚪</div>
+          <div class="feature-title">SILVER</div>
+          <div class="feature-desc">500-999 Points</div>
+        </div>
+        <div class="feature-card" style="border-color:#cd7f32">
+          <div class="feature-icon">🟤</div>
+          <div class="feature-title">BRONZE</div>
+          <div class="feature-desc">&lt;500 Points</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section" style="background:#f8f9fa">
+      <h3>💵 Staking Multipliers</h3>
+      <table class="budget-table">
+        <tr><th>Duration</th><th>Multiplier</th><th>Benefit</th></tr>
+        <tr><td>30 days</td><td>1.1x</td><td>Base boost</td></tr>
+        <tr class="budget-mid"><td>90 days</td><td>1.3x</td><td>Medium boost</td></tr>
+        <tr class="budget-mid"><td>180 days</td><td>1.5x</td><td>High boost</td></tr>
+        <tr class="budget-high"><td>365 days</td><td>2.0x</td><td>Maximum boost</td></tr>
+      </table>
     </div>
   </div>
 
 </div>
 
-<footer class="footer" id="footerText"></footer>
+<footer class="footer">
+  <p>EACO - AI Community Token on Solana</p>
+  <p>Min Trade: $0.01 | CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</p>
+  <p>© 2026 EACO Community | Built with 💜</p>
+</footer>
 
 <script>
 // ====== i18n Data ======
 const i18n = {
-  en: {
-    heroTitle:"EACO Monthly Consensus System", heroSub:"Min Trade $0.01 | Auto Points | Ranking | Consensus Pool",
-    ftMin:"Minimum Trade: $0.01", ftDesc:"Start trading EACO from just one cent!",
-    caLabel:"Contract Address:", copyCopied:"Copied!",
-    kpiCheckins:"Daily Checkins", kpiPromo:"Promo Minutes", kpiMembers:"Active Members",
-    kpiPoints:"Total Points", kpiConsensus:"Consensus Index", kpiTarget:"/ Target",
-    consensusTitle:"Consensus Power Pool", unlock60:"🎁 Airdrop (60)", unlock70:"🌿 Eco Rewards (70)",
-    unlock80:"🤝 Partners (80)", unlock90:"🖼️ Special NFT (90)", unlock100:"👑 Super Gov (100)",
-    levelL1:"L1 Explorer", levelL1Cond:"Register + 7-day checkin streak → Base community access",
-    levelL2:"L2 Builder", levelL2Cond:"30-day streak + 15 promo days → Airdrop eligible",
-    levelL3:"L3 Ambassador", levelL3Cond:"60 promo days + 20 invites → Leaderboard featured",
-    levelL4:"L4 Leader", levelL4Cond:"100 invites + 90 contrib days → Extra rewards",
-    levelL5:"L5 Global Partner", levelL5Cond:"DAO vote + eco contribution → Core governance",
-    rankHead:["#","User","Level","Checkin","Promo","Invite","Total","EffPts","Badge"],
-    badgeDiamond:"DIAMOND", badgePlat:"PLATINUM", badgeGold:"GOLD", badgeSilver:"SILVER", badgeBronze:"BRONZE",
-    checkinHead:["User","Date","Checkin","Promo 30min","AI Task","Day Pts"],
-    footer:`Updated: ${new Date().toISOString().slice(0,10)} | EACO v3.0 | CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH`,
-  },
-  zh: {
-    heroTitle:"EACO 月度共识系统", heroSub:"最低交易$0.01 | 自动积分 | 排行榜 | 共识能量池",
-    ftMin:"最低交易：$0.01", ftDesc:"仅需一分钱即可开始交易EACO！",
-    caLabel:"合约地址：", copyCopied:"已复制！",
-    kpiCheckins:"每日签到", kpiPromo:"推广分钟数", kpiMembers:"活跃成员",
-    kpiPoints:"总积分", kpiConsensus:"共识指数", kpiTarget:"/ 目标",
-    consensusTitle:"共识能量池", unlock60:"🎁 社区空投(60分)", unlock70:"🌿 生态奖励(70分)",
-    unlock80:"🤝 合作计划(80分)", unlock90:"🖼️ 特殊NFT(90分)", unlock100:"👑 超级治理(100分)",
-    levelL1:"L1 探索者", levelL1Cond:"注册+连续签到7天 → 基础社区参与",
-    levelL2:"L2 建设者", levelL2Cond:"连续签到30天+推广15天 → 空投资格",
-    levelL3:"L3 推广大使", levelL3Cond:"推广60天+邀请20人 → 排行榜展示",
-    levelL4:"L4 社区领袖", levelL4Cond:"邀请100人+贡献90天 → 额外奖励",
-    levelL5:"L5 全球合伙人", levelL5Cond:"DAO投票+生态贡献 → 核心治理权",
-    rankHead:["#","用户","等级","签到","推广","邀请","总积分","有效积分","徽章"],
-    badgeDiamond:"钻石", badgePlat:"铂金", badgeGold:"黄金", badgeSilver:"白银", badgeBronze:"青铜",
-    checkinHead:["用户","日期","签到","推广30分钟","AI任务","当日积分"],
-    footer:`更新日期：${new Date().toISOString().slice(0,10)} | EACO v3.0 | CA: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH`,
-  },
-  es: { heroTitle:"Sistema de Consenso Mensual EACO", heroSub:"Min Trade $0.01 | Puntos Auto | Ranking", ftMin:"Mín. Trade: $0.01", ftDesc:"¡Comienza con un centavo!", caLabel:"Dirección Contrato:", copyCopied:"¡Copiado!", kpiCheckins:"Checkins Diarios", kpiPromo:"Minutos Promo", kpiMembers:"Miembros Activos", kpiPoints:"Puntos Totales", kpiConsensus:"Índice Consenso", kpiTarget:"/ Objetivo", consensusTitle:"Pool de Poder Consenso", unlock60:"🎁 Airdrop (60)", unlock70:"🌿 Recompensas Eco (70)", unlock80:"🤝 Partners (80)", unlock90:"🖼️ NFT Especial (90)", unlock100:"👑 Super Gov (100)", levelL1:"L1 Explorador", levelL1Cond:"Registro + 7 días racha", levelL2:"L2 Constructor", levelL2Cond:"30 días racha + 15 promo", levelL3:"L3 Embajador", levelL3Cond:"60 promo + 20 invitaciones", levelL4:"L4 Líder", levelL4Cond:"100 invitaciones + 90 contrib", levelL5:"L5 Partner Global", levelL5Cond:"DAO vote + eco contrib", rankHead:["#","Usuario","Nivel","Checkin","Promo","Invita","Total","EfPts","Insignia"], badgeDiamond:"DIAMANTE", badgePlat:"PLATINO", badgeGold:"ORO", badgeSilver:"PLATA", badgeBronce:"BRONCE", checkinHead:["User","Fecha","Checkin","Promo 30min","AI Task","Pts Día"], footer:`Actualizado: ${new Date().toISOString().slice(0,10)} | EACO v3.0` },
-  fr: { heroTitle:"Système de Consensus Mensuel EACO", heroSub:"Min Trade $0.01 | Points Auto | Classement", ftMin:"Min. Trade: $0.01", ftDesc:"Commencez avec un centime!", caLabel:"Adresse Contrat:", copyCopied:"Copié!", kpiCheckins:"Check-ins Quotidiens", kpiPromo:"Minutes Promo", kpiMembers:"Membres Actifs", kpiPoints:"Points Totaux", kpiConsensus:"Indice Consensus", kpiTarget:"/ Cible", consensusTitle:"Pool de Puissance Consensus", unlock60:"🎁 Airdrop (60)", unlock70:"🌿 Récompenses Éco (70)", unlock80:"🤝 Partenaires (80)", unlock90:"🖼️ NFT Spécial (90)", unlock100:"👑 Super Gov (100)", levelL1:"L1 Explorateur", levelL1Cond:"Inscription + 7 jours suite", levelL2:"L2 Bâtisseur", levelL2Cond:"30 jours suite + 15 promo", levelL3:"L3 Ambassadeur", levelL3Cond:"60 promo + 20 invitations", levelL4:"L4 Leader", levelL4Cond:"100 invitations + 90 contrib", levelL5:"L5 Partenaire Global", levelL5Cond:"Vote DAO + éco contrib", rankHead:["#","Utilisateur","Niveau","Checkin","Promo","Invit","Total","PtsEff","Badge"], badgeDiamond:"DIAMANT", badgePlat:"PLATINE", badgeGold:"OR", badgeSilver:"ARGENT", badgeBronze:"BRONZE", checkinHead:["Utilisateur","Date","Checkin","Promo 30min","Tâche IA","Pts Jour"], footer:`Mis à jour: ${new Date().toISOString().slice(0,10)} | EACO v3.0` },
-  ar: { heroTitle:"نظام التوافق الشهري EACO", heroSub:"أدنى صفقة $0.01 | نقاط تلقائية | ترتيب", ftMin:"الحد الأدنى: $0.01", ftDesc:"ابدأ بـ سنت واحد!", caLabel:"عنوان العقد:", copyCopied:"تم النسخ!", kpiCheckins:"تسجيل يومي", kpiPromo:"دقائق ترويج", kpiMembers:"أعضاء نشطون", kpiPoints:"إجمالي النقاط", kpiConsensus:"مؤشر التوافق", kpiTarget:"/ الهدف", consensusTitle:"بركة قوة التوافق", unlock60:"🎁 إيردروب (60)", unlock70:"🌿 مكافآت بيئية (70)", unlock80:"🤝 شركاء (80)", unlock90:"🖼️ NFT خاص (90)", unlock100:"👑 حوكمة فائقة (100)", levelL1:"L1 مستكشف", levelL1Cond:"تسجيل + 7 أيام متتالية", levelL2:"L2 باني", levelL2Cond:"30 يوم متتالي + 15 ترويج", levelL3:"L3 سفير", levelL3Cond:"60 ترويج + 20 دعوة", levelL4:"L4 قائد", levelL4Cond:"100 دعوة + 90 مساهمة", levelL5:"L5 شريك عالمي", levelL5Cond:"تصويت DAO + مساهمة بيئية", rankHead:["#","مستخدم","المستوى","تسجيل","ترويج","دعوة","المجموع","نقاط فعالة","شارة"], badgeDiamond:"ماسي", badgePlat:"بلاتيني", badgeGold:"ذهبي", badgeSilver:"فضي", badgeBronze:"برونزي", checkinHead:["مستخدم","تاريخ","تسجيل","ترويج 30دقيقة","مهمة ذكاء","نقاط اليوم"], footer:`تحديث: ${new Date().toISOString().slice(0,10)} | EACO v3.0` },
-  ru: { heroTitle:"Система Ежемесячного Консенсуса EACO", heroSub:"Мин. сделка $0.01 | Автоочки | Рейтинг", ftMin:"Мин. Сделка: $0.01", ftDesc:"Начните с одного цента!", caLabel:"Адрес контракта:", copyCopied:"Скопировано!", kpiCheckins:"Ежедневные чекины", kpiPromo:"Минуты промо", kpiMembers:"Активные участники", kpiPoints:"Всего очков", kpiConsensus:"Индекс консенсуса", kpiTarget:"/ Цель", consensusTitle:"Пул Силы Консенсуса", unlock60:"🎁 Эйрдроп (60)", unlock70:"🌿 ЭкоНаграды (70)", unlock80:"🤝 Партнёры (80)", unlock90:"🖼️ Особый NFT (90)", unlock100:"👑 Супер Управление (100)", levelL1:"L1 Исследователь", levelL1Cond:"Регистрация + 7 дней серии", levelL2:"L2 Строитель", levelL2Cond:"30 дней серии + 15 промо", levelL3:"L3 Посол", levelL3Cond:"60 промо + 20 приглашений", levelL4:"L4 Лидер", levelL4Cond:"100 приглашений + 90 вклада", levelL5:"L5 Глобальный Партнёр", levelL5Cond:"Голосование DAO + эко вклад", rankHead:["#","Пользователь","Уровень","Чекин","Промо","Пригл","Итого","ЭффОчки","Значок"], diamond:"АЛМАЗНЫЙ", plat:"ПЛАТИНОВЫЙ", gold:"ЗОЛОТОЙ", silver:"СЕРЕБРЯНЫЙ", bronze:"БРОНЗОВЫЙ", checkinHead:["Пользователь","Дата","Чекин","Промо 30мин","AI Задача","Очки Дня"], footer:`Обновлено: ${new Date().toISOString().slice(0,10)} | EACO v3.0` }
+  en: { heroTitle:"EACO - AI Community Token on Solana", heroSub:"Tutorial + Monthly Consensus + Promotion Strategy", ftMin:"$0.01 Minimum Trade", ftDesc:"Start from just one cent!", caLabel:"Contract Address:", copyCopied:"Copied!", tabGuide:"Tutorial", tabConsensus:"Consensus", tabPromotion:"Promotion", tabLevels:"Levels", guideTitle:"Get Started", securityTitle:"Security First", checkinPts:"Daily Check-in (10pts)", promoPts:"Promo 30min (30pts)", aiPts:"AI Task (20pts)", invitePts:"L1 Invite (50pts)", consensusTitle:"Consensus Power Pool", budgetTitle:"Budget Summary", levelsTitle:"Level System", badgeTitle:"Badge System", stakeTitle:"Staking Multipliers" },
+  zh: { heroTitle:"EACO - Solana AI 社区代币", heroSub:"教程 + 月度共识 + 推广策略", ftMin:"最低交易 $0.01", ftDesc:"一分钱开始！", caLabel:"合约地址：", copyCopied:"已复制！", tabGuide:"教程", tabConsensus:"共识", tabPromotion:"推广", tabLevels:"等级", guideTitle:"入门指南", securityTitle:"安全第一", checkinPts:"每日签到(+10分)", promoPts:"推广30分钟(+30分)", aiPts:"AI任务(+20分)", invitePts:"一级邀请(+50分)", consensusTitle:"共识能量池", budgetTitle:"预算总结", levelsTitle:"等级体系", badgeTitle:"徽章系统", stakeTitle:"锁仓加成" },
+  es: { heroTitle:"EACO - Token Comunitario IA", heroSub:"Tutorial + Consenso Mensual + Promoción", ftMin:"Mín. $0.01", ftDesc:"¡Empieza con un centavo!", caLabel:"Dirección:", copyCopied:"¡Copiado!", tabGuide:"Guía", tabConsensus:"Consenso", tabPromotion:"Promo", tabLevels:"Niveles", guideTitle:"Comenzar", securityTitle:"Seguridad", checkinPts:"Check-in diario (+10)", promoPts:"Promo 30min (+30)", aiPts:"Tarea IA (+20)", invitePts:"Invitación L1 (+50)", consensusTitle:"Pool Consenso", budgetTitle:"Presupuesto", levelsTitle:"Niveles", badgeTitle:"Insignias", stakeTitle:"Staking" },
+  fr: { heroTitle:"EACO - Token Communautaire IA", heroSub:"Tutoriel + Consensus + Promotion", ftMin:"Min. $0.01", ftDesc:"Commencez avec un centime!", caLabel:"Adresse:", copyCopied:"Copié!", tabGuide:"Guide", tabConsensus:"Consensus", tabPromotion:"Promo", tabLevels:"Niveaux", guideTitle:"Commencer", securityTitle:"Sécurité", checkinPts:"Check-in quotidien (+10)", promoPts:"Promo 30min (+30)", aiPts:"Tâche IA (+20)", invitePts:"Invitation L1 (+50)", consensusTitle:"Pool de Consensus", budgetTitle:"Budget", levelsTitle:"Niveaux", badgeTitle:"Badges", stakeTitle:"Staking" },
+  ar: { heroTitle:"EACO - رمز مجتمع الذكاء", heroSub:"الدليل + التوافق الشهري + الترويج", ftMin:"الحد الأدنى $0.01", ftDesc:"ابدأ بسنت واحد!", caLabel:"العنوان:", copyCopied:"تم النسخ!", tabGuide:"الدليل", tabConsensus:"التوافق", tabPromotion:"الترويج", tabLevels:"المستويات", guideTitle:"البدء", securityTitle:"الأمان", checkinPts:"تسجيل يومي (+10)", promoPts:"ترويج 30د (+30)", aiPts:"مهمة ذكاء (+20)", invitePts:"دعوة المستوى1 (+50)", consensusTitle:"بركة التوافق", budgetTitle:"الميزانية", levelsTitle:"المستويات", badgeTitle:"الشارات", stakeTitle:"الstaking" },
+  ru: { heroTitle:"EACO - Токен Сообщества ИИ", heroSub:"Руководство + Консенсус + Продвижение", ftMin:"Мин. $0.01", ftDesc:"Начните с одного цента!", caLabel:"Адрес:", copyCopied:"Скопировано!", tabGuide:"Руководство", tabConsensus:"Консенсус", tabPromotion:"Продвижение", tabLevels:"Уровни", guideTitle:"Начать", securityTitle:"Безопасность", checkinPts:"Чекин ежедневно (+10)", promoPts:"Промо 30мин (+30)", aiPts:"Задача ИИ (+20)", invitePts:"Приглашение L1 (+50)", consensusTitle:"Пул Консенсуса", budgetTitle:"Бюджет", levelsTitle:"Уровни", badgeTitle:"Значки", stakeTitle:"Стейкинг" }
 };
 
 const rtlLangs = ['ar'];
@@ -244,98 +456,20 @@ let curLang = localStorage.getItem('eaco_lang') || 'en';
 
 function t(k){return(i18n[curLang]&&i18n[curLang][k])||(i18n['en'][k])||k;}
 function $(id){return document.getElementById(id);}
-
-function applyLang(){
-  document.documentElement.lang = curLang;
-  document.documentElement.dir = rtlLangs.includes(curLang)?'rtl':'ltr';
-  $('heroTitle').textContent=t('heroTitle');$('heroSub').textContent=t('heroSub');
-  $('ftMin').textContent=t('ftMin');$('ftDesc').textContent=t('ftDesc');
-  $('caLabel').textContent=t('caLabel');
-  $('footerText').textContent=t('footer');
-  renderAll();
+function showTab(tabId){
+  $('.tab-content').forEach(el=>el.classList.remove('active'));
+  $('.tab-link').forEach(el=>el.classList.remove('active'));
+  $(tabId).classList.add('active');
+  event.target.classList.add('active');
 }
-
-function setLang(l){curLang=l;localStorage.setItem('eaco_lang',l);applyLang();}
-
 function copyCA(){navigator.clipboard.writeText('DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH').then(()=>{
   const b=document.querySelector('.copy-btn');
   b.textContent=t('copyCopied');b.style.background='var(--green)';
   setTimeout(()=>{b.textContent='Copy';b.style.background='';},2000);
 });}
 
-// ====== Render Functions ======
-
-function renderKPI(){
-  const data=[
-    {val:'156',label:t('kpiCheckins'),sub:'/ 500 target',cls:''},
-    {val:'4,280',label:t('kpiPromo'),sub:'minutes total',cls:'green'},
-    {val:'89',label:t('kpiMembers'),sub:'active users',cls:'gold'},
-    {val:'12,450',label:t('kpiPoints'),sub:'total points',cls:''},
-    {val:'73',label:t('kpiConsensus'),sub:'/ 100',cls:'purple'},
-  ];
-  $('kpiGrid').innerHTML=data.map(d=>`<div class="kpi-card ${d.cls}"><div class="kpi-val">${d.val}</div><div class="kpi-label">${d.label}</div><div class="kpi-sub">${d.sub}</div></div>`).join('');
-}
-
-function renderConsensus(){
-  const idx=73;
-  $('consensusFill').style.width=idx+'%';
-  $('consensusValue').textContent=`${idx} / 100`;
-  const unlocks=[{thr:60,name:t('unlock60')},{thr:70,name:t('unlock70')},{thr:80,name:t('unlock80')},{thr:90,name:t('unlock90')},{thr:100,name:t('unlock100')}];
-  $('unlockGrid').innerHTML=unlocks.map(u=>`<div class="unlock-item ${idx>=u.thr?'unlocked':'locked'}">${u.name}</div>`).join('');
-}
-
-function renderLevels(){
-  const lvls=[
-    {icon:'🧭',name:t('levelL1'),cond:t('levelL1Cond')},
-    {icon:'🔨',name:t('levelL2'),cond:t('levelL2Cond')},
-    {icon:'🎤',name:t('levelL3'),cond:t('levelL3Cond')},
-    {icon:'👑',name:t('levelL4'),cond:t('levelL4Cond')},
-    {icon:'🌐',name:t('levelL5'),cond:t('levelL5Cond')},
-  ];
-  $('levelGrid').innerHTML=lvls.map(l=>`<div class="level-card"><div class="level-icon">${l.icon}</div><div class="level-name">${l.name}</div><div class="level-cond">${l.cond}</div></div>`).join('');
-}
-
-function renderRanking(){
-  const users=[
-    ['U0001','Alice','L3 Ambassador',420,380,250,1050,1260,'badge-gold'],
-    ['U0002','Bob','L2 Builder',380,320,120,820,984,'badge-silver'],
-    ['U0003','Carol','L3 Ambassador',350,400,180,930,1116,'badge-gold'],
-    ['U0004','Dave','L2 Builder',310,280,90,680,816,'badge-bronze'],
-    ['U0005','Eve','L4 Leader',290,450,300,1040,1560,'badge-platinum'],
-    ['U0006','Frank','L1 Explorer',270,220,50,540,594,'badge-bronze'],
-    ['U0007','Grace','L2 Builder',260,300,110,670,804,'badge-silver'],
-    ['U0008','Hank','L1 Explorer',240,180,40,460,506,'badge-bronze'],
-    ['U0009','Ivy','L3 Ambassador',230,360,200,790,948,'badge-gold'],
-    ['U0010','Jack','L1 Explorer',210,150,30,390,429,'badge-bronze'],
-  ];
-  const badges={diamond:t('badgeDiamond'),plat:t('badgePlat'),gold:t('badgeGold'),silver:t('badgeSilver'),bronze:t('badgeBronze')};
-  $('rankingBody').innerHTML=users.map((u,i)=>{
-    const cls=i===0?'rank-1':i===1?'rank-2':i===2?'rank-3':'';
-    return `<tr class="${cls}"><td>${i+1}</td><td>${u[0]}</td><td>${u[2]}</td><td>${u[3]}</td><td>${u[4]}</td><td>${u[5]}</td><td><b>${u[6]}</b></td><td>${u[7]}</td><td><span class="badge ${u[8]}">${u[8].replace('badge-','').toUpperCase()}</span></td></tr>`;
-  }).join('');
-}
-
-function renderCheckin(){
-  const today=new Date().toISOString().slice(0,10);
-  const rows=[
-    ['U0001',today,'✅','✅','✅',60],
-    ['U0002',today,'✅','✅','❌',40],
-    ['U0003',today,'✅','✅','✅',60],
-    ['U0004',today,'✅','❌','✅',30],
-    ['U0005',today,'✅','✅','✅',60],
-    ['U0006',today,'❌','✅','❌',30],
-    ['U0007',today,'✅','✅','❌',40],
-    ['U0008',today,'✅','❌','❌',10],
-  ];
-  $('checkinBody').innerHTML=rows.map(r=>`<tr><td>${r[0]}</td><td>${r[1]}</td><td>${r[2]}</td><td>${r[3]}</td><td>${r[4]}</td><td><b>${r[5]}</b></td></tr>`).join('');
-}
-
-function renderAll(){renderKPI();renderConsensus();renderLevels();renderRanking();renderCheckin();}
-
 // Lang buttons
-const langs=[{code:'en',name:'English 🇬🇧'},{code:'zh',name:'中文 🇨🇳'},{code:'es',name:'Español 🇪🇸'},{code:'fr',name:'Français 🇫🇷'},{code:'ar',name:'العربية 🇸🇦'},{code:'ru',name:'Русский 🇷🇺'}];
-$('langSwitch').innerHTML=langs.map(l=>`<button class="lang-btn${l.code===curLang?' active':''}" onclick="setLang('${l.code}')">${l.name}</button>`).join('');
-
-applyLang();
+const langs=[{code:'en',name:'EN'},{code:'zh',name:'中文'},{code:'es',name:'ES'},{code:'fr',name:'FR'},{code:'ar',name:'ع'},{code:'ru',name:'RU'}];
+$('langSwitch').innerHTML=langs.map(l=>`<button class="lang-btn${l.code===curLang?' active':''}" onclick="curLang=l.code;localStorage.setItem('eaco_lang',l.code)">${l.name}</button>`).join('');
 </script>
 </body></html>
