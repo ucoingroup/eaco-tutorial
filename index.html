@@ -3,410 +3,90 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>EACO - Complete Guide | Consensus | Promotion | Min Trade $0.01</title>
-<meta name="description" content="EACO AI Community Token on Solana. Get your first EACO step by step. Min trade $0.01.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<title>EACO Beginner Guide | 6 Languages</title>
 <style>
-:root{--pri:#1a73e8;--dark:#0d1b2a;--acc:#00d4aa;--gold:#ffd700;--green:#00c853;--red:#e74c3c;--purple:#9b59b6;--bg:#f0f2f5;--card:#fff;--border:#e0e0e0}
+:root{--primary:#1a73e8;--dark:#0d1b2a;--accent:#00d4aa;--gold:#ffd700;--bg:#f8fafc;--card:#fff}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:#333;line-height:1.6}
-body[dir=rtl]{font-family:'Segoe UI','Tahoma',Arial,sans-serif;direction:rtl}
-body[lang=ja],body[lang=ko]{font-family:'Inter','Hiragino Sans','Yu Gothic','Malgun Gothic',sans-serif}
-body[lang=zh-TW],body[lang=zh-CN]{font-family:'Inter','PingFang SC','Microsoft JhengHei',sans-serif}
-body[lang=th]{font-family:'Inter','Tahoma','Leelawadee',sans-serif}
-
-.nav{background:var(--dark);padding:.7rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;flex-wrap:wrap;gap:8px}
-.nav h1{color:#fff;font-size:1.1rem;font-weight:700;letter-spacing:-.3px}
-.nav h1 span{color:var(--acc)}
-.lang-switch{display:flex;gap:4px;flex-wrap:wrap;align-items:center}
-.lang-btn{padding:4px 10px;border:1px solid rgba(255,255,255,.3);border-radius:20px;background:transparent;color:#aaa;cursor:pointer;font-size:.72rem;transition:.2s;white-space:nowrap}
-.lang-btn:hover,.lang-btn.active{background:var(--acc);color:#fff;border-color:var(--acc)}
-.lang-dropdown-btn{padding:4px 10px;border:1px solid rgba(255,255,255,.3);border-radius:20px;background:transparent;color:#fff;cursor:pointer;font-size:.72rem;transition:.2s;display:flex;align-items:center;gap:4px}
-.lang-dropdown-btn:hover{background:rgba(255,255,255,.1)}
-.lang-dropdown{display:none;position:absolute;top:100%;right:0;background:var(--dark);border:1px solid rgba(255,255,255,.15);border-radius:12px;overflow:hidden;min-width:200px;max-height:320px;overflow-y:auto;box-shadow:0 8px 32px rgba(0,0,0,.4);z-index:200;margin-top:6px}
-.lang-dropdown.show{display:block}
-.lang-option{padding:10px 16px;cursor:pointer;transition:.15s;font-size:.85rem;color:#ccc;display:flex;align-items:center;gap:8px}
-.lang-option:hover{background:var(--acc);color:#fff}
-.lang-option.active-lang{background:rgba(0,212,170,.2);color:var(--acc);pointer-events:none}
-.lang-option .flag{font-size:1.1rem}
-.lang-option .lang-native{font-size:.78rem;opacity:.7;margin-left:auto}
-.lang-group{border-bottom:1px solid rgba(255,255,255,.08);padding:4px 0}
-.lang-group-label{font-size:.68rem;color:#666;padding:8px 16px 4px;text-transform:uppercase;letter-spacing:.5px}
-
-.hero{text-align:center;padding:2.5rem 1rem;background:linear-gradient(135deg,var(--dark),#1b3a4b);color:#fff;position:relative}
-.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 30% 50%,rgba(0,212,170,.1),transparent 60%),radial-gradient(ellipse at 70% 50%,rgba(255,215,0,.08),transparent 60%);pointer-events:none}
-.hero h2{font-size:1.8rem;margin-bottom:.3rem;position:relative;font-weight:800}
-.hero p{color:var(--acc);font-size:.95rem;margin-bottom:1rem;position:relative}
-
-.min-banner{background:linear-gradient(135deg,#00c853,#00e676);color:#fff;padding:.8rem 1.5rem;border-radius:14px;max-width:560px;margin:.5rem auto 1rem;display:flex;align-items:center;gap:1rem;box-shadow:0 4px 20px rgba(0,200,83,.35);position:relative;flex-wrap:wrap;justify-content:center}
-.min-banner .icon{font-size:2rem}
-.min-banner .text h3{font-size:1rem;margin-bottom:.2rem}
-.min-banner .text p{font-size:.8rem;opacity:.9}
-
-.ca-box{max-width:580px;margin:0 auto .8rem;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:1rem}
-.ca-label{font-size:.72rem;color:#888;margin-bottom:.25rem}
-.ca-value{font-family:'Courier New',monospace;font-size:.78rem;word-break:break-all;color:var(--gold);background:rgba(0,0,0,.4);padding:8px 12px;border-radius:6px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap}
-.copy-btn{background:var(--acc);border:none;color:#fff;padding:5px 14px;border-radius:6px;cursor:pointer;font-size:.72rem;white-space:nowrap;transition:.2s}
-.copy-btn:hover{background:#00b894;transform:translateY(-1px)}
-.copy-btn.copied{background:#ffd700;color:#000}
-
-.btn-row{display:flex;gap:10px;justify-content:center;margin-top:.9rem;flex-wrap:wrap;position:relative}
-.btn{padding:8px 20px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.85rem;transition:.2s;display:inline-flex;align-items:center;gap:6px}
-.btn-pri{background:var(--acc);color:#fff}.btn-pri:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,212,170,.4)}
-.btn-sec{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}.btn-sec:hover{background:rgba(255,255,255,.2)}
-
-.container{max-width:960px;margin:0 auto;padding:1rem 1rem}
-
-.section{background:var(--card);border-radius:16px;padding:1.4rem;margin-bottom:1rem;box-shadow:0 2px 12px rgba(0,0,0,.05)}
-.section h3{font-size:1.05rem;margin-bottom:1rem;display:flex;align-items:center;gap:8px;color:var(--pri);font-weight:700}
-.section h3 .emoji{font-size:1.2rem}
-
-.tabs{display:flex;gap:4px;margin-bottom:1rem;flex-wrap:wrap}
-.tab-btn{padding:8px 16px;border:none;border-radius:8px 8px 0 0;background:#e8e8e8;color:#666;cursor:pointer;font-size:.82rem;transition:.2s}
-.tab-btn:hover{background:#d0d0d0}
-.tab-btn.active{background:var(--pri);color:#fff}
-
-.tab-content{display:none}
-.tab-content.active{display:block}
-
-.step-card{background:#fafafa;border:1px solid var(--border);border-radius:14px;padding:1.2rem;margin-bottom:.8rem;position:relative;transition:.2s}
-.step-card:hover{border-color:var(--pri);transform:translateY(-2px);box-shadow:0 4px 16px rgba(0,0,0,.08)}
-.step-num{position:absolute;top:-12px;left:16px;background:linear-gradient(135deg,var(--pri),var(--acc));color:#fff;width:28px;height:28px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.82rem}
-.step-card h4{font-size:1rem;margin:.3rem 0 .5rem;color:#1a1a2e}
-.step-card p{color:#666;font-size:.88rem}
-.step-card .step-link{display:inline-flex;align-items:center;gap:4px;margin-top:.6rem;padding:6px 14px;background:var(--pri);color:#fff;border-radius:8px;text-decoration:none;font-size:.8rem;font-weight:600;transition:.2s}
-.step-card .step-link:hover{background:#1557b0;transform:translateY(-1px)}
-
-.warning-box{background:#fff3cd;border:1px solid #ffc107;border-radius:12px;padding:1rem 1.2rem;margin-bottom:1rem}
-.warning-box .warning-title{font-weight:700;color:#856404;margin-bottom:.5rem;display:flex;align-items:center;gap:6px;font-size:.9rem}
-.warning-box p{color:#856404;font-size:.85rem;line-height:1.7}
-
-.info-card{background:#f8f9fa;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:.7rem}
-.info-card h4{font-size:.9rem;color:var(--pri);margin-bottom:.3rem;font-weight:600}
-.info-card p{color:#555;font-size:.85rem}
-.info-card a{color:var(--pri);font-weight:500}
-
-.ca-verify-grid{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-top:.5rem}
-@media(max-width:500px){.ca-verify-grid{grid-template-columns:1fr}}
-
-.tip-card{display:flex;align-items:flex-start;gap:12px;background:#f8f9fa;border:1px solid var(--border);border-radius:12px;padding:1rem 1.2rem;margin-bottom:.7rem}
-.tip-icon{font-size:1.4rem;flex-shrink:0;margin-top:2px}
-.tip-content h4{font-size:.9rem;color:#1a1a2e;font-weight:600;margin-bottom:.3rem}
-.tip-content p{color:#666;font-size:.85rem}
-
-.consensus-section{background:linear-gradient(135deg,#f0f4ff,#e8f5e9);border:1px solid #c5cae9}
-.consensus-section h3{color:var(--purple)}
-.consensus-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.7rem;margin-top:.5rem}
-@media(max-width:600px){.consensus-grid{grid-template-columns:1fr}}
-.consensus-item{background:#fff;border-radius:10px;padding:.8rem;text-align:center}
-.consensus-item .label{font-size:.75rem;color:#888;margin-bottom:.2rem}
-.consensus-item .value{font-size:1.1rem;font-weight:700;color:var(--pri)}
-.consensus-item .sub{font-size:.72rem;color:#999}
-
-.rank-table{width:100%;border-collapse:collapse;font-size:.85rem}
-.rank-table th{background:var(--pri);color:#fff;padding:8px 12px;text-align:left;border-radius:8px 8px 0 0}
-.rank-table td{padding:8px 12px;border-bottom:1px solid #eee}
-.rank-table tr:last-child td{border-bottom:none}
-.rank-table .rank-medal{font-size:.9rem}
-.rank-table .rank-name{font-weight:600}
-.rank-table .rank-pts{color:var(--pri);font-weight:600}
-.rank-badge{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.75rem;font-weight:600}
-.rank-badge.diamond{background:#e8f5e9;color:#2e7d32}
-.rank-badge.gold{background:#fff8e1;color:#f57f17}
-.rank-badge.silver{background:#f5f5f5;color:#616161}
-.rank-badge.bronze{background:#fff3e0;color:#bf360c}
-.rank-badge.rookie{background:#e3f2fd;color:#1565c0}
-
-.promo-section{background:linear-gradient(135deg,#fff9c4,#fff3e0);border:1px solid #ffe082}
-.promo-section h3{color:#e65100}
-
-footer{text-align:center;padding:2rem 1rem;color:#888;font-size:.82rem;border-top:1px solid #e0e0e0;margin-top:1rem}
-footer p{opacity:.7}
-
-@media(max-width:600px){
-  .nav{padding:.6rem 1rem}
-  .hero h2{font-size:1.4rem}
-  .lang-dropdown{min-width:160px}
-  .ca-verify-grid,.consensus-grid{grid-template-columns:1fr}
-  .step-num{width:24px;height:24px;font-size:.75rem;top:-10px}
-}
-
-::-webkit-scrollbar{width:6px}
-::-webkit-scrollbar-track{background:transparent}
-::-webkit-scrollbar-thumb{background:#ccc;border-radius:3px}
-.lang-dropdown::-webkit-scrollbar{width:4px}
-.lang-dropdown::-webkit-scrollbar-thumb{background:rgba(255,255,255,.2)}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:#333;line-height:1.6;transition:.3s}
+body[dir=rtl]{font-family:'Tahoma',Arial,sans-serif}
+.nav{background:var(--dark);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.3)}
+.nav h1{color:#fff;font-size:1.3rem}.nav h1 span{color:var(--accent)}
+.lang-switch{display:flex;gap:4px;flex-wrap:wrap}
+.lang-btn{padding:4px 10px;border:1px solid rgba(255,255,255,.3);border-radius:20px;background:transparent;color:#aaa;cursor:pointer;font-size:.75rem;transition:.2s}
+.lang-btn:hover,.lang-btn.active{background:var(--accent);color:#fff;border-color:var(--accent)}
+.hero{text-align:center;padding:4rem 1rem;background:linear-gradient(135deg,var(--dark),#1b2838);color:#fff}
+.hero h2{font-size:2.2rem;margin-bottom:.5rem}.hero p{font-size:1.1rem;color:var(--accent);opacity:.9}
+.ca-box{max-width:600px;margin:2rem auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:1.2rem;text-align:left}
+.ca-label{font-size:.8rem;color:#888;margin-bottom:.4px}
+.ca-value{font-family:'Courier New',monospace;font-size:.85rem;word-break:break-all;color:var(--gold);background:rgba(0,0,0,.3);padding:8px 12px;border-radius:6px;display:flex;justify-content:space-between;align-items:center}
+.copy-btn{background:var(--accent);border:none;color:#fff;padding:4px 12px;border-radius:6px;cursor:pointer;font-size:.75rem;white-space:nowrap}
+.btn-row{display:flex;gap:10px;justify-content:center;margin-top:1rem;flex-wrap:wrap}
+.btn{padding:10px 24px;border-radius:8px;text-decoration:none;font-weight:600;font-size:.9rem;transition:.2s;display:inline-block}
+.btn-primary{background:var(--accent);color:#fff}.btn-primary:hover{transform:translateY(-2px);box-shadow:0 4px 15px rgba(0,212,170,.4)}
+.btn-secondary{background:rgba(255,255,255,.1);color:#fff;border:1px solid rgba(255,255,255,.2)}
+.container{max-width:900px;margin:0 auto;padding:2rem 1rem}
+.section{background:var(--card);border-radius:16px;padding:2rem;margin-bottom:1.5rem;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+.section h3{color:var(--primary);margin-bottom:1rem;font-size:1.3rem;display:flex;align-items:center;gap:8px}
+.steps{counter-reset:step}.step{display:flex;gap:1rem;margin-bottom:1.5rem;padding:1rem;background:var(--bg);border-radius:12px;border-left:4px solid var(--accent)}
+.step-num{width:36px;height:36px;background:var(--primary);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:bold;flex-shrink:0}
+.step-content h4{margin-bottom:.3rem;color:var(--dark)}
+.security-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.sec-item{padding:1rem;background:#fff5f5;border-radius:10px;border-left:3px solid #e74c3c;font-size:.9rem}
+.tips-list{list-style:none}.tips-list li{padding:.7rem 0;padding-left:2rem;position:relative;border-bottom:1px solid #eee}
+.tips-list li:before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:bold}
+.footer{text-align:center;padding:2rem;color:#888;font-size:.85rem;background:var(--dark);color:#aaa}
+@media(max-width:600px){.hero h2{font-size:1.6rem}.section{padding:1.2rem}.ca-value{font-size:.75rem}}
 </style>
 </head>
 <body>
-<nav>
-  <h1>🪙 <span>EACO</span> <span style="font-size:.7rem;color:#888;font-weight:400" data-i18n="nav_subtitle">Beginner's Guide</span></h1>
-  <div class="lang-switch">
-    <div style="position:relative">
-      <button class="lang-dropdown-btn" onclick="toggleLangDropdown()" id="langBtn">🌐 English ▾</button>
-      <div class="lang-dropdown" id="langDropdown">
-        <div class="lang-group">
-          <div class="lang-group-label">UN Official Languages</div>
-          <div class="lang-option" onclick="setLang('en')"><span class="flag">🇺🇸</span> English <span class="lang-native">English</span></div>
-          <div class="lang-option" onclick="setLang('zh')"><span class="flag">🇨🇳</span> 中文 <span class="lang-native">Chinese</span></div>
-          <div class="lang-option" onclick="setLang('es')"><span class="flag">🇪🇸</span> Español <span class="lang-native">Spanish</span></div>
-          <div class="lang-option" onclick="setLang('fr')"><span class="flag">🇫🇷</span> Français <span class="lang-native">French</span></div>
-          <div class="lang-option" onclick="setLang('ar')"><span class="flag">🇸🇦</span> العربية <span class="lang-native">Arabic</span></div>
-          <div class="lang-option" onclick="setLang('ru')"><span class="flag">🇷🇺</span> Русский <span class="lang-native">Russian</span></div>
-        </div>
-        <div class="lang-group">
-          <div class="lang-group-label">Asia Pacific</div>
-          <div class="lang-option" onclick="setLang('ja')"><span class="flag">🇯🇵</span> 日本語 <span class="lang-native">Japanese</span></div>
-          <div class="lang-option" onclick="setLang('ko')"><span class="flag">🇰🇷</span> 한국어 <span class="lang-native">Korean</span></div>
-          <div class="lang-option" onclick="setLang('vi')"><span class="flag">🇻🇳</span> Tiếng Việt <span class="lang-native">Vietnamese</span></div>
-          <div class="lang-option" onclick="setLang('ms')"><span class="flag">🇲🇾</span> Bahasa Melayu <span class="lang-native">Malay</span></div>
-          <div class="lang-option" onclick="setLang('th')"><span class="flag">🇹🇭</span> ไทย <span class="lang-native">Thai</span></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</nav>
-
-<div class="hero">
-  <h2 data-i18n="hero_title">EACO Beginner's Guide</h2>
-  <p data-i18n="hero_sub">Your first EACO token — step by step, safe and simple</p>
-  <div class="min-banner">
-    <div class="icon">💰</div>
-    <div class="text">
-      <h3 data-i18n="banner_title">$0.01 Minimum Trade</h3>
-      <p data-i18n="banner_sub">Start trading EACO from just one cent — beginner friendly!</p>
-    </div>
-  </div>
-  <div class="ca-box">
-    <div class="ca-label" data-i18n="ca_label">Contract Address (CA)</div>
-    <div class="ca-value">
-      <span id="caText">DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</span>
-      <button class="copy-btn" onclick="copyCA()" id="copyBtn" data-i18n="btn_copy">Copy</button>
-    </div>
-  </div>
-  <div class="btn-row">
-    <a href="https://solflare.com/" target="_blank" class="btn btn-pri">🔗 <span data-i18n="btn_solflare">Get Solflare Wallet</span></a>
-    <a href="https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-sec">🔍 <span data-i18n="btn_explorer">View on Explorer</span></a>
-  </div>
-</div>
+<nav class="nav"><h1>🚀 <span>EACO</span> Guide</h1><div class="lang-switch" id="langSwitch"></div></nav>
+<div class="hero"><h2 id="heroTitle">Loading...</h2><p id="heroSubtitle"></p>
+<div class="ca-box"><div class="ca-label" id="caLabel">Contract Address:</div><div class="ca-value"><span id="caValue"></span><button class="copy-btn" onclick="copyCA()" id="copyBtn">Copy</button></div></div>
+<div class="btn-row"><a href="https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-primary" id="orbBtn">OrbMarkets</a><a href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank" class="btn btn-secondary" id="solscanBtn">Solscan</a></div></div>
 
 <div class="container">
-  <div class="tabs">
-    <button class="tab-btn active" onclick="switchTab('tutorial')" id="tab_tutorial" data-i18n="tab_tutorial">📘 Tutorial</button>
-    <button class="tab-btn" onclick="switchTab('safety')" id="tab_safety" data-i18n="tab_safety">🛡️ Safety</button>
-    <button class="tab-btn" onclick="switchTab('consensus')" id="tab_consensus" data-i18n="tab_consensus">🏆 Consensus</button>
-    <button class="tab-btn" onclick="switchTab('promotion')" id="tab_promotion" data-i18n="tab_promotion">🚀 Promotion</button>
-  </div>
+<div class="section"><h3 id="walletSection">📱 Step 1: Get a Wallet</h3><p id="walletDesc"></p><a href="https://solflare.com/" target="_blank" class="btn btn-primary" id="walletLinkText">Download Solflare →</a></div>
 
-  <div class="tab-content active" id="content_tutorial">
-    <div class="section">
-      <h3><span class="emoji">🚀</span> <span data-i18n="steps_title">Get Your First EACO</span></h3>
-      <div class="step-card">
-        <div class="step-num">1</div>
-        <h4 data-i18n="s1_title">Install Solflare Wallet</h4>
-        <p data-i18n="s1_desc">Download Solflare from the official website. Available as browser extension and mobile app. Never download from unofficial sources.</p>
-        <a href="https://solflare.com/" target="_blank" class="step-link">🔗 <span data-i18n="s1_btn">Get Solflare</span></a>
-      </div>
-      <div class="step-card">
-        <div class="step-num">2</div>
-        <h4 data-i18n="s2_title">Create or Import Wallet</h4>
-        <p data-i18n="s2_desc">Create a new wallet or import an existing one. Write down your seed phrase on paper and store it somewhere safe. Never store it digitally or share it with anyone.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">3</div>
-        <h4 data-i18n="s3_title">Deposit SOL</h4>
-        <p data-i18n="s3_desc">Transfer SOL to your Solflare wallet. You need SOL to swap for EACO and pay gas fees. Always keep at least <strong>0.05 SOL</strong> for transaction fees.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">4</div>
-        <h4 data-i18n="s4_title">Swap SOL → EACO</h4>
-        <p data-i18n="s4_desc">Open Solflare built-in Swap. Paste the EACO contract address:</p>
-        <div style="background:#f0f0f0;padding:6px 10px;border-radius:6px;font-family:monospace;font-size:.8rem;color:var(--pri);margin:.5rem 0;word-break:break-all">DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH</div>
-        <p data-i18n="s4_desc2">Double-check the contract address, enter the amount, and confirm the swap.</p>
-      </div>
-      <div class="step-card">
-        <div class="step-num">5</div>
-        <h4 data-i18n="s5_title">Verify Your EACO</h4>
-        <p data-i18n="s5_desc">After the transaction completes, check your EACO balance in Solflare. You can also verify on Solscan using your wallet address.</p>
-      </div>
-    </div>
-  </div>
+<div class="section"><h3 id="securityTitle">🔒 Security First</h3><div class="security-grid" id="securityGrid"></div></div>
 
-  <div class="tab-content" id="content_safety">
-    <div class="section">
-      <h3><span class="emoji">🛡️</span> <span data-i18n="safety_title">Safety Reminders</span></h3>
-      <div class="warning-box">
-        <div class="warning-title">⚠️ <span data-i18n="warn_title">Stay Positive & Protected</span></div>
-        <p data-i18n="warn_1">Your seed phrase = your wallet. Never share it with anyone, never enter it into any website.</p>
-        <p data-i18n="warn_2">Only use official Solflare and verified links.</p>
-        <p data-i18n="warn_3">Start small — test with tiny amounts before moving bigger ones.</p>
-        <p data-i18n="warn_4">Check the contract address twice before every swap.</p>
-      </div>
-      <div class="section" style="margin-top:1rem;background:transparent;padding:.5rem 0">
-        <h3><span class="emoji">🔍</span> <span data-i18n="exp_title">Official Explorers</span></h3>
-        <div class="ca-verify-grid">
-          <div class="info-card">
-            <h4>OrbMarkets</h4>
-            <p><a href="https://orbmarkets.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank">orbmarkets.io/token/EACO →</a></p>
-          </div>
-          <div class="info-card">
-            <h4>Solscan</h4>
-            <p><a href="https://solscan.io/token/DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH" target="_blank">solscan.io/token/EACO →</a></p>
-          </div>
-        </div>
-      </div>
-      <h3 style="margin-top:.5rem"><span class="emoji">💡</span> <span data-i18n="tips_title">Key Trading Tips</span></h3>
-      <div class="tip-card">
-        <div class="tip-icon">⛽</div>
-        <div class="tip-content">
-          <h4 data-i18n="t1_title">Reserve Gas Fees</h4>
-          <p data-i18n="t1_desc">Always keep at least 0.05 SOL for gas fees. Without it, you cannot send or swap tokens.</p>
-        </div>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">🔄</div>
-        <div class="tip-content">
-          <h4 data-i18n="t2_title">Use Built-in Swap</h4>
-          <p data-i18n="t2_desc">Use Solflare built-in Swap for the safest experience. Avoid unknown DEXs.</p>
-        </div>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">✅</div>
-        <div class="tip-content">
-          <h4 data-i18n="t3_title">Double-Check CA</h4>
-          <p data-i18n="t3_desc">Always verify the contract address before swapping. Scammers create fake tokens with similar names.</p>
-        </div>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">🎯</div>
-        <div class="tip-content">
-          <h4 data-i18n="t4_title">Start Small</h4>
-          <p data-i18n="t4_desc">Test with a small amount first. Once you are confident, you can increase your position.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="section"><h3 id="tutorialTitle">📖 Step-by-Step Guide</h3><div class="steps" id="stepsContainer"></div></div>
 
-  <div class="tab-content" id="content_consensus">
-    <div class="section consensus-section">
-      <h3><span class="emoji">🏆</span> <span data-i18n="consensus_title">Monthly Consensus System</span></h3>
-      <p style="color:#555;font-size:.88rem;margin-bottom:.8rem" data-i18n="consensus_desc">Join the monthly consensus, earn rewards and unlock exclusive badges. Every action counts!</p>
-      <div class="consensus-grid">
-        <div class="consensus-item">
-          <div class="label" data-i18n="energy_pool">Energy Pool</div>
-          <div class="value" style="color:var(--acc)">1,000,000</div>
-          <div class="sub" data-i18n="monthly_rewards">Monthly Rewards</div>
-        </div>
-        <div class="consensus-item">
-          <div class="label" data-i18n="max_earnable">Max/Day</div>
-          <div class="value" style="color:var(--pri)">500</div>
-          <div class="sub" data-i18n="points_per_day">Points Per Day</div>
-        </div>
-        <div class="consensus-item">
-          <div class="label" data-i18n="settle_day">Settlement</div>
-          <div class="value" style="color:var(--purple)">Monday</div>
-          <div class="sub" data-i18n="auto_distribute">Auto Distribute</div>
-        </div>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><span class="emoji">📊</span> <span data-i18n="earning_title">How to Earn Points</span></h3>
-      <div class="step-card" style="background:#f0f8ff">
-        <div class="step-num" style="background:var(--pri)">✓</div>
-        <h4 data-i18n="e1_title">Daily Check-in</h4>
-        <p data-i18n="e1_desc">+10 pts/day. Stay consistent every day to build momentum.</p>
-      </div>
-      <div class="step-card" style="background:#fff3e0">
-        <div class="step-num" style="background:#e65100">✓</div>
-        <h4 data-i18n="e2_title">Promote EACO</h4>
-        <p data-i18n="e2_desc">+30 pts/share. Share with friends and earn points for every successful referral.</p>
-      </div>
-      <div class="step-card" style="background:#f3e5f5">
-        <div class="step-num" style="background:var(--purple)">✓</div>
-        <h4 data-i18n="e3_title">AI Task</h4>
-        <p data-i18n="e3_desc">+20 pts/task. Complete AI-powered community tasks to boost your rank.</p>
-      </div>
-      <div class="step-card" style="background:#e8f5e9">
-        <div class="step-num" style="background:var(--green)">✓</div>
-        <h4 data-i18n="e4_title">Invite Friends</h4>
-        <p data-i18n="e4_desc">L1: +50 pts | L2: +25 pts. The more friends you bring, the higher you climb!</p>
-      </div>
-    </div>
-
-    <div class="section">
-      <h3><span class="emoji">🎖️</span> <span data-i18n="badge_title">Badge System</span></h3>
-      <table class="rank-table">
-        <thead><tr><th data-i18n="badge_col">Badge</th><th data-i18n="level_col">Level</th><th data-i18n="threshold_col">Threshold</th><th data-i18n="bonus_col">Staking Bonus</th></tr></thead>
-        <tbody>
-          <tr><td><span class="rank-badge diamond">💎 DIAMOND</span></td><td class="rank-name">L5</td><td class="rank-pts">100,000+ pts</td><td>2.0x</td></tr>
-          <tr><td><span class="rank-badge gold">🥇 GOLD</span></td><td class="rank-name">L4</td><td class="rank-pts">50,000+ pts</td><td>1.6x</td></tr>
-          <tr><td><span class="rank-badge silver">🥈 SILVER</span></td><td class="rank-name">L3</td><td class="rank-pts">20,000+ pts</td><td>1.3x</td></tr>
-          <tr><td><span class="rank-badge bronze">🥉 BRONZE</span></td><td class="rank-name">L2</td><td class="rank-pts">5,000+ pts</td><td>1.1x</td></tr>
-          <tr><td><span class="rank-badge rookie">🌱 ROOKIE</span></td><td class="rank-name">L1</td><td class="rank-pts">0+ pts</td><td>1.0x</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="tab-content" id="content_promotion">
-    <div class="section promo-section">
-      <h3><span class="emoji">🚀</span> <span data-i18n="promo_title">Promotion Budget Plan</span></h3>
-      <p style="color:#555;font-size:.88rem;margin-bottom:.8rem" data-i18n="promo_desc">Strategic weekly promotion budget to maximize community growth and EACO visibility.</p>
-    </div>
-    <div class="section">
-      <h3><span class="emoji">📋</span> <span data-i18n="promo_schedule">Weekly Schedule</span></h3>
-      <div class="step-card" style="background:#fff9c4">
-        <h4 data-i18n="p1_title">Minimum Weekly Budget</h4>
-        <p data-i18n="p1_desc">≥500 EACO/week (~$5 value). Consistent presence beats sporadic bursts.</p>
-      </div>
-      <div class="step-card" style="background:#e3f2fd">
-        <h4 data-i18n="p2_title">Monthly Projection</h4>
-        <p data-i18n="p2_desc">~15,500–32,400 EACO/month. Budget scales with community size and market conditions.</p>
-      </div>
-      <div class="step-card" style="background:#f3e5f5">
-        <h4 data-i18n="p3_title">Promotion Channels</h4>
-        <p data-i18n="p3_desc">Social media, community groups, influencers, and content creation. Diversify your reach.</p>
-      </div>
-      <div class="step-card" style="background:#e8f5e9">
-        <h4 data-i18n="p4_title">Track & Optimize</h4>
-        <p data-i18n="p4_desc">Monitor engagement metrics weekly. Double down on what works, pause what doesn't.</p>
-      </div>
-    </div>
-    <div class="section">
-      <h3><span class="emoji">🔗</span> <span data-i18n="resources_title">Promotion Resources</span></h3>
-      <div class="tip-card">
-        <div class="tip-icon">📱</div>
-        <div class="tip-content">
-          <h4 data-i18n="res1_title">Social Media Kit</h4>
-          <p data-i18n="res1_desc">Download banners, logos, and pre-written posts to share across all your channels.</p>
-        </div>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">📊</div>
-        <div class="tip-content">
-          <h4 data-i18n="res2_title">EACO Dashboard</h4>
-          <p data-i18n="res2_desc">Real-time statistics, community growth charts, and monthly consensus leaderboard.</p>
-        </div>
-      </div>
-      <div class="tip-card">
-        <div class="tip-icon">💬</div>
-        <div class="tip-content">
-          <h4 data-i18n="res3_title">Community Support</h4>
-          <p data-i18n="res3_desc">Join the EACO community group for tips, resources, and coordination with fellow promoters.</p>
-        </div>
-      </div>
-    </div>
-  </div>
+<div class="section"><h3 id="tipsTitle">💡 Pro Tips</h3><ul class="tips-list" id="tipsList"></ul></div>
 </div>
 
-<footer>
-  <p data-i18n="footer">EACO Community · Not financial advice · Always DYOR</p>
-</footer>
+<footer class="footer" id="footerText"></footer>
 
 <script>
-var i18n={en:{nav_subtitle:"Beginner's Guide",hero_title:"EACO Beginner's Guide",hero_sub:"Your first EACO token — step by step, safe and simple",banner_title:"$0.01 Minimum Trade",banner_sub:"Start trading EACO from just one cent — beginner friendly!",ca_label:"Contract Address (CA)",btn_copy:"Copy",btn_copy_done:"Copied!",btn_solflare:"Get Solflare Wallet",btn_explorer:"View on Explorer",tab_tutorial:"📘 Tutorial",tab_safety:"🛡️ Safety",tab_consensus:"🏆 Consensus",tab_promotion:"🚀 Promotion",steps_title:"Get Your First EACO",s1_title:"Install Solflare Wallet",s1_desc:"Download Solflare from the official website. Available as browser extension and mobile app. Never download from unofficial sources.",s1_btn:"Get Solflare",s2_title:"Create or Import Wallet",s2_desc:"Create a new wallet or import an existing one. Write down your seed phrase on paper and store it somewhere safe. Never store it digitally or share it with anyone.",s3_title:"Deposit SOL",s3_desc:"Transfer SOL to your Solflare wallet. You need SOL to swap for EACO and pay gas fees. Always keep at least 0.05 SOL for transaction fees.",s4_title:"Swap SOL → EACO",s4_desc:"Open Solflare built-in Swap. Paste the EACO contract address:",s4_desc2:"Double-check the contract address, enter the amount, and confirm the swap.",s5_title:"Verify Your EACO",s5_desc:"After the transaction completes, check your EACO balance in Solflare. You can also verify on Solscan using your wallet address.",safety_title:"Safety Reminders",warn_title:"Stay Positive & Protected",warn_1:"Your seed phrase = your wallet. Never share it with anyone, never enter it into any website.",warn_2:"Only use official Solflare and verified links.",warn_3:"Start small — test with tiny amounts before moving bigger ones.",warn_4:"Check the contract address twice before every swap.",exp_title:"Official Explorers",tips_title:"Key Trading Tips",t1_title:"Reserve Gas Fees",t1_desc:"Always keep at least 0.05 SOL for gas fees. Without it, you cannot send or swap tokens.",t2_title:"Use Built-in Swap",t2_desc:"Use Solflare built-in Swap for the safest experience. Avoid unknown DEXs.",t3_title:"Double-Check CA",t3_desc:"Always verify the contract address before swapping. Scammers create fake tokens with similar names.",t4_title:"Start Small",t4_desc:"Test with a small amount first. Once you are confident, you can increase your position.",consensus_title:"Monthly Consensus System",consensus_desc:"Join the monthly consensus, earn rewards and unlock exclusive badges. Every action counts!",energy_pool:"Energy Pool",monthly_rewards:"Monthly Rewards",max_earnable:"Max/Day",points_per_day:"Points Per Day",settle_day:"Settlement",auto_distribute:"Auto Distribute",earning_title:"How to Earn Points",e1_title:"Daily Check-in",e1_desc:"+10 pts/day. Stay consistent every day to build momentum.",e2_title:"Promote EACO",e2_desc:"+30 pts/share. Share with friends and earn points for every successful referral.",e3_title:"AI Task",e3_desc:"+20 pts/task. Complete AI-powered community tasks to boost your rank.",e4_title:"Invite Friends",e4_desc:"L1: +50 pts | L2: +25 pts. The more friends you bring, the higher you climb!",badge_title:"Badge System",badge_col:"Badge",level_col:"Level",threshold_col:"Threshold",bonus_col:"Staking Bonus",promo_title:"Promotion Budget Plan",promo_desc:"Strategic weekly promotion budget to maximize community growth and EACO visibility.",promo_schedule:"Weekly Schedule",p1_title:"Minimum Weekly Budget",p1_desc:"≥500 EACO/week (~$5 value). Consistent presence beats sporadic bursts.",p2_title:"Monthly Projection",p2_desc:"~15,500–32,400 EACO/month. Budget scales with community size and market conditions.",p3_title:"Promotion Channels",p3_desc:"Social media, community groups, influencers, and content creation. Diversify your reach.",p4_title:"Track & Optimize",p4_desc:"Monitor engagement metrics weekly. Double down on what works, pause what doesn't.",resources_title:"Promotion Resources",res1_title:"Social Media Kit",res1_desc:"Download banners, logos, and pre-written posts to share across all your channels.",res2_title:"EACO Dashboard",res2_desc:"Real-time statistics, community growth charts, and monthly consensus leaderboard.",res3_title:"Community Support",res3_desc:"Join the EACO community group for tips, resources, and coordination with fellow promoters.",footer:"EACO Community · Not financial advice · Always DYOR"},zh:{nav_subtitle:"新手指南",hero_title:"EACO 新手指南",hero_sub:"安全、简单地获取你的第一枚 EACO",banner_title:"最低 $0.01 交易",banner_sub:"仅需一分钱即可开始交易 EACO — 适合新手！",ca_label:"合约地址 (CA)",btn_copy:"复制",btn_copy_done:"已复制！",btn_solflare:"下载 Solflare 钱包",btn_explorer:"浏览器查看",tab_tutorial:"📘 教程",tab_safety:"🛡️ 安全",tab_consensus:"🏆 共识",tab_promotion:"🚀 推广",steps_title:"获取你的第一枚 EACO",s1_title:"安装 Solflare 钱包",s1_desc:"从官方网站下载 Solflare。支持浏览器扩展和手机 App。切勿从非官方渠道下载。",s1_btn:"获取 Solflare",s2_title:"创建或导入钱包",s2_desc:"创建新钱包或导入已有钱包。将助记词抄写在纸上并妥善保管。绝不数字化存储或分享给他人。",s3_title:"充值 SOL",s3_desc:"向你的 Solflare 钱包转入 SOL。你需要 SOL 来兑换 EACO 和支付手续费。始终保留至少 0.05 SOL。",s4_title:"兑换 SOL → EACO",s4_desc:"打开 Solflare 内置 Swap 功能。精确粘贴 EACO 合约地址：",s4_desc2:"再次核对合约地址，输入数量并确认兑换。",s5_title:"验证你的 EACO",s5_desc:"交易完成后，在 Solflare 中查看 EACO 余额。也可在 Solscan 上验证。",safety_title:"安全提醒",warn_title:"保持警惕，保护资产",warn_1:"助记词 = 你的钱包。绝对不要分享给任何人，不要输入到任何网站。",warn_2:"只使用官方 Solflare 和经过验证的链接。",warn_3:"从小额开始 — 先用少量测试，再逐步增加。",warn_4:"每次交易前务必核对合约地址。",exp_title:"官方浏览器",tips_title:"关键交易提示",t1_title:"预留手续费",t1_desc:"始终保留至少 0.05 SOL 作为手续费。没有手续费将无法发送或兑换代币。",t2_title:"使用内置 Swap",t2_desc:"使用 Solflare 内置 Swap 是最安全的方式。避免使用不知名的 DEX。",t3_title:"双重核对 CA",t3_desc:"兑换前务必核对合约地址。骗子会创建名称相似的假代币。",t4_title:"从小额开始",t4_desc:"先用小额测试。确认无误后再增加投入。",consensus_title:"月度共识系统",consensus_desc:"参与月度共识，赚取奖励，解锁专属徽章。每个行动都有价值！",energy_pool:"能量池",monthly_rewards:"每月奖励",max_earnable:"每日上限",points_per_day:"每日积分",settle_day:"结算日",auto_distribute:"自动分发",earning_title:"如何获取积分",e1_title:"每日签到",e1_desc:"每天 +10 积分。保持每天签到，积累势能。",e2_title:"推广 EACO",e2_desc:"每次分享 +30 积分。与朋友分享并成功推荐即可获得积分。",e3_title:"AI 任务",e3_desc:"每任务 +20 积分。完成 AI 驱动的社区任务提升排名。",e4_title:"邀请好友",e4_desc:"L1: +50 积分 | L2: +25 积分。邀请越多朋友，排名越高！",badge_title:"徽章体系",badge_col:"徽章",level_col:"等级",threshold_col:"门槛",bonus_col:"锁仓加成",promo_title:"推广预算方案",promo_desc:"战略性每周推广预算，最大化社区增长和 EACO 曝光。",promo_schedule:"每周计划",p1_title:"每周最低预算",p1_desc:"每周 ≥500 EACO（价值约 $5）。持续存在胜过间歇性爆发。",p2_title:"月度预估",p2_desc:"每月约 15,500–32,400 EACO。预算随社区规模和市况调整。",p3_title:"推广渠道",p3_desc:"社交媒体、社区群组、KOL 和内容创作。多元化你的触达。",p4_title:"追踪与优化",p4_desc:"每周监测互动指标。坚持有效的，暂停无效的。",resources_title:"推广资源",res1_title:"社交媒体工具包",res1_desc:"下载横幅、标志和预写帖子，在所有渠道分享。",res2_title:"EACO 看板",res2_desc:"实时统计、社区增长图表和月度共识排行榜。",res3_title:"社区支持",res3_desc:"加入 EACO 社区群，获取技巧、资源并与其他推广者协作。",footer:"EACO 社区 · 非投资建议 · 请自行研究 (DYOR)"},es:{nav_subtitle:"Guía para Principiantes",hero_title:"Guía para Principiantes de EACO",hero_sub:"Tu primer token EACO — paso a paso, seguro y simple",banner_title:"Trade Mínimo $0.01",banner_sub:"¡Comienza a tradear EACO desde un centavo — ideal para principiantes!",ca_label:"Dirección del Contrato (CA)",btn_copy:"Copiar",btn_copy_done:"¡Copiado!",btn_solflare:"Obtener Billetera Solflare",btn_explorer:"Ver en Explorador",tab_tutorial:"📘 Tutorial",tab_safety:"🛡️ Seguridad",tab_consensus:"🏆 Consenso",tab_promotion:"🚀 Promoción",steps_title:"Obtén Tu Primer EACO",s1_title:"Instalar Billetera Solflare",s1_desc:"Descarga Solflare desde el sitio web oficial. Disponible como extensión de navegador y app móvil. Nunca descargues de fuentes no oficiales.",s1_btn:"Obtener Solflare",s2_title:"Crear o Importar Billetera",s2_desc:"Crea una nueva billetera o importa una existente. Anota tu frase semilla en papel y guárdala en un lugar seguro. Nunca la guardes digitalmente.",s3_title:"Depositar SOL",s3_desc:"Transfiere SOL a tu dirección de Solflare. Necesitarás SOL para intercambiar por EACO y pagar comisiones. Siempre conserva al menos 0.05 SOL.",s4_title:"Intercambiar SOL → EACO",s4_desc:"Abre la función Swap integrada de Solflare. Pega exactamente la dirección del contrato EACO:",s4_desc2:"Verifica la dirección del contrato, ingresa la cantidad y confirma.",s5_title:"Verifica Tu EACO",s5_desc:"Después de la transacción, revisa tu saldo EACO en Solflare. También puedes verificar en Solscan.",safety_title:"Recordatorios de Seguridad",warn_title:"Mantente Seguro y Protegido",warn_1:"Tu frase semilla = tu billetera. Nunca la compartas ni la ingreses en ningún sitio web.",warn_2:"Solo usa Solflare oficial y enlaces verificados.",warn_3:"Empieza con poco — prueba con cantidades pequeñas antes de invertir más.",warn_4:"Verifica la dirección del contrato antes de cada intercambio.",exp_title:"Exploradores Oficiales",tips_title:"Consejos Clave de Trading",t1_title:"Reserva Comisiones",t1_desc:"Siempre guarda al menos 0.05 SOL para comisiones. Sin ellas, no puedes enviar ni intercambiar tokens.",t2_title:"Usa Swap Integrado",t2_desc:"Usa el Swap integrado de Solflare para la experiencia más segura. Evita DEX desconocidos.",t3_title:"Verifica el CA",t3_desc:"Siempre verifica la dirección del contrato antes de intercambiar. Los estafadores crean tokens falsos.",t4_title:"Empieza con Poco",t4_desc:"Prueba con una cantidad pequeña primero. Cuando estés seguro, puedes aumentar tu posición.",consensus_title:"Sistema de Consenso Mensual",consensus_desc:"Únete al consenso mensual, gana recompensas y desbloquea insignias exclusivas. ¡Cada acción cuenta!",energy_pool:"Pool de Energía",monthly_rewards:"Recompensas Mensuales",max_earnable:"Máx/Día",points_per_day:"Puntos Por Día",settle_day:"Liquidación",auto_distribute:"Distribución Automática",earning_title:"Cómo Ganar Puntos",e1_title:"Registro Diario",e1_desc:"+10 pts/día. Mantén la consistencia cada día para construir impulso.",e2_title:"Promocionar EACO",e2_desc:"+30 pts/compartir. Comparte con amigos y gana puntos por cada referido exitoso.",e3_title:"Tarea de IA",e3_desc:"+20 pts/tarea. Completa tareas de la comunidad impulsadas por IA para ascender.",e4_title:"Invitar Amigos",e4_desc:"L1: +50 pts | L2: +25 pts. ¡Cuantos más amigos traigas, más alto subes!",badge_title:"Sistema de Insignias",badge_col:"Insignia",level_col:"Nivel",threshold_col:"Umbral",bonus_col:"Bonus de Staking",promo_title:"Plan de Presupuesto de Promoción",promo_desc:"Presupuesto estratégico semanal para maximizar el crecimiento de la comunidad y la visibilidad de EACO.",promo_schedule:"Horario Semanal",p1_title:"Presupuesto Semanal Mínimo",p1_desc:"≥500 EACO/semana (~$5). La presencia constante supera a los saltos esporádicos.",p2_title:"Proyección Mensual",p2_desc:"~15 500–32 400 EACO/mes. El presupuesto escala con el tamaño de la comunidad.",p3_title:"Canales de Promoción",p3_desc:"Redes sociales, grupos comunitarios, influencers y creación de contenido. Diversifica tu alcance.",p4_title:"Rastrea y Optimiza",p4_desc:"Mide las métricas de compromiso semanalmente. Duplica lo que funciona, pausa lo que no.",resources_title:"Recursos de Promoción",res1_title:"Kit de Redes Sociales",res1_desc:"Descarga banners, logotipos y publicaciones pre-escritas para compartir en todos tus canales.",res2_title:"Panel EACO",res2_desc:"Estadísticas en tiempo real, gráficos de crecimiento de la comunidad y ranking mensual de consenso.",res3_title:"Soporte Comunitario",res3_desc:"Únete al grupo comunitario de EACO para consejos, recursos y coordinación con otros promotores.",footer:"Comunidad EACO · No es consejo financiero · Siempre DYOR"},fr:{nav_subtitle:"Guide du Débutant",hero_title:"Guide du Débutant EACO",hero_sub:"Votre premier token EACO — étape par étape, en toute sécurité",banner_title:"Trade Minimum $0.01",banner_sub:"Commencez à trader EACO à partir d'un centime — idéal pour les débutants !",ca_label:"Adresse du Contrat (CA)",btn_copy:"Copier",btn_copy_done:"Copié !",btn_solflare:"Obtenir Portefeuille Solflare",btn_explorer:"Voir sur l'Explorateur",tab_tutorial:"📘 Tutoriel",tab_safety:"🛡️ Sécurité",tab_consensus:"🏆 Consensus",tab_promotion:"🚀 Promotion",steps_title:"Obtenez Votre Premier EACO",s1_title:"Installer le Portefeuille Solflare",s1_desc:"Téléchargez Solflare depuis le site officiel. Disponible en extension navigateur et app mobile. Ne téléchargez jamais depuis des sources non officielles.",s1_btn:"Obtenir Solflare",s2_title:"Créer ou Importer un Portefeuille",s2_desc:"Créez un nouveau portefeuille ou importez-en un existant. Notez votre phrase seed sur papier et conservez-la en lieu sûr. Ne la stockez jamais numériquement.",s3_title:"Déposer du SOL",s3_desc:"Transférez du SOL vers votre adresse Solflare. Vous aurez besoin de SOL pour échanger contre EACO et payer les frais. Gardez toujours au moins 0.05 SOL.",s4_title:"Échanger SOL → EACO",s4_desc:"Ouvrez la fonction Swap intégrée de Solflare. Collez exactement l'adresse du contrat EACO :",s4_desc2:"Vérifiez l'adresse du contrat, entrez le montant et confirmez.",s5_title:"Vérifiez Votre EACO",s5_desc:"Après la transaction, vérifiez votre solde EACO dans Solflare. Vous pouvez aussi vérifier sur Solscan.",safety_title:"Rappels de Sécurité",warn_title:"Restez Prudent et Protégé",warn_1:"Votre phrase seed = votre portefeuille. Ne la partagez jamais et ne la saisissez sur aucun site.",warn_2:"Utilisez uniquement Solflare officiel et les liens vérifiés.",warn_3:"Commencez petit — testez avec de petits montants avant d'investir davantage.",warn_4:"Vérifiez l'adresse du contrat avant chaque échange.",exp_title:"Explorateurs Officiels",tips_title:"Conseils Clés de Trading",t1_title:"Réservez les Frais",t1_desc:"Réservez toujours au moins 0.05 SOL pour les frais. Sans eux, vous ne pouvez pas envoyer ni échanger de tokens.",t2_title:"Utilisez Swap Intégré",t2_desc:"Utilisez le Swap intégré de Solflare pour une expérience plus sûre. Évitez les DEX inconnus.",t3_title:"Vérifiez le CA",t3_desc:"Vérifiez toujours l'adresse du contrat avant d'échanger. Les arnaqueurs créent de faux tokens.",t4_title:"Commencez Petit",t4_desc:"Testez d'abord avec un petit montant. Une fois confiant, vous pouvez augmenter votre position.",consensus_title:"Système de Consensus Mensuel",consensus_desc:"Rejoignez le consensus mensuel, gagnez des récompenses et débloquez des badges exclusifs. Chaque action compte !",energy_pool:"Pool d'Énergie",monthly_rewards:"Récompenses Mensuelles",max_earnable:"Max/Jour",points_per_day:"Points Par Jour",settle_day:"Liquidation",auto_distribute:"Distribution Auto",earning_title:"Comment Gagner des Points",e1_title:"Check-in Quotidien",e1_desc:"+10 pts/jour. Restez constant chaque jour pour construire votre élan.",e2_title:"Promouvoir EACO",e2_desc:"+30 pts/partage. Partagez avec vos amis et gagnez des points pour chaque parrainage réussi.",e3_title:"Tâche IA",e3_desc:"+20 pts/tâche. Complétez des tâches communautaires pilotées par IA pour améliorer votre rang.",e4_title:"Inviter des Amis",e4_desc:"L1: +50 pts | L2: +25 pts. Plus vous amenez d'amis, plus vous montez !",badge_title:"Système de Badges",badge_col:"Badge",level_col:"Niveau",threshold_col:"Seuil",bonus_col:"Bonus de Staking",promo_title:"Plan Budgétaire de Promotion",promo_desc:"Budget promotionnel stratégique hebdomadaire pour maximiser la croissance de la communauté et la visibilité d'EACO.",promo_schedule:"Programme Hebdomadaire",p1_title:"Budget Hebdomadaire Minimum",p1_desc:"≥500 EACO/semaine (~$5). Une présence constante bat les à-coups sporadiques.",p2_title:"Projection Mensuelle",p2_desc:"~15 500–32 400 EACO/mois. Le budget s'adapte à la taille de la communauté.",p3_title:"Canaux de Promotion",p3_desc:"Réseaux sociaux, groupes communautaires, influenceurs et création de contenu. Diversifiez votre portée.",p4_title:"Suivez et Optimisez",p4_desc:"Surveillez les métriques d'engagement chaque semaine. Doublez ce qui marche, mettez en pause ce qui ne marche pas.",resources_title:"Ressources de Promotion",res1_title:"Kit Médias Sociaux",res1_desc:"Téléchargez bannières, logos et publications pré-rédigées pour partager sur tous vos canaux.",res2_title:"Tableau de Bord EACO",res2_desc:"Statistiques en temps réel, graphiques de croissance de la communauté et classement mensuel du consensus.",res3_title:"Support Communautaire",res3_desc:"Rejoignez le groupe communautaire EACO pour des conseils, des ressources et de la coordination avec d'autres promoteurs.",footer:"Communauté EACO · Pas un conseil financier · Toujours DYOR"},ar:{nav_subtitle:"دليل المبتدئين",hero_title:"دليل المبتدئين لـ EACO",hero_sub:"أول رمز EACO لك — خطوة بخطوة، بأمان وبساطة",banner_title:"الحد الأدنى للمعاملة $0.01",banner_sub:"ابدأ التداول من سنت واحد فقط — مناسب للمبتدئين!",ca_label:"عنوان العقد (CA)",btn_copy:"نسخ",btn_copy_done:"تم النسخ!",btn_solflare:"الحصول على محفظة Solflare",btn_explorer:"عرض في المستكشف",tab_tutorial:"📘 البرنامج التعليمي",tab_safety:"🛡️ الأمان",tab_consensus:"🏆 الإجماع",tab_promotion:"🚀 الترويج",steps_title:"احصل على أول EACO لك",s1_title:"تثبيت محفظة Solflare",s1_desc:"حمّل Solflare من الموقع الرسمي. متاح كإضافة متصفح وتطبيق جوال. لا تحمّل أبداً من مصادر غير رسمية.",s1_btn:"الحصول على Solflare",s2_title:"إنشاء أو استيراد محفظة",s2_desc:"أنشئ محفظة جديدة أو استورد محفظة موجودة. اكتب عبارة الاسترداد على ورقة واحتفظ بها في مكان آمن. لا تخزنها رقمياً أبداً.",s3_title:"إيداع SOL",s3_desc:"حوّل SOL إلى عنوان محفظة Solflare الخاصة بك. تحتاج SOL لتبادلها مع EACO ودفع الرسوم. احتفظ دائماً بـ 0.05 SOL على الأقل.",s4_title:"تبديل SOL إلى EACO",s4_desc:"افتح ميزة Swap المدمجة في Solflare. الصق عنوان عقد EACO بالضبط:",s4_desc2:"تحقق من عنوان العقد، أدخل المقدار وأكّد.",s5_title:"تحقق من EACO الخاص بك",s5_desc:"بعد إتمام المعاملة، تحقق من رصيد EACO في Solflare. يمكنك أيضاً التحقق على Solscan.",safety_title:"تذكيرات أمنية",warn_title:"ابقَ آمناً ومحمياً",warn_1:"عبارة الاسترداد = محفظتك. لا تشاركها مع أي شخص ولا تدخلها في أي موقع.",warn_2:"استخدم فقط Solflare الرسمي والروابط الموثوقة.",warn_3:"ابدأ بمبالغ صغيرة — اختبر أولاً قبل زيادة المبلغ.",warn_4:"تحقق من عنوان العقد مرتين قبل كل تبادل.",exp_title:"المستكشفون الرسميون",tips_title:"نصائح تداول مهمة",t1_title:"احجز الرسوم",t1_desc:"احجز دائماً 0.05 SOL على الأقل لرسوم الغاز. بدونها لن تتمكن من إرسال أو تبديل الرموز.",t2_title:"استخدم Swap المدمج",t2_desc:"استخدم Swap المدمج في Solflare للحصول على أقصى أمان. تجنب DEXs غير المعروفة.",t3_title:"تحقق من CA",t3_desc:"تحقق دائماً من عنوان العقد قبل التبديل. المحتالون ينشئون رموزاً مزيفة.",t4_title:"ابدأ بصغير",t4_desc:"اختبر بمبلغ صغير أولاً. عندما تكون واثقاً، يمكنك زيادة استثمارك.",consensus_title:"نظام الإجماع الشهري",consensus_desc:"انضم إلى الإجماع الشهري، اكسب المكافآت وافتح الشارات الحصرية. كل إجراء له قيمة!",energy_pool:"مجمع الطاقة",monthly_rewards:"المكافآت الشهرية",max_earnable:"الحد الأقصى/اليوم",points_per_day:"النقاط في اليوم",settle_day:"التسوية",auto_distribute:"التوزيع التلقائي",earning_title:"كيف تكسب النقاط",e1_title:"تسجيل الدخول اليومي",e1_desc:"+10 نقاط/يوم. حافظ على الاستمرارية كل يوم لبناء الزخم.",e2_title:"ترويج EACO",e2_desc:"+30 نقاط/مشاركة. شارك مع الأصدقاء واكسب نقاطاً لكل إحالة ناجحة.",e3_title:"مهمة الذكاء الاصطناعي",e3_desc:"+20 نقاط/مهمة. أكمل مهام المجتمع المدعومة بالذكاء الاصطناعي لتعزيز تصنيفك.",e4_title:"دعوة الأصدقاء",e4_desc:"المستوى 1: +50 نقطة | المستوى 2: +25 نقطة. كلما أحضرت أصدقاء أكثر، ارتقيت أكثر!",badge_title:"نظام الشارات",badge_col:"الشارة",level_col:"المستوى",threshold_col:"الحد",bonus_col:"مكافأة التصعيد",promo_title:"خطة ميزانية الترويج",promo_desc:"ميزانية ترويجية أسبوعية استراتيجية لتعظيم نمو المجتمع ورؤية EACO.",promo_schedule:"الجدول الأسبوعي",p1_title:"الحد الأدنى للميزانية الأسبوعية",p1_desc:"≥500 EACO/أسبوع (~$5). الحضور المستمر يتفوق على الاندفاع المتقطع.",p2_title:"التوقعات الشهرية",p2_desc:"~15,500–32,400 EACO/شهر. الميزانية تتوسع مع حجم المجتمع.",p3_title:"قنوات الترويج",p3_desc:"وسائل التواصل الاجتماعي، مجموعات المجتمع، المؤثرين وإنشاء المحتوى. نوّع نطاق وصولك.",p4_title:"تتبع وتحسين",p4_desc:"راقب مقاييس التفاعل أسبوعياً. ضاعف ما ينجح، وأوقف ما لا ينجح.",resources_title:"موارد الترويج",res1_title:"حزمة وسائل التواصل الاجتماعي",res1_desc:"حمّل المناشير والشعارات والمنشورات المكتوبة مسبقاً لمشاركتها عبر جميع قنواتك.",res2_title:"لوحة تحكم EACO",res2_desc:"إحصائيات في الوقت الفعلي، مخططات نمو المجتمع والترتيب الشهري للإجماع.",res3_title:"دعم المجتمع",res3_desc:"انضم إلى مجموعة مجتمع EACO للحصول على النصائح والموارد والتنسيق مع الآخرين.",footer:"مجتمع EACO — ليس نصيحة مالية — ابحث بنفسك دائماً (DYOR)"},ru:{nav_subtitle:"Руководство для новичков",hero_title:"Руководство для новичков EACO",hero_sub:"Ваш первый токен EACO — шаг за шагом, безопасно и просто",banner_title:"Мин. сделка $0.01",banner_sub:"Начните торговать EACO от одного цента — удобно для новичков!",ca_label:"Адрес контракта (CA)",btn_copy:"Копировать",btn_copy_done:"Скопировано!",btn_solflare:"Скачать кошелёк Solflare",btn_explorer:"Открыть в обозревателе",tab_tutorial:"📘 Руководство",tab_safety:"🛡️ Безопасность",tab_consensus:"🏆 Консенсус",tab_promotion:"🚀 Продвижение",steps_title:"Получите свой первый EACO",s1_title:"Установите кошелёк Solflare",s1_desc:"Скачайте Solflare с официального сайта. Доступен как расширение для браузера и мобильное приложение. Никогда не скачивайте из неофициальных источников.",s1_btn:"Получить Solflare",s2_title:"Создайте или импортируйте кошелёк",s2_desc:"Создайте новый кошелёк или импортируйте существующий. Запишите seed-фразу на бумаге и храните в безопасном месте. Никогда не храните её в цифровом виде.",s3_title:"Внесите SOL",s3_desc:"Переведите SOL на адрес вашего кошелька Solflare. Вам понадобится SOL для обмена на EACO и оплаты комиссий. Всегда оставляйте не менее 0.05 SOL.",s4_title:"Обмен SOL → EACO",s4_desc:"Откройте встроенную функцию Swap в Solflare. Вставьте адрес контракта EACO точно:",s4_desc2:"Ещё раз проверьте адрес контракта, введите сумму и подтвердите обмен.",s5_title:"Проверьте ваш EACO",s5_desc:"После завершения транзакции проверьте баланс EACO в Solflare. Также можно проверить на Solscan.",safety_title:"Правила безопасности",warn_title:"Оставайтесь в безопасности",warn_1:"Ваша seed-фраза = ваш кошелёк. Никогда не делитесь ею и не вводите на сайтах.",warn_2:"Используйте только официальный Solflare и проверенные ссылки.",warn_3:"Начните с малого — протестируйте с маленькими суммами прежде чем увеличивать.",warn_4:"Проверяйте адрес контракта дважды перед каждым обменом.",exp_title:"Официальные обозреватели",tips_title:"Ключевые советы по торговле",t1_title:"Резервируйте комиссии",t1_desc:"Всегда оставляйте не менее 0.05 SOL на комиссии. Без них вы не сможете отправлять или обменивать токены.",t2_title:"Используйте встроенный Swap",t2_desc:"Используйте встроенный Swap Solflare для максимальной безопасности. Избегайте неизвестных DEX.",t3_title:"Проверяйте CA",t3_desc:"Всегда проверяйте адрес контракта перед обменом. Мошенники создают поддельные токены.",t4_title:"Начните с малого",t4_desc:"Сначала протестируйте с небольшой суммой. Уверены — увеличивайте позицию.",consensus_title:"Система ежемесячного консенсуса",consensus_desc:"Присоединяйтесь к ежемесячному консенсусу, зарабатывайте награды и открывайте эксклюзивные значки. Каждое действие важно!",energy_pool:"Энергетический пул",monthly_rewards:"Ежемесячные награды",max_earnable:"Макс/День",points_per_day:"Очков в день",settle_day:"Расчёт",auto_distribute:"Автораспределение",earning_title:"Как заработать очки",e1_title:"Ежедневный вход",e1_desc:"+10 очков/день. Будьте последовательны каждый день для наращивания импульса.",e2_title:"Продвигайте EACO",e2_desc:"+30 очков/репост. Делитесь с друзьями и получайте очки за каждую успешную реферальную ссылку.",e3_title:"Задание ИИ",e3_desc:"+20 очков/задание. Выполняйте задания сообщества с поддержкой ИИ для повышения ранга.",e4_title:"Приглашайте друзей",e4_desc:"Ур. 1: +50 очков | Ур. 2: +25 очков. Чем больше друзей вы приведёте, тем выше подниметесь!",badge_title:"Система значков",badge_col:"Значок",level_col:"Уровень",threshold_col:"Порог",bonus_col:"Бонус за стейкинг",promo_title:"План бюджета продвижения",promo_desc:"Стратегический еженедельный бюджет для максимизации роста сообщества и видимости EACO.",promo_schedule:"Еженедельное расписание",p1_title:"Минимальный недельный бюджет",p1_desc:"≥500 EACO/неделя (~$5). Постоянное присутствие побеждает эпизодические всплески.",p2_title:"Месячный прогноз",p2_desc:"~15 500–32 400 EACO/месяц. Бюджет масштабируется с размером сообщества.",p3_title:"Каналы продвижения",p3_desc:"Социальные сети, группы сообщества, инфлюенсеры и создание контента. Диверсифицируйте охват.",p4_title:"Отслеживайте и оптимизируйте",p4_desc:"Еженедельно отслеживайте показатели вовлечённости. Удваивайте то, что работает, останавливайте то, что нет.",resources_title:"Ресурсы для продвижения",res1_title:"Набор для соцсетей",res1_desc:"Скачайте баннеры, логотипы и готовые посты для публикации во всех ваших каналах.",res2_title:"Панель EACO",res2_desc:"Статистика в реальном времени, графики роста сообщества и ежемесячный рейтинг консенсуса.",res3_title:"Поддержка сообщества",res3_desc:"Присоединяйтесь к группе сообщества EACO для получения советов, ресурсов и координации с другими.",footer:"Сообщество EACO · Не является финансовой рекомендацией · Всегда DYOR"},ja:{nav_subtitle:"初心者ガイド",hero_title:"EACO 初心者ガイド",hero_sub:"最初のEACOトークン — ステップバイステップで安全・シンプル",banner_title:"最小取引 $0.01",banner_sub:"たった1セントからEACOの取引を始めよう — 初心者向け！",ca_label:"コントラクトアドレス (CA)",btn_copy:"コピー",btn_copy_done:"コピー完了！",btn_solflare:"Solflare ウォレットを入手",btn_explorer:"エクスプローラーで確認",tab_tutorial:"📘 チュートリアル",tab_safety:"🛡️ セキュリティ",tab_consensus:"🏆 コンセンサス",tab_promotion:"🚀 プロモーション",steps_title:"最初のEACOを入手しよう",s1_title:"Solflare ウォレットをインストール",s1_desc:"公式サイトからSolflareをダウンロード。ブラウザ拡張機能とモバイルアプリに対応。非公式ソースからは絶対にダウンロードしないでください。",s1_btn:"Solflareを入手",s2_title:"ウォレットを作成またはインポート",s2_desc:"新しいウォレットを作成するか、既存のウォレットをインポート。シードフレーズは紙に書き写し、安全な場所に保管。デジタル保存や他人への共有は絶対にしないでください。",s3_title:"SOLを入金",s3_desc:"Solflare ウォレットアドレスにSOLを送金。EACOと交換するにはSOLが必要で、ガス代の支払い也需要。常に最低 0.05 SOL を残しておきましょう。",s4_title:"SOL → EACO を交換",s4_desc:"Solflare内置のSwap機能を開く。EACOコントラクトアドレスを正確に貼り付け：",s4_desc2:"コントラクトアドレスを再確認し、数量を入力して交換を確定。",s5_title:"EACOを確認",s5_desc:"取引完了後、SolflareでEACO残高を確認。Solscanでウォレットアドレスを使って確認也可以。",safety_title:"安全上の注意",warn_title:"安全に取引するために",warn_1:"シードフレーズ = ウォレット本身。絶対に誰にも共有せず、どのウェブサイトにも入力しないでください。",warn_2:"公式Solflareと確認済みのリンクのみを使用してください。",warn_3:"少額から始める — 大きく動く前に小额でテストしてください。",warn_4:"毎回交換前にコントラクトアドレスを必ず確認してください。",exp_title:"公式エクスプローラー",tips_title:"重要な取引ヒント",t1_title:"ガス代を確保",t1_desc:"常に最低0.05 SOLをガス代として確保。なければトークンの送信や交換ができません。",t2_title:"内置Swapを使用",t2_desc:"最も安全な 방법은Solflare内置のSwapを使用。未知のDEXは避けてください。",t3_title:"CAを二重確認",t3_desc:"交換前に必ずコントラクトアドレスを確認。詐欺師は似た名前の偽トークンを作成します。",t4_title:"少額から始める",t4_desc:"まずは小额でテスト。慣れてきたらポジションを増やしてください。",consensus_title:"月度コンセンサスシステム",consensus_desc:"月度コンセンサスに参加して報酬を獲得し、限定バッジをアンロック。一つひとつの行動が大切です！",energy_pool:"エネルギープール",monthly_rewards:"月間報酬",max_earnable:"1日最大",points_per_day:"1日あたりのポイント",settle_day:"精算日",auto_distribute:"自動分配",earning_title:"ポイントの獲得方法",e1_title:"デイリー簽到",e1_desc:"+10ポイント/日。毎日続けて勢いを身につけましょう。",e2_title:"EACOを宣伝",e2_desc:"+30ポイント/シェア。友達に共有し、紹介が成功するたびにポイントを獲得。",e3_title:"AIタスク",e3_desc:"+20ポイント/タスク。AI駆動のコミュニティタスクを完了してランクアップ。",e4_title:"友達紹介",e4_desc:"L1: +50ポイント | L2: +25ポイント。紹介する友達が多いほど上位に上がれます！",badge_title:"バッジシステム",badge_col:"バッジ",level_col:"レベル",threshold_col:"閾値",bonus_col:"ステーキングボーナス",promo_title:"プロモーション予算計画",promo_desc:"コミュニティの成長とEACOの認知度を最大化するための戦略的週間プロモーション予算。",promo_schedule:"週間スケジュール",p1_title:"週間最小予算",p1_desc:"500 EACO/週以上（~$5相当）。定期的な発信は偶発的な一跳りより効果的です。",p2_title:"月間予測",p2_desc:"約15,500〜32,400 EACO/月。予算はコミュニティ规模和市況に応じて拡大。",p3_title:"プロモーションチャネル",p3_desc:"SNS、コミュニティグループ、インフルエンサー、コンテンツ作成。リーチを多元化しましょう。",p4_title:"追踪と最適化",p4_desc:"毎週エンゲージメント指標を監視。効果的なものに倍増、効果のないものを一時停止。",resources_title:"プロモーションリソース",res1_title:"SNSキット",res1_desc:"バナー、ロゴ、投稿文をダウンロードして、すべてのチャネルで共有しましょう。",res2_title:"EACOダッシュボード",res2_desc:"リアルタイム統計、コミュニティ成長チャート、月次コンセンサスラキング。",res3_title:"コミュニティサポート",res3_desc:"EACOコミュニティグループに参加して、ヒントやリソースの取得、他のプロモーターとの調整をしましょう。",footer:"EACOコミュニティ · 金融アドバイスではありません · 常にDYOR"},ko:{nav_subtitle:"초보자 가이드",hero_title:"EACO 초보자 가이드",hero_sub:"첫 번째 EACO 토큰 — 단계별로, 안전하고 단순하게",banner_title:"최소 거래 $0.01",banner_sub:"단돈 1센트부터 EACO 거래를 시작하세요 — 초보자 친화적!",ca_label:"컨트랙트 주소 (CA)",btn_copy:"복사",btn_copy_done:"복사됨!",btn_solflare:"Solflare 지갑 받기",btn_explorer:"익스플로러에서 보기",tab_tutorial:"📘 튜토리얼",tab_safety:"🛡️ 보안",tab_consensus:"🏆 컨센서스",tab_promotion:"🚀 홍보",steps_title:"첫 번째 EACO를入手하세요",s1_title:"Solflare 지갑 설치",s1_desc:"공식 웹사이트에서 Solflare를 다운로드하세요. 브라우저 확장 프로그램과 모바일 앱으로 제공됩니다. 비공식 출처에서 절대 다운로드하지 마세요.",s1_btn:"Solflare 받기",s2_title:"지갑 생성 또는 가져오기",s2_desc:"새 지갑을 만들거나 기존 지갑을 가져오세요. 시드 문구를 종이에 적어 안전한 곳에 보관하세요. 디지털 방식으로 저장하거나他人와 공유하지 마세요.",s3_title:"SOL 입금",s3_desc:"Solflare 지갑 주소로 SOL을 전송하세요. EACO로 교환하려면 SOL이 필요하며 가스비를 지불也需要합니다. 항상 최소 0.05 SOL 이상을 남겨두세요。",s4_title:"SOL → EACO 교환",s4_desc:"Solflare 내장 Swap 기능을 여세요. EACO 컨트랙트 주소를 정확히 붙여넣으세요:",s4_desc2:"컨트랙트 주소를 다시 확인한 후 금액을 입력하고 교환을 확정하세요.",s5_title:"EACO 확인",s5_desc:"거래가 완료되면 Solflare에서 EACO 잔액을 확인하세요. Solscan에서 지갑 주소로 확인할 수도 있습니다.",safety_title:"보안 주의사항",warn_title:"안전하고 보호받으며 거래하세요",warn_1:"시드 문구 = 지갑本身。 절대 누구와도 공유하지 말고 어떤 웹사이트에도 입력하지 마세요.",warn_2:"공식 Solflare와 확인된 링크만 사용하세요.",warn_3:"소액부터 시작하세요 — 큰 금액을 움직이기 전에 소액으로 테스트하세요.",warn_4:"모든 교환 전에 컨트랙트 주소를 반드시 두 번 확인하세요。",exp_title:"공식 익스플로러",tips_title:"핵심 거래 팁",t1_title:"가스비 예약",t1_desc:"항상 최소 0.05 SOL을 가스비로 예약하세요. 없으면 토큰을 보내거나 교환할 수 없습니다.",t2_title:"내장 Swap 사용",t2_desc:"가장 안전한 방법은 Solflare 내장 Swap을 사용하는 것입니다. 알 수 없는 DEX는 피하세요.",t3_title:"CA 이중 확인",t3_desc:"교환 전에 반드시 컨트랙트 주소를 확인하세요. 사기꾼은 유사한 이름의 가짜 토큰을 생성합니다.",t4_title:"소액으로 시작",t4_desc:"먼저 소액으로 테스트하세요. 자신감이 생기면 포지션을 늘리세요.",consensus_title:"월간 컨센서스 시스템",consensus_desc:"월간 컨센서스에 참여하여 보상을 획득하고 독점 배지를 잠금 해제하세요. 모든 행동이 의미를 갖습니다!",energy_pool:"에너지 풀",monthly_rewards:"월간 보상",max_earnable:"하루 최대",points_per_day:"하루 포인트",settle_day:"정산일",auto_distribute:"자동 분배",earning_title:"포인트 획득 방법",e1_title:"일일 체크인",e1_desc:"+10포인트/일. 매일 꾸준히하여 모멘텀을 구축하세요.",e2_title:"EACO 홍보",e2_desc:"+30포인트/공유. 친구에게 공유하고 성공적인 추천마다 포인트를 획득하세요.",e3_title:"AI 태스크",e3_desc:"+20포인트/태스크. AI 기반 커뮤니티 태스크를 완료하여 순위를 올리세요.",e4_title:"친구 초대",e4_desc:"L1: +50포인트 | L2: +25포인트. 초대하는 친구가 많을수록 높은 곳으로 올라갈 수 있습니다!",badge_title:"배지 시스템",badge_col:"배지",level_col:"레벨",threshold_col:"임계값",bonus_col:"스테이킹 보너스",promo_title:"홍보 예산 계획",promo_desc:"커뮤니티 성장과 EACO 가시성을 극대화하기 위한 전략적 주간 홍보 예산.",promo_schedule:"주간 일정",p1_title:"주간 최소 예산",p1_desc:"주 500 EACO 이상 (~$5相当). 지속적인 존재감이 산발적인 폭발보다 낫습니다.",p2_title:"월간 전망",p2_desc:"월 약 15,500~32,400 EACO. 예산은 커뮤니티 규모와 시장 상황에 따라 확대됩니다.",p3_title:"홍보 채널",p3_desc:"소셜 미디어, 커뮤니티 그룹, 인플루언서, 콘텐츠 제작. 리치를 다양화하세요.",p4_title:"추적 및 최적화",p4_desc:"주간 참여 지표를 모니터링하세요. 효과적인 것은 두 배로, 효과 없는 것은 일시 중단하세요.",resources_title:"홍보 리소스",res1_title:"소셜 미디어 키트",res1_desc:"배너, 로고, 사전 작성된 게시물을 다운로드하여 모든 채널에서 공유하세요.",res2_title:"EACO 대시보드",res2_desc:"실시간 통계, 커뮤니티 성장 차트, 월간 컨센서스 리더보드.",res3_title:"커뮤니티 지원",res3_desc:"팁, 리소스, 다른 홍보자들과의 조율을 위해 EACO 커뮤니티 그룹에 참여하세요.",footer:"EACO 커뮤니티 · 금융 조언이 아닙니다 · 항상 DYOR"},vi:{nav_subtitle:"Hướng dẫn dành cho người mới",hero_title:"Hướng dẫn dành cho người mới về EACO",hero_sub:"Token EACO đầu tiên của bạn — từng bước, an toàn và đơn giản",banner_title:"Giao dịch tối thiểu $0.01",banner_sub:"Bắt đầu giao dịch EACO chỉ từ một xu — thân thiện với người mới!",ca_label:"Địa chỉ hợp đồng (CA)",btn_copy:"Sao chép",btn_copy_done:"Đã sao chép!",btn_solflare:"Tải Ví Solflare",btn_explorer:"Xem trên Trình duyệt",tab_tutorial:"📘 Hướng dẫn",tab_safety:"🛡️ An toàn",tab_consensus:"🏆 Đồng thuận",tab_promotion:"🚀 Khuyến mãi",steps_title:"Nhận EACO đầu tiên của bạn",s1_title:"Cài đặt Ví Solflare",s1_desc:"Tải Solflare từ trang web chính thức. Có sẵn dưới dạng tiện ích mở rộng trình duyệt và ứng dụng di động. Không bao giờ tải từ các nguồn không chính thức.",s1_btn:"Tải Solflare",s2_title:"Tạo hoặc Nhập Ví",s2_desc:"Tạo ví mới hoặc nhập ví hiện có. Viết cụm từ khôi phục ra giấy và cất giữ ở nơi an toàn. Không bao giờ lưu trữ kỹ thuật số hoặc chia sẻ với bất kỳ ai.",s3_title:"Nạp SOL",s3_desc:"Chuyển SOL vào địa chỉ ví Solflare của bạn. Bạn cần SOL để hoán đổi lấy EACO và trả phí gas. Luôn giữ ít nhất 0.05 SOL cho phí giao dịch.",s4_title:"Hoán đổi SOL → EACO",s4_desc:"Mở tính năng Swap tích hợp của Solflare. Dán chính xác địa chỉ hợp đồng EACO:",s4_desc2:"Kiểm tra lại địa chỉ hợp đồng, nhập số lượng và xác nhận hoán đổi.",s5_title:"Xác minh EACO của bạn",s5_desc:"Sau khi giao dịch hoàn tất, hãy kiểm tra số dư EACO trong Solflare. Bạn cũng có thể xác minh trên Solscan.",safety_title:"Lưu ý an toàn",warn_title:"Giữ an toàn và bảo vệ bản thân",warn_1:"Cụm từ khôi phục = ví của bạn. Không bao giờ chia sẻ với bất kỳ ai, không 
-ất kỳ trang web nào.",warn_2:"Chỉ sử dụng Solflare chính thức và các liên kết đã được xác minh.",warn_3:"Bắt đầu với số tiền nhỏ — kiểm tra với số tiền nhỏ trước khi chuyển sang số tiền lớn hơn.",warn_4:"Kiểm tra địa chỉ hợp đồng hai lần trước mỗi lần hoán đổi.",exp_title:"Trình duyệt chính thức",tips_title:"Mẹo giao dịch quan trọng",t1_title:"Dự phòng phí gas",t1_desc:"Luôn giữ ít nhất 0.05 SOL cho phí gas. Nếu không có, bạn không thể gửi hoặc hoán đổi token.",t2_title:"Sử dụng Swap tích hợp",t2_desc:"Sử dụng Swap tích hợp của Solflare để có trải nghiệm an toàn nhất. Tránh các DEX không rõ nguồn gốc.",t3_title:"Kiểm tra kỹ CA",t3_desc:"Luôn xác minh địa chỉ hợp đồng trước khi hoán đổi. Kẻ lừa đảo tạo token giả với tên tương tự.",t4_title:"Bắt đầu nhỏ",t4_desc:"Trước tiên hãy thử với một số tiền nhỏ. Khi đã tự tin, bạn có thể tăng vị thế của mình.",consensus_title:"Hệ thống Đồng thuận Hàng tháng",consensus_desc:"Tham gia đồng thuận hàng tháng, kiếm phần thưởng và mở khóa huy hiệu độc quyền. Mọi hành động đều có giá trị!",energy_pool:"Năng lượng Pool",monthly_rewards:"Phần thưởng hàng tháng",max_earnable:"Tối đa/Ngày",points_per_day:"Điểm mỗi ngày",settle_day:"Thanh toán",auto_distribute:"Phân phối tự động",earning_title:"Cách kiếm Điểm",e1_title:"Điểm danh hàng ngày",e1_desc:"+10 điểm/ngày. Duy trì nhất quán mỗi ngày để xây dựng đà tăng trưởng.",e2_title:"Quảng bá EACO",e2_desc:"+30 điểm/lần chia sẻ. Chia sẻ với bạn bè và kiếm điểm cho mỗi lượt giới thiệu thành công.",e3_title:"Nhiệm vụ AI",e3_desc:"+20 điểm/nhiệm vụ. Hoàn thành các nhiệm vụ cộng đồng do AI hỗ trợ để tăng thứ hạng.",e4_title:"Mời bạn bè",e4_desc:"Cấp 1: +50 điểm | Cấp 2: +25 điểm. Càng nhiều bạn bè bạn mời, bạn càng leo cao!",badge_title:"Hệ thống Huy hiệu",badge_col:"Huy hiệu",level_col:"Cấp độ",threshold_col:"Ngưỡng",bonus_col:"Thưởng Staking",promo_title:"Kế hoạch Ngân sách Khuyến mãi",promo_desc:"Ngân sách khuyến mãi hàng tuần chiến lược để tối đa hóa tăng trưởng cộng đồng và khả năng hiển thị của EACO.",promo_schedule:"Lịch hàng tuần",p1_title:"Ngân sách tối thiểu hàng tuần",p1_desc:"≥500 EACO/tuần (~$5 giá trị). Sự hiện diện nhất quán vượt trội hơn các đợt bùng nổ không thường xuyên.",p2_title:"Dự báo hàng tháng",p2_desc:"~15.500–32.400 EACO/tháng. Ngân sách tăng theo quy mô cộng đồng và điều kiện thị trường.",p3_title:"Kênh khuyến mãi",p3_desc:"Mạng xã hội, nhóm cộng đồng, người có ảnh hưởng và sáng tạo nội dung. Đa dạng hóa phạm vi tiếp cận của bạn.",p4_title:"Theo dõi và Tối ưu hóa",p4_desc:"Theo dõi các chỉ số tương tác hàng tuần. Nhân đôi những gì hiệu quả, tạm dừng những gì không.",resources_title:"Tài nguyên Khuyến mãi",res1_title:"Bộ công cụ Mạng xã hội",res1_desc:"Tải xuống biểu ngữ, logo và bài viết được viết sẵn để chia sẻ trên tất cả các kênh của bạn.",res2_title:"Bảng điều khiển EACO",res2_desc:"Thống kê thời gian thực, biểu đồ tăng trưởng cộng đồng và bảng xếp hạng đồng thuận hàng tháng.",res3_title:"Hỗ trợ cộng đồng",res3_desc:"Tham gia nhóm cộng đồng EACO để nhận mẹo, tài nguyên và phối hợp với những người quảng bá khác.",footer:"Cộng đồng EACO · Không phải lời khuyên tài chính · Luôn tự nghiên cứu (DYOR)"},ms:{nav_subtitle:"Panduan untuk Pemula",hero_title:"Panduan Pemula EACO",hero_sub:"Token EACO pertama anda — langkah demi langkah, selamat dan mudah",banner_title:"Dagang Minimum $0.01",banner_sub:"Mula berdagang EACO dari satu sen sahaja — mesra pemula!",ca_label:"Alamat Kontrak (CA)",btn_copy:"Salin",btn_copy_done:"Disalin!",btn_solflare:"Dapatkan Dompet Solflare",btn_explorer:"Lihat pada Pelayar",tab_tutorial:"📘 Tutorial",tab_safety:"🛡️ Keselamatan",tab_consensus:"🏆 Konsensus",tab_promotion:"🚀 Promosi",steps_title:"Dapatkan EACO Pertama Anda",s1_title:"Pasang Dompet Solflare",s1_desc:"Muat turun Solflare darilaman web rasmi. Tersedia sebagai sambungan pelayar dan aplikasi mudah alih. Jangan sesekali muat turun dari sumber tidak rasmi.",s1_btn:"Dapatkan Solflare",s2_title:"Buat atau Import Dompet",s2_desc:"Buat dompet baharu atau import yang sedia ada. Tuliskan frasa seed anda di atas kertas dan simpan di tempat yang selamat. Jangan sekali-kali menyimpan secara digital atau berkongsi dengan sesiapa.",s3_title:"Deposit SOL",s3_desc:"Pindahkan SOL ke alamat dompet Solflare anda. Anda perlukan SOL untuk menukar kepada EACO dan membayar yuran gas. Sentiasa simpan sekurang-kurangnya 0.05 SOL untuk yuran transaksi.",s4_title:"Tukar SOL → EACO",s4_desc:"Buka fungsi Swap terbina dalam Solflare. Tampal alamat kontrak EACO dengan tepat:",s4_desc2:"Semak semula alamat kontrak, masukkan jumlah dan sahkan pertukaran.",s5_title:"Pengesahkan EACO Anda",s5_desc:"Selepas transaksi selesai, semak baki EACO anda dalam Solflare. Anda juga boleh mengesahkan pada Solscan.",safety_title:"Peringatan Keselamatan",warn_title:"Kekal Berhati-hati & Dilindungi",warn_1:"Frasa seed anda = dompet anda. Jangan sekali-kali berkongsi dengan sesiapa atau masukkan ke mana-manalaman web.",warn_2:"Hanya gunakan Solflare rasmi dan enlace yang disahkan.",warn_3:"Mulakan dengan jumlah kecil — uji dengan jumlah kecil sebelum memindahkan jumlah yang lebih besar.",warn_4:"Semak alamat kontrak dua kali sebelum setiap pertukaran.",exp_title:"Pelayar Rasmi",tips_title:"Petua Dagangan Utama",t1_title:"Simpan Yuran Gas",t1_desc:"Sentiasa simpan sekurang-kurangnya 0.05 SOL untuk yuran gas. Tanpa ia, anda tidak boleh menghantar atau menukar token.",t2_title:"Gunakan Swap Terbina Dalam",t2_desc:"Gunakan Swap terbina dalam Solflare untuk pengalaman paling selamat. Elakkan DEX yang tidak dikenali.",t3_title:"Semak CA Dua Kali",t3_desc:"Sentiasa sahkan alamat kontrak sebelum menukar. Penipu mencipta token palsu dengan nama yang serupa.",t4_title:"Mulakan dengan Kecil",t4_desc:"Uji dengan jumlah kecil dahulu. Setelah yakin, anda boleh meningkatkan posisi anda.",consensus_title:"Sistem Konsensus Bulanan",consensus_desc:"Sertai konsensus bulanan, peroleh ganjaran dan buka lencana eksklusif. Setiap tindakan bermakna!",energy_pool:"Pool Tenaga",monthly_rewards:"Ganjaran Bulanan",max_earnable:"Maks/Hari",points_per_day:"Mata Setiap Hari",settle_day:"Penetapan",auto_distribute:"Agihan Auto",earning_title:"Cara Memperoleh Mata",e1_title:"Daftar masuk harian",e1_desc:"+10 mata/hari. Kekal konsisten setiap hari untuk membina momentum.",e2_title:"Promosi EACO",e2_desc:"+30 mata/kongsi. Kongsi dengan rakan dan peroleh mata untuk setiap rujukan berjaya.",e3_title:"Tugas AI",e3_desc:"+20 mata/tugas. Lengkapkan tugas komuniti yang dikuasakan AI untuk meningkatkan pangkat anda.",e4_title:"Jemput Rakan",e4_desc:"Tahap 1: +50 mata | Tahap 2: +25 mata. Lebih ramai rakan yang anda ajak, semakin tinggi anda mendaki!",badge_title:"Sistem Lencana",badge_col:"Lencana",level_col:"Tahap",threshold_col:"Ambang",bonus_col:"Bonus Staking",promo_title:"Pelan Belanja Promosi",promo_desc:"Belanja promosi mingguan strategik untuk memaksimumkan pertumbuhan komuniti dan keterlihatan EACO.",promo_schedule:"Jadual Mingguan",p1_title:"Belanja Mingguan Minimum",p1_desc:"≥500 EACO/minggu (~$5 nilai). Kehadiran konsisten mengatasi letupan yang sporadik.",p2_title:"Unjuran Bulanan",p2_desc:"~15,500–32,400 EACO/bulan. Belanja berskala dengan saiz komuniti dan keadaan pasaran.",p3_title:"Saluran Promosi",p3_desc:"Media sosial, kumpulan komuniti, influenci dan penghasilan kandungan. Brigunakan saluran capaian anda.",p4_title:"Jejak & Optimumkan",p4_desc:"Pantau metrik penglibatan setiap minggu. Gandakan apa yang berkesan, hentikan apa yang tidak.",resources_title:"Sumber Promosi",res1_title:"Kit Media Sosial",res1_desc:"Muat turun banner, logo dan pos yang ditulis terlebih dahulu untuk dikongsi di semua saluran anda.",res2_title:"Papan Pemuka EACO",res2_desc:"Statistik masa nyata, carta pertumbuhan komuniti dan carta kedudukan konsensus bulanan.",res3_title:" sokongan Komuniti",res3_desc:"Sertai kumpulan komuniti EACO untuk mendapatkan petua, sumber dan penyelarasan dengan promoter lain.",footer:"Komuniti EACO · Bukan nasihat kewangan · Sentiasa DYOR"},th:{nav_subtitle:"คู่มือสำหรับมือใหม่",hero_title:"คู่มือเริ่มต้น EACO",hero_sub:"โทเค็น EACO แรกของคุณ — ทีละขั้นตอน ปลอดภัย และง่าย",banner_title:"ซื้อขายขั้นต่ำ $0.01",banner_sub:"เริ่มซื้อขาย EACO ตั้งแต่หนึ่งเซ็นต์ — เหมาะสำหรับมือใหม่!",ca_label:"ที่อยู่สัญญา (CA)",btn_copy:"คัดลอก",btn_copy_done:"คัดลอกแล้ว!",btn_solflare:"รับกระเป๋าเงิน Solflare",btn_explorer:"ดูบน Explorer",tab_tutorial:"📘 บทช่วยสอน",tab_safety:"🛡️ ความปลอดภัย",tab_consensus:"🏆 ฉันทามติ",tab_promotion:"🚀 การส่งเสริม",steps_title:"รับ EACO ตัวแรกของคุณ",s1_title:"ติดตั้งกระเป๋าเงิน Solflare",s1_desc:"ดาวน์โหลด Solflare จากเว็บไซต์ทางการ มีทั้งส่วนขยายเบราว์เซอร์และแอปมือถือ ห้ามดาวน์โหลดจากแหล่งที่ไม่เป็นทางการเด็ดขาด",s1_btn:"รับ Solflare",s2_title:"สร้างหรือนำเข้ากระเป๋าเงิน",s2_desc:"สร้างกระเป๋าเงินใหม่หรือนำเข้ากระเป๋าที่มีอยู่ เขียนวลีเริ่มต้นของคุณลงบนกระดาษและเก็บไว้ในที่ปลอดภัย ห้ามเก็บในรูปแบบดิจิทัลหรือแชร์กับใครเด็ดขาด",s3_title:"ฝาก SOL",s3_desc:"โอน SOL ไปยังที่อยู่กระเป๋าเงิน Solflare ของคุณ คุณต้องมี SOL เพื่อแลกเปลี่ยนเป็น EACO และจ่ายค่าแก๊ส เก็บ SOL ไว้อย่างน้อย 0.05 เสมอ",s4_title:"แลกเปลี่ยน SOL → EACO",s4_desc:"เปิดฟังก์ชัน Swap ภายใน Solflare วางที่อยู่สัญญา EACO อย่างแม่นยำ:",s4_desc2:"ตรวจสอบที่อยู่สัญญาอีกครั้ง ใส่จำนวน แล้วยืนยันการแลกเปลี่ยน",s5_title:"ตรวจสอบ EACO ของคุณ",s5_desc:"หลังจากธุรกรรมเสร็จสิ้น ให้ตรวจสอบยอด EACO ใน Solflare คุณยังสามารถตรวจสอบได้ที่ Solscan",safety_title:"เตือนความปลอดภัย",warn_title:"ระวังตัวและป้องกันตัว",warn_1:"วลีเริ่มต้นของคุณ = กระเป๋าเงินของคุณ ห้ามแชร์กับใครเด็ดขาด ห้ามใส่ในเว็บไซต์ใดๆ",warn_2:"ใช้เฉพาะ Solflare ทางการและลิงก์ที่ตรวจสอบแล้วเท่านั้น",warn_3:"เริ่มต้นด้วยจำนวนน้อย — ทดสอบด้วยจำนวนเล็กๆ ก่อนย้ายไปจำนวนที่ใหญ่กว่า",warn_4:"ตรวจสอบที่อยู่สัญญาสองครั้งก่อนทุกการแลกเปลี่ยน",exp_title:"Explorer ทางการ",tips_title:"เคล็ดลับการซื้อขายที่สำคัญ",t1_title:"สำรองค่าแก๊ส",t1_desc:"เก็บ SOL อย่างน้อย 0.05 ไว้สำหรับค่าแก๊สเสมอ ถ้าไม่มี คุณจะส่งหรือแลกเปลี่ยนโทเค็นไม่ได้",t2_title:"ใช้ Swap ภายใน",t2_desc:"ใช้ Swap ภายใน Solflare เพื่อประสบการณ์ที่ปลอดภัยที่สุด หลีกเลี่ยง DEX ที่ไม่รู้จัก",t3_title:"ตรวจสอบ CA สองครั้ง",t3_desc:"ตรวจสอบที่อยู่สัญญาก่อนแลกเปลี่ยนเสมอ ผู้โกงสร้างโทเค็นปลอมที่มีชื่อคล้ายกัน",t4_title:"เริ่มต้นด้วยน้อย",t4_desc:"ทดสอบด้วยจำนวนน้อยก่อน เมื่อมั่นใจแล้ว คุณสามารถเพิ่มตำแหน่งได้",consensus_title:"ระบบฉันทามติรายเดือน",consensus_desc:"เข้าร่วมฉันทามติรายเดือน รับรางวัล และปลดล็อกเหรียญตราพิเศษ ทุกการกระทำมีความหมาย!",energy_pool:"พูลพลังงาน",monthly_rewards:"รางวัลรายเดือน",max_earnable:"สูงสุด/วัน",points_per_day:"คะแนนต่อวัน",settle_day:"วันชำระ",auto_distribute:"กระจายอัตโนมัติ",earning_title:"วิธีรับคะแนน",e1_title:"เช็คอินรายวัน",e1_desc:"+10 คะแนน/วัน ทำอย่างสม่ำเสมอทุกวันเพื่อสร้างโมเมนตัม",e2_title:"ส่งเสริม EACO",e2_desc:"+30 คะแนน/แชร์ แชร์กับเพื่อนและรับคะแนนสำหรับทุกการแนะนำที่สำเร็จ",e3_title:"ภารกิจ AI",e3_desc:"+20 คะแนน/ภารกิจ ทำภารกิจชุมชนที่ขับเคลื่อนด้วย AI เพื่อเพิ่มอันดับของคุณ",e4_title:"เชิญเพื่อน",e4_desc:"ระดับ 1: +50 คะแนน | ระดับ 2: +25 คะแนน ยิ่งเชิญเพื่อนมาก คุณก็ยิ่งขึ้นสูง!",badge_title:"ระบบเหรียญตรา",badge_col:"เหรียญตรา",level_col:"ระดับ",threshold_col:"เกณฑ์",bonus_col:"โบนัส Staking",promo_title:"แผนงบประมาณส่งเสริม",promo_desc:"งบประมาณส่งเสริมรายสัปดาห์เชิงกลยุทธ์เพื่อเพิ่มสูงสุดการเติบโตของชุมชนและการมองเห็น EACO",promo_schedule:"ตารางรายสัปดาห์",p1_title:"งบประมาณขั้นต่ำรายสัปดาห์",p1_desc:"≥500 EACO/สัปดาห์ (~$5 มูลค่า) การปรากฏตัวอย่างสม่ำเสมอเหนือกว่าการระเบิดแบบไม่สม่ำเสมอ",p2_title:"การคาดการณ์รายเดือน",p2_desc:"~15,500–32,400 EACO/เดือน งบประมาณปรับขนาดตามขนาดชุมชนและสภาวะตลาด",p3_title:"ช่องทางส่งเสริม",p3_desc:"โซเชียลมีเดีย กลุ่มชุมชน ผู้มีอิทธิพล และการสร้างเนื้อหา กระจายการเข้าถึงของคุณ",p4_title:"ติดตามและปรับให้เหมาะสม",p4_desc:"ติดตามตัวชี้วัดการมีส่วนร่วมรายสัปดาห์ ทำสิ่งที่ได้ผลเป็นสองเท่า หยุดสิ่งที่ไม่ได้ผล",resources_title:"ทรัพยากรส่งเสริม",res1_title:"ชุดโซเชียลมีเดีย",res1_desc:"ดาวน์โหลดแบนเนอร์ โลโก้ และโพสต์ที่เขียนไว้ล่วงหน้าเพื่อแชร์ในทุกช่องทางของคุณ",res2_title:"แดชบอร์ด EACO",res2_desc:"สถิติแบบเรียลไทม์ แผนภูมิการเติบโตของชุมชน และอันดับฉันทามติรายเดือน",res3_title:"การสนับสนุนชุมชน",res3_desc:"เข้าร่วมกลุ่มชุมชน EACO เพื่อรับเคล็ดลับ ทรัพยากร และประสานงานกับผู้ส่งเสริมคนอื่นๆ",footer:"ชุมชน EACO · ไม่ใช่คำแนะนำทางการเงิน · DYOR เสมอ"}};</script>
-</body>
-</html>
+const i18n = {"en": {"app_title": "EACO Beginner Guide", "lang_name": "English", "hero_title": "Welcome to EACO", "hero_subtitle": "The next-generation AI-powered community token on Solana", "ca_label": "Contract Address (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copy", "copied": "Copied!", "orb_btn": "View on OrbMarkets", "solscan_btn": "View on Solscan", "wallet_section": "Step 1: Get a Wallet", "wallet_desc": "Download Solflare wallet - the recommended wallet for EACO", "wallet_link": "https://solflare.com/", "wallet_link_text": "Download Solflare", "security_title": "Security First", "sec_1": "Never share your seed phrase with anyone", "sec_2": "Only use official links (check CA carefully)", "sec_3": "Start with small test amounts", "sec_4": "Always verify contract address before trading", "tutorial_title": "Step-by-Step Guide", "step1_title": "Create Your Wallet", "step1_desc": "Download Solflare from the official website. Create a new wallet and securely backup your 12-word seed phrase. Never share it with anyone!", "step2_title": "Fund Your Wallet with SOL", "step2_desc": "You need SOL for gas fees. Reserve at least 0.05 SOL for transactions. Buy SOL from any major exchange and transfer to your Solflare wallet.", "step3_title": "Get EACO Tokens", "step3_desc": "Go to OrbMarkets or use Solflare's built-in Swap. Search for EACO contract address: DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH. Always double-check the CA!", "step4_title": "Trade & Hold", "step4_desc": "Use Solflare's built-in DEX swap or OrbMarkets to trade EACO. Consider staking for monthly consensus rewards up to 2x multiplier!", "step5_title": "Join Community", "step5_desc": "Join our global community! Participate in daily check-ins, promotions, and earn points. Top contributors get airdrop eligibility!", "tips_title": "Pro Tips", "tip_1": "Reserve 0.05 SOL for gas fees always", "tip_2": "Use Solflare's built-in Swap for best rates", "tip_3": "Double-check CA before every transaction", "tip_4": "Join monthly consensus program for 2x staking rewards", "footer_text": "Updated: 2026-05-31 | EACO Community - Built for Global Adoption"}, "zh": {"app_title": "EACO 新手指南", "lang_name": "中文", "hero_title": "欢迎来到 EACO", "hero_subtitle": "基于 Solana 的下一代 AI 驱动社区代币", "ca_label": "合约地址 (CA)：", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "复制", "copied": "已复制！", "orb_btn": "在 OrbMarkets 查看", "solscan_btn": "在 Solscan 查看", "wallet_section": "第1步：获取钱包", "wallet_desc": "下载 Solflare 钱包 — EACO 推荐钱包", "wallet_link": "https://solflare.com/", "wallet_link_text": "下载 Solflare", "security_title": "安全第一", "sec_1": "绝不向任何人透露种子短语", "sec_2": "仅使用官方链接（仔细核对CA）", "sec_3": "从小额测试开始", "sec_4": "交易前务必核对合约地址", "tutorial_title": "分步教程", "step1_title": "创建钱包", "step1_desc": "从官网下载 Solflare，创建新钱包并安全备份12字种子短语。切勿泄露给任何人！", "step2_title": "充值 SOL", "step2_desc": "需要 SOL 作为 Gas 费。至少预留 0.05 SOL 用于交易。从主流交易所购买 SOL 并转入 Solflare 钱包。", "step3_title": "获取 EACO 代币", "step3_desc": "访问 OrbMarkets 或使用 Solflare 内置 Swap。搜索 EACO 合约地址：DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH。务必核对 CA！", "step4_title": "交易与持有", "step4_desc": "使用 Solflare 内置 DEX Swap 或 OrbMarket 交易 EACO。考虑参与锁仓以获得月度共识奖励，最高 2 倍加成！", "step5_title": "加入社区", "step5_desc": "加入全球社区！参与每日签到、推广活动赚取积分。顶级贡献者将获得空投资格！", "tips_title": "专业提示", "tip_1": "始终预留 0.05 SOL 作为 Gas 费", "tip_2": "使用 Solflare 内置 Swap 获得最佳汇率", "tip_3": "每笔交易前双重核对 CA", "tip_4": "参与月度共识计划获得 2 倍锁仓奖励", "footer_text": "更新日期：2026-05-31 | EACO 社区 - 为全球采用而建"}, "es": {"app_title": "Guía de EACO para Principiantes", "lang_name": "Español", "hero_title": "Bienvenido a EACO", "hero_subtitle": "El token comunitario de próxima generación con IA en Solana", "ca_label": "Dirección del Contrato (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copiar", "copied": "¡Copiado!", "orb_btn": "Ver en OrbMarkets", "solscan_btn": "Ver en Solscan", "wallet_section": "Paso 1: Obtén una Billetera", "wallet_desc": "Descarga Solflare - la billetera recomendada para EACO", "wallet_link": "https://solflare.com/", "wallet_link_text": "Descargar Solflare", "security_title": "Seguridad Primero", "sec_1": "Nunca compartas tu frase semilla con nadie", "sec_2": "Usa solo enlaces oficiales (verifica el CA)", "sec_3": "Comienza con pequeñas cantidades de prueba", "sec_4": "Siempre verifica la dirección del contrato antes de operar", "tutorial_title": "Guía Paso a Paso", "step1_title": "Crea tu Billetera", "step1_desc": "Descarga Solflare desde el sitio oficial. Crea una nueva billetera y respalda tu frase semilla de 12 palabras. ¡Nunca la compartas!", "step2_title": "Fondos tu Billetera con SOL", "step2_desc": "Necesitas SOL para tarifas de gas. Reserva al menos 0.05 SOL para transacciones. Compra SOL en cualquier exchange importante.", "step3_title": "Obtén Tokens EACO", "step3_desc": "Ve a OrbMarkets o usa el Swap integrado de Solflare. Busca la dirección de contrato EACO. ¡Verifica siempre el CA!", "step4_title": "Opera y Mantén", "step4_desc": "Usa el Swap DEX integrado de Solflare u OrbMarkets. ¡Considera hacer staking para recompensas mensuales hasta 2x!", "step5_title": "Únete a la Comunidad", "step5_desc": "¡Únete a nuestra comunidad global! Participa en check-ins diarios, promociones y gana puntos.", "tips_title": "Consejos Pro", "tip_1": "Reserva 0.05 SOL para tarifas de gas", "tip_2": "Usa el Swap de Solflare para mejores tasas", "tip_3": "Verifica el CA antes de cada transacción", "tip_4": "Únete al programa de consenso mensual", "footer_text": "Actualizado: 2026-05-31 | EACO Community"}, "fr": {"app_title": "Guide EACO pour Débutants", "lang_name": "Français", "hero_title": "Bienvenue sur EACO", "hero_subtitle": "Le jeton communautaire nouvelle génération propulsé par l'IA sur Solana", "ca_label": "Adresse du Contrat (CA) :", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Copier", "copied": "Copié !", "orb_btn": "Voir sur OrbMarkets", "solscan_btn": "Voir sur Solscan", "wallet_section": "Étape 1 : Obtenir un Portefeuille", "wallet_desc": "Téléchargez Solflare - le portefeuille recommandé pour EACO", "wallet_link": "https://solflare.com/", "wallet_link_text": "Télécharger Solflare", "security_title": "Sécurité Avant Tout", "sec_1": "Ne partagez jamais votre phrase seed", "sec_2": "Utilisez uniquement les liens officiels", "sec_3": "Commencez par de petits montants test", "sec_4": "Vérifiez toujours le contrat avant d'échanger", "tutorial_title": "Guide Étape par Étape", "step1_title": "Créer votre Portefeuille", "step1_desc": "Téléchargez Solflare depuis le site officiel. Créez un nouveau portefeuille et sauvegardez votre phrase seed de 12 mots.", "step2_title": "Approvisionner en SOL", "step2_desc": "Vous avez besoin de SOL pour les frais de gaz. Gardez au moins 0.05 SOL pour les transactions.", "step3_title": "Obtenir des Jetons EACO", "step3_desc": "Allez sur OrbMarkets ou utilisez le Swap intégré de Solflare. Cherchez l'adresse du contrat EACO.", "step4_title": "Échanger et Détenir", "step4_desc": "Utilisez le Swap DEX intégré ou OrbMarkets. Envisagez le staking pour des récompenses jusqu'à 2x !", "step5_title": "Rejoindre la Communauté", "step5_desc": "Rejoignez notre communauté mondiale ! Participez aux check-ins quotidiens et gagnez des points.", "tips_title": "Conseils Pro", "tip_1": "Gardez 0.05 SOL pour les frais de gaz", "tip_2": "Utilisez le Swap Solflare pour les meilleurs taux", "tip_3": "Vérifiez le CA avant chaque transaction", "tip_4": "Rejoignez le programme de consensus mensuel", "footer_text": "Mis à jour : 2026-05-31 | EACO Community"}, "ar": {"app_title": "دليل EACO للمبتدئين", "lang_name": "العربية", "hero_title": "مرحباً بكم في EACO", "hero_subtitle": "عملة مجتمعية من الجيل التالي مدعومة بالذكاء الاصطناعي على سولانا", "ca_label": "عقد العنوان (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "نسخ", "copied": "تم النسخ!", "orb_btn": "عرض على OrbMarkets", "solscan_btn": "عرض على Solscan", "wallet_section": "الخطوة 1: الحصول على محفظة", "wallet_desc": "قم بتحميل Solflare - المحفظة الموصى بها لـ EACO", "wallet_link": "https://solflare.com/", "wallet_link_text": "تحميل Solflare", "security_title": "الأمان أولاً", "sec_1": "لا تشارك عبارة البذر مع أي شخص", "sec_2": "استخدم الروابط الرسمية فقط", "sec_3": "ابدأ بمبالغ صغيرة للاختبار", "sec_4": "تحقق دائماً من العقد قبل التداول", "tutorial_title": "دليل خطوة بخطوة", "step1_title": "إنشاء محفظتك", "step1_desc": "قم بتحميل Solflare من الموقع الرسمي. أنشئ محفظة جديدة واحفظ عبارة البذر المكونة من 12 كلمة.", "step2_title": "شحن محفظتك بـ SOL", "step2_desc": "تحتاج SOL لرسوم الغاز. احتفظ بـ 0.5 SOL على الأقل للمعاملات.", "step3_title": "الحصول على عملات EACO", "step3_desc": "اذهب إلى OrbMarkets أو استخدم Swap المدمج في Solflare. ابحث عن عنوان عقد EACO.", "step4_title": "التداول والاحتفاظ", "step4_desc": "استخدم Swap DEX أو OrbMarkets. فكر في Staking للحصول على مكافآت حتى ضعفين!", "step5_title": "انضم للمجتمع", "step5_desc": "انضم لمجتمعنا العالمي! شك في التسجيل اليومي واكسب نقاطاً.", "tips_title": "نصائح احترافية", "tip_1": "احتفظ بـ 0.5 SOL لرسوم الغاز", "tip_2": "استخدم Swap Solflare لأفضل الأسعار", "tip_3": "تحقق من CA قبل كل معاملة", "tip_4": "انضم لبرنامج الإجماع الشهري", "footer_text": "تحديث: 2026-05-31 | EACO Community"}, "ru": {"app_title": "Руководство EACO для начинающих", "lang_name": "Русский", "hero_title": "Добро пожаловать в EACO", "hero_subtitle": "Токен сообщества нового поколения с ИИ на Solana", "ca_label": "Адрес контракта (CA):", "ca_value": "DqfoyZH96RnvZusSp3Cdncjpyp3C74ZmJzGhjmHnDHRH", "copy_btn": "Копировать", "copied": "Скопировано!", "orb_btn": "Смотреть на OrbMarkets", "solscan_btn": "Смотреть на Solscan", "wallet_section": "Шаг 1: Получите кошелёк", "wallet_desc": "Скачайте Solflare - рекомендованный кошелёк для EACO", "wallet_link": "https://solflare.com/", "wallet_link_text": "Скачать Solflare", "security_title": "Безопасность превыше всего", "sec_1": "Никогда не делитесь сид-фразой", "sec_2": "Используйте только официальные ссылки", "sec_3": "Начинайте с небольших тестовых сумм", "sec_4": "Всегда проверяйте адрес контракта перед торговлей", "tutorial_title": "Пошаговое руководство", "step1_title": "Создайте кошелёк", "step1_desc": "Скачайте Solflare с официального сайта. Создайте новый кошелёк и сохраните сид-фразу из 12 слов.", "step2_title": "Пополните кошелёк SOL", "step2_desc": "Вам нужен SOL для комиссий. Оставьте минимум 0.05 SOL для транзакций.", "step3_title": "Получите токены EACO", "step3_desc": "Перейдите на OrbMarkets или используйте встроенный Swap в Solflare. Поищите адрес контракта EACO.", "step4_title": "Торговля и удержание", "step4_desc": "Используйте DEX Swap или OrbMarkets. Рассмотрите стейкинг для наград до 2x!", "step5_title": "Присоединяйтесь к сообществу", "step5_desc": "Присоединяйтесь к нашему глобальному сообществу! Участвуйте в ежедневных чекинах и зарабатывайте очки.", "tips_title": "Советы профи", "tip_1": "Держите 0.05 SOL для газовых комиссий", "tip_2": "Используйте Swap Solflare для лучших курсов", "tip_3": "Проверяйте CA перед каждой транзакцией", "tip_4": "Присоединяйтесь к программе месячного консенсуса", "footer_text": "Обновлено: 2026-05-31 | EACO Community"}};
+let curLang = localStorage.getItem('eaco_lang') || 'en';
+const rtlLangs = ['ar'];
+function t(key){return (i18n[curLang]&&i18n[curLang][key])||(i18n['en'][key]||key)}
+function applyLang(){
+  document.documentElement.lang = curLang;
+  document.documentElement.dir = rtlLangs.includes(curLang)?'rtl':'ltr';
+  const map={heroTitle:'heroTitle',heroSubtitle:'heroSubtitle',caLabel:'caLabel',caValue:'caValue',copyBtn:'copyBtn',orbBtn:'orbBtn',solscanBtn:'solscanBtn',walletSection:'walletSection',walletDesc:'walletDesc',walletLinkText:'walletLinkText',securityTitle:'securityTitle',tutorialTitle:'tutorialTitle',tipsTitle:'tipsTitle',footerText:'footerText'};
+  for(const[id,key]of Object.entries(map)){const el=document.getElementById(id);if(el)el.textContent=t(key)}
+  document.title=t('app_title');
+  // Security grid
+  const sg=document.getElementById('securityGrid'); if(sg){
+    sg.innerHTML=[1,2,3,4].map(i=>`<div class="sec-item">${t('sec_'+i)}</div>`).join('');
+  }
+  // Steps
+  const sc=document.getElementById('stepsContainer'); if(sc){
+    sc.innerHTML=[1,2,3,4,5].map(i=>`<div class="step"><div class="step-num">${i}</div><div class="step-content"><h4>${t('step'+i+'_title')}</h4><p>${t('step'+i+'_desc')}</p></div></div>`).join('');
+  }
+  // Tips
+  const tl=document.getElementById('tipsList'); if(tl){
+    tl.innerHTML=[1,2,3,4].map(i=>`<li>${t('tip_'+i)}</li>`).join('');
+  }
+  // Lang buttons
+  const ls=document.getElementById('langSwitch'); if(ls){
+    ls.innerHTML=Object.keys(i18n).map(l=>`<button class="lang-btn${l===curLang?' active':''}" onclick:setLang('${l}')">${i18n[l].lang_name}</button>`).join('');
+  }
+}
+function setLang(l){curLang=l;localStorage.setItem('eaco_lang',l);applyLang()}
+function copyCA(){navigator.clipboard.writeText(document.getElementById('caValue').textContent).then(()=>{
+  const b=document.getElementById('copyBtn');b.textContent='copied!';setTimeout(()=>{b.textContent=t('copyBtn')},2000)})}
+applyLang();
+</script>
+</body></html>
