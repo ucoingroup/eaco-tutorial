@@ -35,7 +35,7 @@
     "tip_2": "Use Solflare's built-in Swap for best rates",
     "tip_3": "Double-check CA before every transaction",
     "tip_4": "Join monthly consensus program for 2x staking rewards",
-    "footer_text": "Updated: 2026-06-28 | EACO Community - Built for Global Adoption"
+    "footer_text": "Updated: 2026-07-03 | EACO Community - Built for Global Adoption"
   },
   "zh": {
     "app_title": "EACO 新手指南",
@@ -73,7 +73,7 @@
     "tip_2": "使用 Solflare 内置 Swap 获得最佳汇率",
     "tip_3": "每笔交易前双重核对 CA",
     "tip_4": "参与月度共识计划获得 2 倍锁仓奖励",
-    "footer_text": "更新日期：2026-06-28 | EACO 社区 - 为全球采用而建"
+    "footer_text": "更新日期：2026-07-03 | EACO 社区 - 为全球采用而建"
   },
   "es": {
     "app_title": "Guía de EACO para Principiantes",
@@ -111,7 +111,7 @@
     "tip_2": "Usa el Swap de Solflare para mejores tasas",
     "tip_3": "Verifica el CA antes de cada transacción",
     "tip_4": "Únete al programa de consenso mensual",
-    "footer_text": "Actualizado: 2026-06-28 | EACO Community"
+    "footer_text": "Actualizado: 2026-07-03 | EACO Community"
   },
   "fr": {
     "app_title": "Guide EACO pour Débutants",
@@ -149,7 +149,7 @@
     "tip_2": "Utilisez le Swap Solflare pour les meilleurs taux",
     "tip_3": "Vérifiez le CA avant chaque transaction",
     "tip_4": "Rejoignez le programme de consensus mensuel",
-    "footer_text": "Mis à jour : 2026-06-28 | EACO Community"
+    "footer_text": "Mis à jour : 2026-07-03 | EACO Community"
   },
   "ar": {
     "app_title": "دليل EACO للمبتدئين",
@@ -187,7 +187,7 @@
     "tip_2": "استخدم Swap Solflare لأفضل الأسعار",
     "tip_3": "تحقق من CA قبل كل معاملة",
     "tip_4": "انضم لبرنامج الإجماع الشهري",
-    "footer_text": "تحديث: 2026-06-28 | EACO Community"
+    "footer_text": "تحديث: 2026-07-03 | EACO Community"
   },
   "ru": {
     "app_title": "Руководство EACO для начинающих",
@@ -225,6 +225,6 @@
     "tip_2": "Используйте Swap Solflare для лучших курсов",
     "tip_3": "Проверяйте CA перед каждой транзакцией",
     "tip_4": "Присоединяйтесь к программе месячного консенсуса",
-    "footer_text": "Обновлено: 2026-06-28 | EACO Community"
+    "footer_text": "Обновлено: 2026-07-03 | EACO Community"
   }
 }
